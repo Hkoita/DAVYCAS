@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STELab | Système de Traçabilité Épidémiologique | DAVYCAS</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Découvrez STELab, la plateforme électronique de traçabilité des données épidémiologiques et échantillons de laboratoire conçue par DAVYCAS International.">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/stelab.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Specific Navbar overrides to ensure horizontal layout as on homepage */
+        .premium-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(13, 13, 26, 0.85);
+            backdrop-filter: blur(20px);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+        }
+        .nav-logo img { height: 60px; filter: brightness(0) invert(1); }
+        .nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { text-decoration: none; color: #fff; font-weight: 500; opacity: 0.8; transition: 0.3s; font-size: 15px; }
+        .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--turquoise, #469cb0); }
+
+        /* Dropdown Menu System */
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .has-dropdown .nav-link { display: flex; align-items: center; gap: 6px; }
+        .dropdown-arrow { font-size: 0.7rem; opacity: 0.6; transition: transform 0.3s ease; }
+        .has-dropdown:hover .dropdown-arrow { transform: rotate(180deg); opacity: 1; }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(13, 13, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 12px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 12px;
+            height: 12px;
+            background: rgba(13, 13, 26, 0.95);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.25s;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--turquoise);
+            padding-left: 20px;
+        }
+        
+        /* Buttons should not look like links */
+        a.btn-stelab { text-decoration: none !important; display: inline-flex !important; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVBAR -->
+    <header class="premium-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS Logo">
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="piliers.html">Piliers</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="projets.html" class="nav-link active">Projets <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="stelab.html" class="dropdown-link">
+                                <i class="fa-solid fa-microscope"></i>
+                                STELab
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta">
+                <a href="#" class="cta-don-nav" style="background: var(--stelab-primary); color: white; padding: 10px 24px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 14px;">Faire un don</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section class="hero-stelab-v2">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <span class="hero-label">Projet Digital</span>
+                        <h1>STELab</h1>
+                        <div class="hero-subtitle">Système de Traçabilité des données Épidémiologiques et des échantillons de Laboratoire</div>
+                        <p class="hero-desc">Une plateforme électronique conçue pour renforcer la surveillance épidémiologique, le suivi des échantillons biologiques et la prise de décision en santé publique.</p>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <a href="#presentation" class="btn-stelab btn-stelab-primary">Découvrir la plateforme <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="contact.html" class="btn-stelab btn-stelab-outline">Contacter DAVYCAS</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="systemes_information_davycas_v1_1773179797576.png" alt="Interface STELab">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. INTRODUCTION -->
+        <section id="presentation" class="stelab-section stelab-section-white">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <span class="hero-label" style="background: #f0f2f5;">Introduction</span>
+                        <h2 style="font-size: 48px; color: var(--stelab-text-dark); margin-bottom: 24px; font-family: 'Sora', sans-serif;">La donnée au service de la vie</h2>
+                        <p style="font-size: 1.1rem; color: var(--stelab-text-muted); margin-bottom: 32px; line-height: 1.8;">
+                            STELab est une plateforme électronique de gestion des données cas par cas, disponible au niveau des services épidémiologiques et des laboratoires. Elle intègre le suivi du transport des échantillons biologiques et facilite la saisie, la visualisation et le rapportage des données.
+                        </p>
+                        <p style="font-size: 1.1rem; color: var(--stelab-text-muted); line-height: 1.8;">
+                            Conçue pour répondre aux défis du terrain en Afrique de l'Ouest, STELab permet une coordination fluide entre les acteurs de santé, garantissant que chaque donnée contribue efficacement à la lutte contre les épidémies.
+                        </p>
+                    </div>
+                    <div>
+                        <div style="background: var(--stelab-bg-light); padding: 56px; border-radius: 40px; border: 1px solid var(--stelab-border); position: relative;">
+                            <i class="fa-solid fa-quote-left" style="position: absolute; top: 40px; left: 40px; font-size: 40px; opacity: 0.1; color: var(--stelab-primary);"></i>
+                            <h4 style="color: var(--stelab-primary); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px;">Objectif Principal</h4>
+                            <p style="font-size: 1.4rem; font-weight: 600; color: var(--stelab-text-dark); font-style: italic; line-height: 1.5;">
+                                "Garantir une traçabilité totale et une disponibilité immédiate des informations sanitaires pour une action publique plus rapide et plus précise."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FONCTIONNALITÉS CLÉS -->
+        <section class="stelab-section stelab-section-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span class="hero-label">Efficacité</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Fonctionnalités clés</h2>
+                    <p style="color: var(--stelab-text-muted); max-width: 600px; margin: 16px auto 0;">Des outils pensés pour l'excellence opérationnelle en santé publique.</p>
+                </div>
+                
+                <div class="stelab-grid-3">
+                    <article class="stelab-card">
+                        <div class="stelab-icon"><i class="fa-solid fa-hospital-user"></i></div>
+                        <h3>Gestion cas par cas</h3>
+                        <p>Centralisation structurée des données de surveillance pour un suivi précis des situations sanitaires individuelles.</p>
+                    </article>
+                    <article class="stelab-card">
+                        <div class="stelab-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+                        <h3>Suivi des échantillons</h3>
+                        <p>Traçabilité du transport des échantillons biologiques entre terrain, laboratoires et niveaux de coordination.</p>
+                    </article>
+                    <article class="stelab-card">
+                        <div class="stelab-icon"><i class="fa-solid fa-wifi-slash"></i></div>
+                        <h3>Mode offline</h3>
+                        <p>Saisie locale possible sans connexion Internet, avec données stockées en toute sécurité sur le poste utilisateur.</p>
+                    </article>
+                    <article class="stelab-card">
+                        <div class="stelab-icon"><i class="fa-solid fa-rotate"></i></div>
+                        <h3>Synchronisation automatique</h3>
+                        <p>Mise à jour transparente des données dès que la connexion Internet devient disponible sur le terrain.</p>
+                    </article>
+                    <article class="stelab-card">
+                        <div class="stelab-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Visualisation & cartographie</h3>
+                        <p>Tableaux de bord, indicateurs, graphiques et rendus cartographiques pour faciliter la décision stratégique.</p>
+                    </article>
+                    <article class="stelab-card">
+                        <div class="stelab-icon"><i class="fa-solid fa-file-export"></i></div>
+                        <h3>Export des données</h3>
+                        <p>Extractions anonymisées au format Excel pour permettre des analyses épidémiologiques complémentaires approfondies.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ARCHITECTURE TECHNIQUE -->
+        <section class="stelab-section stelab-section-dark">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span class="hero-label" style="background: rgba(255,255,255,0.1); color: white;">Stack Technique</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Architecture robuste & évolutive</h2>
+                    <p style="color: rgba(255,255,255,0.6); margin-top: 16px;">Une technologie moderne pour des données critiques.</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <span class="tech-label">Backend</span>
+                        <div class="tech-value">PHP 7.2 & Zend Framework 3</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Frontend</span>
+                        <div class="tech-value">VueJS 2 & JavaScript / JQuery</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Base de données</span>
+                        <div class="tech-value">MongoDB (Big Data)</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Visualisation</span>
+                        <div class="tech-value">Highcharts</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Serveur Web</span>
+                        <div class="tech-value">Apache 2</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Performance</span>
+                        <div class="tech-value">Redis & MemCached</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Cloud & Sécurité</span>
+                        <div class="tech-value">Serveur Canada / Allemagne</div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-label">Redondance</span>
+                        <div class="tech-value">Backup National In-Country</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. VALEUR AJOUTÉE -->
+        <section class="stelab-section stelab-section-white">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span class="hero-label">Impact</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Pourquoi STELab fait la différence ?</h2>
+                </div>
+                
+                <div class="stelab-grid-3">
+                    <article class="stelab-card" style="padding: 40px;">
+                        <h4 style="color: var(--stelab-primary); margin-bottom: 16px; font-size: 1.2rem;">Continuité Offline</h4>
+                        <p>Garantit le travail ininterrompu des équipes même dans les zones sans couverture réseau.</p>
+                    </article>
+                    <article class="stelab-card" style="padding: 40px;">
+                        <h4 style="color: var(--stelab-primary); margin-bottom: 16px; font-size: 1.2rem;">Traçabilité Totale</h4>
+                        <p>Zéro perte d'échantillons biologiques grâce au monitoring rigoureux des flux de transport.</p>
+                    </article>
+                    <article class="stelab-card" style="padding: 40px;">
+                        <h4 style="color: var(--stelab-primary); margin-bottom: 16px; font-size: 1.2rem;">Aide à la Décision</h4>
+                        <p>Transformation instantanée des données brutes en tableaux de bord exploitables par les autorités.</p>
+                    </article>
+                    <article class="stelab-card" style="padding: 40px;">
+                        <h4 style="color: var(--stelab-primary); margin-bottom: 16px; font-size: 1.2rem;">Coordination Centralisée</h4>
+                        <p>Une vision consolidée en temps réel pour tous les échelons de la pyramide sanitaire.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WORKFLOW -->
+        <section class="stelab-section stelab-section-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span class="hero-label">Workflow</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Comment ça fonctionne ?</h2>
+                    <p style="color: var(--stelab-text-muted); margin-top: 16px;">Une architecture décentralisée pour une efficacité centralisée.</p>
+                </div>
+                
+                <div class="timeline-stelab">
+                    <div class="timeline-item-v2">
+                        <div class="timeline-dot">01</div>
+                        <div class="timeline-box">
+                            <h4>Saisie Locale</h4>
+                            <p>L’utilisateur saisit les données en local sur son application STELab, même sans aucune connexion Internet active.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-v2">
+                        <div class="timeline-dot">02</div>
+                        <div class="timeline-dot" style="background: #469cb0;">02</div>
+                        <div class="timeline-box">
+                            <h4>Disponibilité Terrain</h4>
+                            <p>Les informations restent accessibles et modifiables sur le poste de l’utilisateur en permanence.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-v2">
+                        <div class="timeline-dot">03</div>
+                        <div class="timeline-box">
+                            <h4>Synchronisation</h4>
+                            <p>Dès que la connexion devient disponible, les données sont automatiquement synchronisées avec le serveur central sécurisé.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-v2">
+                        <div class="timeline-dot">04</div>
+                        <div class="timeline-dot" style="background: #469cb0;">04</div>
+                        <div class="timeline-box">
+                            <h4>Pilotage Central</h4>
+                            <p>Les niveaux district, régional et central visualisent les données consolidées selon leurs droits d'accès respectifs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. HELPDESK & SUPPORT -->
+        <section class="stelab-section stelab-section-white">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <span class="hero-label">Accompagnement</span>
+                        <h2 style="font-size: 42px; font-family: 'Sora', sans-serif; margin-bottom: 24px;">Helpdesk & Support Terrain</h2>
+                        <p style="color: var(--stelab-text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+                            STELab n’est pas seulement un logiciel, c’est un écosystème de soutien. DAVYCAS assure un suivi permanent pour garantir le fonctionnement optimal de la plateforme au quotidien.
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                            <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--stelab-text-dark);">
+                                <i class="fa-solid fa-headset" style="color: var(--stelab-primary);"></i> Helpdesk dédié
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--stelab-text-dark);">
+                                <i class="fa-solid fa-phone" style="color: var(--stelab-primary);"></i> Appels & WhatsApp
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--stelab-text-dark);">
+                                <i class="fa-solid fa-desktop" style="color: var(--stelab-primary);"></i> Monitoring actif
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--stelab-text-dark);">
+                                <i class="fa-solid fa-users-gear" style="color: var(--stelab-primary);"></i> Suivi permanent
+                            </div>
+                        </div>
+                    </div>
+                    <div class="support-img-wrapper reveal">
+                        <img src="person-office-work-day.jpg" alt="Equipe Support DAVYCAS" class="support-img-premium">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. DÉPLOIEMENT -->
+        <section class="stelab-section stelab-section-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span class="hero-label">Géographie</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Déploiement Stratégique</h2>
+                </div>
+                
+                <div class="deploy-card">
+                    <div class="deploy-col">
+                        <h4>Pays</h4>
+                        <ul>
+                            <li>Burkina Faso</li>
+                            <li>Niger</li>
+                        </ul>
+                    </div>
+                    <div class="deploy-col">
+                        <h4>Niveaux</h4>
+                        <ul>
+                            <li>Central</li>
+                            <li>Régional</li>
+                            <li>District</li>
+                        </ul>
+                    </div>
+                    <div class="deploy-col">
+                        <h4>Unités</h4>
+                        <ul>
+                            <li>Labos de référence</li>
+                            <li>Formations sanitaires</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA FINAL -->
+        <section class="stelab-section" style="background: linear-gradient(135deg, var(--stelab-primary), var(--stelab-secondary)); color: white; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 48px; font-family: 'Sora', sans-serif; margin-bottom: 24px; color: white;">Vous souhaitez en savoir plus sur STELab ?</h2>
+                <p style="max-width: 800px; margin: 0 auto 48px; font-size: 1.2rem; opacity: 0.9;">DAVYCAS International accompagne les institutions sanitaires dans la mise en place de solutions concrètes pour la surveillance, les laboratoires et la décision publique.</p>
+                <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn-stelab" style="background: white; color: var(--stelab-primary);">Contacter DAVYCAS <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></a>
+                    <a href="projets.html" class="btn-stelab" style="border: 1px solid rgba(255,255,255,0.4); color: white;">Retour aux projets</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. FOOTER -->
+    <footer class="site-footer-v2" style="background: #0d0d1a; padding: 100px 0 60px;">
+        <div class="container">
+            <div class="footer-grid-v2" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px;">
+                <div class="footer-col">
+                    <a href="index.html" style="display: block; margin-bottom: 32px;">
+                        <img src="Logo.png" alt="DAVYCAS Logo" style="height: 80px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; max-width: 420px;">Expertise institutionnelle au service de la santé publique en Afrique de l'Ouest. Nous transformons les défis sanitaires en solutions structurantes.</p>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Raccourcis</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 16px;"><a href="index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">Accueil</a></li>
+                        <li style="margin-bottom: 16px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">À Propos</a></li>
+                        <li style="margin-bottom: 16px;"><a href="piliers.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">Piliers</a></li>
+                        <li style="margin-bottom: 16px;"><a href="projets.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">Projets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Contact</h5>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">Ouagadougou, Burkina Faso</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">contact@davycas.org</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px;">+226 25 34 12 50</p>
+                </div>
+            </div>
+            <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.4); font-size: 13px;">
+                <p>© 2026 DAVYCAS International. Tous droits réservés.</p>
+                <p>Afrique de l'Ouest</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

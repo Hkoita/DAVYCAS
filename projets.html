@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets | DAVYCAS International</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="about-v2-body">
+
+    <!-- 1. NAVBAR STICKY -->
+    <header class="main-header" style="background: rgba(13,13,26,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="header-inner">
+            <a href="index.html" class="header-logo">
+                <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+            </a>
+            
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link">Piliers</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="projets.html" class="nav-link active">Projets <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="stelab.html" class="dropdown-link">
+                                <i class="fa-solid fa-microscope"></i>
+                                STELab
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="#" class="btn-v2 btn-v2-primary" style="padding: 8px 24px; font-size: 14px;">Faire un don</a>
+            </div>
+            
+            <button class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. HERO PROJETS -->
+    <section class="hero-section-v2" style="height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; background: #0d0d1a;">
+        <div style="position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2000') center/cover; opacity: 0.35;"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,13,26,0.92) 0%, rgba(70,156,176,0.2) 100%);"></div>
+        
+        <div class="container z-1">
+            <div style="max-width: 900px;">
+                <span class="label-v2 scroll-fade-up">Nos Projets</span>
+                <h1 class="h1-v2 scroll-fade-up" style="font-family: 'Sora', sans-serif;">Des projets conçus pour renforcer durablement les systèmes de santé</h1>
+                <p class="scroll-fade-up" style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 48px; max-width: 750px; line-height: 1.8;">
+                    À travers l’Afrique de l’Ouest, DAVYCAS conçoit et met en œuvre des projets à fort impact dans les domaines de la surveillance épidémiologique, des laboratoires, des enquêtes de terrain et des systèmes d’information sanitaire.
+                </p>
+                <div style="display: flex; gap: 24px;" class="scroll-fade-up">
+                    <a href="#projets" class="btn-v2 btn-v2-primary">Explorer les projets</a>
+                    <a href="#" class="btn-v2 btn-v2-outline">Devenir partenaire</a>
+                </div>
+                
+                <div style="display: flex; gap: 48px; margin-top: 64px; border-top: 1px solid var(--border); padding-top: 32px;" class="scroll-fade-up">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--turquoise);">Depuis 2016</div>
+                        <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Expertise Terrain</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--turquoise);">Burkina, Niger, Mali</div>
+                        <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Présence Régionale</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: var(--turquoise);">Multi-pays</div>
+                        <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Portée des Projets</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MARQUEE PREMIUM -->
+    <div class="marquee-container" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="marquee-content">
+            <span>SURVEILLANCE ÉPIDÉMIOLOGIQUE</span><span>·</span><span>LABORATOIRES</span><span>·</span><span>INNOVATION</span><span>·</span><span>DONNÉES DE SANTÉ</span><span>·</span><span>LOGISTIQUE</span><span>·</span><span>AFRIQUE DE L’OUEST</span><span>·</span><span>IMPACT TERRAIN</span><span>·</span>
+            <span>SURVEILLANCE ÉPIDÉMIOLOGIQUE</span><span>·</span><span>LABORATOIRES</span><span>·</span><span>INNOVATION</span><span>·</span><span>DONNÉES DE SANTÉ</span><span>·</span><span>LOGISTIQUE</span><span>·</span><span>AFRIQUE DE L’OUEST</span><span>·</span><span>IMPACT TERRAIN</span><span>·</span>
+        </div>
+    </div>
+
+    <!-- 4. INTRODUCTION ÉDITORIALE -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start;">
+                <div class="scroll-fade-up">
+                    <span class="label-v2">Vision Projet</span>
+                    <h2 class="h2-v2">Des interventions pensées pour le terrain et la décision</h2>
+                </div>
+                <div class="scroll-fade-up">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px;">
+                        DAVYCAS développe des projets répondant à des besoins concrets des systèmes de santé : meilleure détection des maladies, circulation fluide des données, gestion sécurisée des échantillons et coordination renforcée entre le terrain, les laboratoires et le niveau central.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                        Chaque projet combine une expertise technique de pointe, une mise en œuvre opérationnelle rigoureuse et un accompagnement institutionnel pour garantir la pérennité des résultats.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FILTRES DE PROJETS -->
+    <section id="projets" style="background: #0d0d1a; padding-bottom: 48px;">
+        <div class="container">
+            <div class="filter-container scroll-fade-up">
+                <div class="filter-tag active">Tous</div>
+                <div class="filter-tag">Surveillance</div>
+                <div class="filter-tag">Laboratoire</div>
+                <div class="filter-tag">Systèmes d’information</div>
+                <div class="filter-tag">Études & Enquêtes</div>
+                <div class="filter-tag">Logistique sanitaire</div>
+                <div class="filter-tag">Multi-pays</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PROJET PHARE EN VEDETTE -->
+    <section class="featured-project-v2 section-v2">
+        <div class="container">
+            <div class="featured-glass-v2 scroll-fade-up">
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center;">
+                    <div>
+                        <span class="project-badge-v2" style="background: var(--violet); color: white;">Projet Phare</span>
+                        <h2 style="font-size: 64px; font-weight: 800; margin-bottom: 8px; font-family: 'Sora', sans-serif;">STELab</h2>
+                        <p style="color: var(--turquoise); font-weight: 600; font-size: 18px; margin-bottom: 24px;">Système de Traçabilité des données Épidémiologiques et des échantillons de Laboratoire</p>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 32px;">
+                            STELab est une plateforme électronique de gestion cas par cas des données de surveillance et des échantillons biologiques. Elle permet la saisie, la visualisation et la synchronisation des données en temps réel.
+                        </p>
+                        <div style="display: flex; gap: 16px;">
+                            <a href="stelab.html" class="btn-v2 btn-v2-primary">Découvrir le projet</a>
+                            <a href="contact.html" class="btn-v2 btn-v2-outline">Nous contacter</a>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div class="glass-card" style="padding: 24px;">
+                            <i class="fa-solid fa-cloud-arrow-up" style="color: var(--turquoise); font-size: 24px; margin-bottom: 16px;"></i>
+                            <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Fonctionnement Offline</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Synchronisation automatique dès que la connexion est disponible.</p>
+                        </div>
+                        <div class="glass-card" style="padding: 24px;">
+                            <i class="fa-solid fa-vial" style="color: var(--turquoise); font-size: 24px; margin-bottom: 16px;"></i>
+                            <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Suivi Échantillons</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Traçabilité complète du transport des échantillons biologiques.</p>
+                        </div>
+                        <div class="glass-card" style="padding: 24px;">
+                            <i class="fa-solid fa-chart-pie" style="color: var(--turquoise); font-size: 24px; margin-bottom: 16px;"></i>
+                            <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Visualisation</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Tableaux de bord, graphiques et cartographies dynamiques.</p>
+                        </div>
+                        <div class="glass-card" style="padding: 24px;">
+                            <i class="fa-solid fa-map-location-dot" style="color: var(--turquoise); font-size: 24px; margin-bottom: 16px;"></i>
+                            <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Déploiement</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Actuellement opérationnel au Burkina Faso et au Niger.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. GRILLE PRINCIPALE DES PROJETS -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <div class="project-grid-v2">
+                <!-- PROJET 1: STELab -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="systemes_information_davycas_v1_1773179797576.png" class="project-img-v2" alt="STELab" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Systèmes d’information sanitaire</span>
+                        <h3 class="project-title-v2">STELab</h3>
+                        <p class="project-desc-v2">Plateforme de traçabilité des données épidémiologiques et des échantillons de laboratoire pour renforcer la surveillance cas par cas.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>Burkina Faso, Niger</span>
+                            <a href="stelab.html" style="color: var(--turquoise); font-weight: 600; text-decoration: none;">Découvrir STELab →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 2: SITEB -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="action_bg.png" class="project-img-v2" alt="SITEB" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Logistique sanitaire</span>
+                        <h3 class="project-title-v2">SITEB</h3>
+                        <p class="project-desc-v2">Système intégré de transport des échantillons biologiques pour améliorer la chaîne de référencement et la rapidité d’acheminement.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>Burkina, Niger, Cabo Verde</span>
+                            <span style="color: var(--turquoise); font-weight: 600;">Déploiement régional</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 3: MenAfriNet -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="surveillance_epidemiologique_davycas_v1_1773179588380.png" class="project-img-v2" alt="MenAfriNet" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Surveillance épidémiologique</span>
+                        <h3 class="project-title-v2">MenAfriNet</h3>
+                        <p class="project-desc-v2">Amélioration de la surveillance cas par cas de la méningite au Burkina Faso et au Niger avec forte composante laboratoire.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>Burkina Faso, Niger</span>
+                            <span style="color: var(--text-muted);">2016–2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 4: PCV13 -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=800" class="project-img-v2" alt="Vaccin PCV13" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Recherche & évaluation</span>
+                        <h3 class="project-title-v2">Vaccin PCV13</h3>
+                        <p class="project-desc-v2">Suivi longitudinal de l’efficacité vaccinale et surveillance des pneumonies sévères chez les enfants de moins de 5 ans.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>Burkina Faso</span>
+                            <span style="color: var(--turquoise); font-weight: 600;">Études spécialisées</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 5: Nutrition SMART -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800" class="project-img-v2" alt="Nutrition SMART" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Études & enquêtes de terrain</span>
+                        <h3 class="project-title-v2">Nutrition SMART</h3>
+                        <p class="project-desc-v2">Appui technique à la conduite d’enquêtes nutritionnelles nationales et d’évaluations sur les micronutriments.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-handshake" style="margin-right: 6px;"></i>UNICEF, WFP</span>
+                            <span style="color: var(--turquoise); font-weight: 600;">National</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 6: Polio -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800" class="project-img-v2" alt="Surveillance Polio" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Logistique / surveillance</span>
+                        <h3 class="project-title-v2">Surveillance Polio</h3>
+                        <p class="project-desc-v2">Mise en place d’un dispositif de transport des prélèvements pour renforcer la surveillance et la réactivité autour de la poliomyélite.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>Niger</span>
+                            <span style="color: var(--turquoise); font-weight: 600;">En cours</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 7: Arboviroses -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="laboratoire_davycas_v1_1773180005050.png" class="project-img-v2" alt="Arboviroses" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Surveillance</span>
+                        <h3 class="project-title-v2">Arboviroses</h3>
+                        <p class="project-desc-v2">Déploiement d’un dispositif sentinelle pour améliorer la détection, le suivi et la réponse aux arboviroses régionales.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-microscope" style="margin-right: 6px;"></i>Surveillance sentinelle</span>
+                            <span style="color: var(--turquoise); font-weight: 600;">Projet technique</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET 8: SBC -->
+                <article class="project-card-v2 scroll-fade-up">
+                    <img src="about_institutional_davycas_v1_1773179496979.png" class="project-img-v2" alt="Surveillance Communautaire" loading="lazy">
+                    <div class="project-content-v2">
+                        <span class="project-badge-v2">Santé publique</span>
+                        <h3 class="project-title-v2">Surveillance Communautaire</h3>
+                        <p class="project-desc-v2">Renforcement des mécanismes d’alerte précoce et de remontée des évènements de santé publique à partir du terrain.</p>
+                        <div class="project-footer-v2">
+                            <span><i class="fa-solid fa-users" style="margin-right: 6px;"></i>Niveau communautaire</span>
+                            <span style="color: var(--turquoise); font-weight: 600;">Appui institutionnel</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SECTION MÉTHODOLOGIE DAVYCAS -->
+    <section class="section-v2" style="background: #13132b;">
+        <div class="container">
+            <div class="section-header-v2 center" style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+                <span class="label-v2">Notre Méthode</span>
+                <h2 class="h2-v2">Une méthode d’intervention centrée sur l’impact</h2>
+                <p style="color: var(--text-muted);">DAVYCAS ne se contente pas d’exécuter des activités. L’organisation structure des solutions adaptées aux contextes institutionnels, techniques et humains des pays d’intervention.</p>
+            </div>
+            
+            <div class="method-grid-v2">
+                <div class="method-card-v2 scroll-fade-up">
+                    <i class="fa-solid fa-magnifying-glass method-icon-v2"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Diagnostic des besoins</h4>
+                    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Analyse approfondie des gaps techniques et opérationnels au niveau des systèmes nationaux.</p>
+                </div>
+                <div class="method-card-v2 scroll-fade-up">
+                    <i class="fa-solid fa-pen-nib method-icon-v2"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Co-construction</h4>
+                    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Développement conjoint de solutions avec les ministères et les partenaires de référence.</p>
+                </div>
+                <div class="method-card-v2 scroll-fade-up">
+                    <i class="fa-solid fa-gears method-icon-v2"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Mise en œuvre</h4>
+                    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Déploiement technique et logistique rigoureux avec un suivi de terrain permanent.</p>
+                </div>
+                <div class="method-card-v2 scroll-fade-up">
+                    <i class="fa-solid fa-arrows-rotate method-icon-v2"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Amélioration Continue</h4>
+                    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Capitalisation des acquis et ajustements constants pour maximiser l’impact durable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SECTION IMPACT / CHIFFRES CLÉS -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+                <div class="scroll-fade-up">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--turquoise); margin-bottom: 8px;">2016</div>
+                    <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Expertise depuis</div>
+                </div>
+                <div class="scroll-fade-up">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--turquoise); margin-bottom: 8px;">Multi-pays</div>
+                    <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Présence Régionale</div>
+                </div>
+                <div class="scroll-fade-up">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--turquoise); margin-bottom: 8px;">Structurants</div>
+                    <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Projets Déployés</div>
+                </div>
+                <div class="scroll-fade-up">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--turquoise); margin-bottom: 8px;">Reconnue</div>
+                    <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Expertise Technique</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. SECTION PARTENAIRES -->
+    <section class="section-v2" style="background: #13132b; border-bottom: none;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 64px;">
+                <span class="label-v2">Crédibilité</span>
+                <h2 class="h2-v2">Des projets portés avec des partenaires de référence</h2>
+                <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Nos projets s’inscrivent dans des dynamiques de collaboration avec des institutions nationales et des partenaires internationaux.</p>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 48px; opacity: 0.6;" class="scroll-fade-up">
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">UNICEF</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">WFP</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">CDC FOUNDATION</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">GATES FOUNDATION</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">WAHO</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">VILLAGEREACH</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">ASLM</div>
+                <div style="font-size: 24px; font-weight: 700; letter-spacing: -1px;">FONDATION MÉRIEUX</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. SECTION CTA FINAL -->
+    <section class="section-v2" style="background: #0d0d1a; position: relative; overflow: hidden; text-align: center;">
+        <div style="position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1524069290683-0457abfe42c3?auto=format&fit=crop&q=80&w=2000') center/cover; opacity: 0.15;"></div>
+        <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(98,90,154,0.2) 0%, transparent 80%);"></div>
+        
+        <div class="container z-1">
+            <div style="padding: 100px 0;">
+                <h2 class="h2-v2 scroll-fade-up" style="margin-bottom: 24px;">Construisons ensemble les prochains projets à impact</h2>
+                <p class="scroll-fade-up" style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    DAVYCAS accompagne les institutions et bailleurs dans la conception et le déploiement de projets de santé publique à forte valeur opérationnelle.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 24px;" class="scroll-fade-up">
+                    <a href="#" class="btn-v2 btn-v2-primary">Devenir partenaire</a>
+                    <a href="#" class="btn-v2 btn-v2-outline">Nous écrire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <footer class="site-footer-full" style="background: #0d0d1a; padding: 80px 0 40px; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="footer-mega-grid">
+                <div>
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+                    </a>
+                    <p class="footer-brand-desc">Construire l'avenir en structurant le présent. DAVYCAS est au cœur de l'innovation sanitaire au service des populations et du développement africain.</p>
+                </div>
+                <div class="footer-nav-col">
+                    <h6>Raccourcis</h6>
+                    <a href="index.html">Accueil</a>
+                    <a href="about.html">À Propos</a>
+                    <a href="projets.html">Projets</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-contact-col">
+                    <h6>Siège Social</h6>
+                    <p>Quartier d'Affaires</p>
+                    <p>Ouagadougou, Burkina Faso</p>
+                    <p>contact@davycas.org</p>
+                    <p>+226 25 34 12 50</p>
+                </div>
+            </div>
+            <div class="footer-bottom-line" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 32px; margin-top: 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted);">
+                <div>© 2026 DAVYCAS ONG Globale. Tous droits réservés.</div>
+                <div>Burkina Faso · Niger · Mali · Côte d'Ivoire</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade-up').forEach(el => observer.observe(el));
+        
+        // Hamburger Menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.header-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

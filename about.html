@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | DAVYCAS International</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="about-v2-body">
+
+    <!-- HEADER (Simplified for v2 coherence) -->
+    <header class="main-header" style="background: rgba(13,13,26,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="header-inner">
+            <a href="index.html" class="header-logo">
+                <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+            </a>
+            
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link active">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link">Piliers</a></li>
+                    <li class="nav-item has-dropdown">
+                        <a href="projets.html" class="nav-link">Projets <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="stelab.html" class="dropdown-link">
+                                <i class="fa-solid fa-microscope"></i>
+                                STELab
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="contact.html" class="btn-v2 btn-v2-outline" style="padding: 8px 24px; font-size: 14px;">Contact</a>
+            </div>
+            
+            <button class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <style>
+        @keyframes kenburns-subtle {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .hero-section-v2 { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; background: #0a0a14; }
+        .hero-bg-img { position: absolute; inset: 0; background: url('about_institutional_davycas_v1_1773179496979.png') center/cover no-repeat; opacity: 1; animation: kenburns-subtle 20s infinite alternate linear; }
+        .hero-overlay-subtle { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.5), transparent); z-index: 1; }
+        .hero-title {
+            color: #FFFFFF !important;
+            font-weight: 800 !important;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6) !important;
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(32px, 5vw, 64px);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .glass-hero-card { 
+            position: relative; 
+            z-index: 2; 
+            max-width: 800px; 
+            background: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            border-radius: 40px; 
+            padding: 64px; 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.4); 
+            transition: transform 0.5s ease;
+        }
+        .glass-hero-card:hover { transform: translateY(-10px); border-color: rgba(70, 156, 176, 0.4); }
+        
+        @media (max-width: 768px) {
+            .glass-hero-card { padding: 40px 24px; border-radius: 32px; }
+        }
+    </style>
+
+    <section class="hero-section-v2">
+        <div class="hero-bg-img"></div>
+        <div class="hero-overlay-subtle"></div>
+        
+        <div class="container z-1">
+            <div class="glass-hero-card scroll-fade-up">
+                <!-- Breadcrumb Premium -->
+                <div class="breadcrumb-v2" style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6);">
+                    <a href="index.html" style="color: inherit; text-decoration: none; transition: color 0.3s;">Accueil</a>
+                    <span style="color: rgba(255,255,255,0.2);">/</span>
+                    <span style="color: var(--turquoise, #469cb0); font-weight: 800;">À propos</span>
+                </div>
+
+                <span class="label-v2" style="color: #469cb0; border: 1px solid rgba(70, 156, 176, 0.3); background: rgba(70, 156, 176, 0.1); padding: 6px 16px; border-radius: 100px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 24px;">À propos de nous</span>
+                <h1 class="hero-title">
+                  Une <span style="color: #5d9aae;">ONG africaine</span> au service de la <span style="color: #5d9aae;">santé publique</span>
+                </h1>
+
+
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 0; max-width: 680px;">
+
+                    Créée en juillet 2016 à Ouagadougou, DAVYCAS accompagne les ministères de la santé d'Afrique de l'Ouest dans la mise en œuvre de leurs programmes de santé publique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- MARQUEE 1 -->
+    <div class="marquee-container" style="background: var(--violet);">
+        <div class="marquee-content">
+            <span>SANTÉ PUBLIQUE</span>
+            <span>·</span>
+            <span>AFRIQUE DE L'OUEST</span>
+            <span>·</span>
+            <span>DEPUIS 2016</span>
+            <span>·</span>
+            <span>BURKINA FASO</span>
+            <span>·</span>
+            <span>NIGER</span>
+            <span>·</span>
+            <span>MALI</span>
+            <span>·</span>
+            <span>SURVEILLANCE ÉPIDÉMIOLOGIQUE</span>
+            <span>·</span>
+            <span>LABORATOIRE</span>
+            <span>·</span>
+            <span>INNOVATION</span>
+            <span>·</span>
+            <!-- Repeat for seamless scroll -->
+            <span>SANTÉ PUBLIQUE</span>
+            <span>·</span>
+            <span>AFRIQUE DE L'OUEST</span>
+            <span>·</span>
+            <span>DEPUIS 2016</span>
+            <span>·</span>
+            <span>BURKINA FASO</span>
+            <span>·</span>
+            <span>NIGER</span>
+            <span>·</span>
+            <span>MALI</span>
+            <span>·</span>
+            <span>SURVEILLANCE ÉPIDÉMIOLOGIQUE</span>
+            <span>·</span>
+            <span>LABORATOIRE</span>
+            <span>·</span>
+            <span>INNOVATION</span>
+            <span>·</span>
+        </div>
+    </div>
+
+    <!-- SECTION 2: IDENTITÉ -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                <div class="scroll-fade-up">
+                    <span class="label-v2">Carte d'Identité</span>
+                    <h2 class="h2-v2">Qui est DAVYCAS International ?</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 24px;">
+                        Association laïque, apolitique, à but non lucratif, créée en juillet 2016 pour fournir un appui technique aux ministères de la santé de la région ouest-africaine.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">
+                        Nos domaines d'expertise couvrent la surveillance en laboratoire, les études d'évaluation des programmes de santé, et l'intégration des technologies de l'information pour une santé plus performante.
+                    </p>
+                </div>
+                <div class="glass-card scroll-fade-up" style="padding: 40px;">
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <i class="fa-solid fa-building" style="color: var(--turquoise); width: 24px;"></i>
+                            <div style="font-size: 14px;">
+                                <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">Dénomination</div>
+                                <div style="font-weight: 500;">Davycas International</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <i class="fa-solid fa-calendar" style="color: var(--turquoise); width: 24px;"></i>
+                            <div style="font-size: 14px;">
+                                <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">Création</div>
+                                <div style="font-weight: 500;">18 juillet 2016</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <i class="fa-solid fa-location-dot" style="color: var(--turquoise); width: 24px;"></i>
+                            <div style="font-size: 14px;">
+                                <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">Siège</div>
+                                <div style="font-weight: 500;">Ouagadougou, Burkina Faso</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <i class="fa-solid fa-phone" style="color: var(--turquoise); width: 24px;"></i>
+                            <div style="font-size: 14px;">
+                                <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">Tél</div>
+                                <div style="font-weight: 500;">+226 25 34 12 50</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <i class="fa-solid fa-envelope" style="color: var(--turquoise); width: 24px;"></i>
+                            <div style="font-size: 14px;">
+                                <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">Email</div>
+                                <div style="font-weight: 500;">davycasburkina@gmail.com</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <i class="fa-solid fa-file-contract" style="color: var(--turquoise); width: 24px;"></i>
+                            <div style="font-size: 14px;">
+                                <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">Récépissé</div>
+                                <div style="font-weight: 500;">N°2016_FE1271/MATDSI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-v2" style="background: #F5F6FA; padding: 120px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <!-- Card: Mission -->
+                <div class="glass-card scroll-fade-up" style="background: #FFFFFF; border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid #469cb0; box-shadow: 0 20px 40px rgba(0,0,0,0.04); padding: 48px; border-radius: 32px;">
+                    <div style="width: 64px; height: 64px; background: rgba(70, 156, 176, 0.08); border: 1px solid rgba(70, 156, 176, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 32px;">
+                        <i class="fa-solid fa-bullseye" style="color: #469cb0; font-size: 28px;"></i>
+                    </div>
+                    <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 20px; color: #0d0d1a; font-family: 'Sora', sans-serif;">Notre Mission</h3>
+                    <p style="color: #4A4A68; font-size: 1.1rem; line-height: 1.8;">
+                        Contribuer au renforcement global de la capacité des états d'Afrique de l'Ouest à l'amélioration de la santé des populations, en apportant des appuis multiformes aux différentes composantes de la santé publique.
+                    </p>
+                </div>
+                <!-- Card: But -->
+                <div class="glass-card scroll-fade-up" style="background: #FFFFFF; border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid #625a9a; box-shadow: 0 20px 40px rgba(0,0,0,0.04); padding: 48px; border-radius: 32px;">
+                    <div style="width: 64px; height: 64px; background: rgba(98, 90, 154, 0.08); border: 1px solid rgba(98, 90, 154, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 32px;">
+                        <i class="fa-solid fa-star" style="color: #625a9a; font-size: 28px;"></i>
+                    </div>
+                    <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 20px; color: #0d0d1a; font-family: 'Sora', sans-serif;">Notre But</h3>
+                    <p style="color: #4A4A68; font-size: 1.1rem; line-height: 1.8;">
+                        Permettre une opérationnalisation rapide et efficace des programmes et initiatives de santé publique sur le terrain. Comme le disait Frantz FANON : "Chaque génération doit découvrir sa mission, la remplir ou la trahir." DAVYCAS a trouvé la sienne.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: OBJECTIFS -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <div class="section-header-v2">
+                <span class="label-v2">Nos Objectifs</span>
+                <h2 class="h2-v2">Ce que nous nous engageons à faire</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                <!-- 01 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">01</div>
+                    <i class="fa-solid fa-handshake" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Appui technique</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Soutien aux programmes de santé publique des ministères d'Afrique de l'Ouest"</p>
+                </div>
+                <!-- 02 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">02</div>
+                    <i class="fa-solid fa-coins" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Mobilisation des ressources</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Mobiliser des ressources pour la mise en œuvre durable des projets de santé"</p>
+                </div>
+                <!-- 03 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">03</div>
+                    <i class="fa-solid fa-microscope" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Études scientifiques</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Études épidémiologiques, de vaccination et de biologie médicale"</p>
+                </div>
+                <!-- 04 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">04</div>
+                    <i class="fa-solid fa-laptop-code" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Solutions technologiques</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Développement de logiciels et conseils en systèmes de santé"</p>
+                </div>
+                <!-- 05 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">05</div>
+                    <i class="fa-solid fa-chart-line" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Collecte de données</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Données de qualité sur les facteurs d'apparition et distribution des maladies"</p>
+                </div>
+                <!-- 06 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">06</div>
+                    <i class="fa-solid fa-hospital" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
+                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Conditions de travail</h4>
+                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Amélioration des conditions de travail des prestataires de soins"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: STRATÉGIE -->
+    <section class="section-v2" style="background: #13132b;">
+        <div class="container">
+            <span class="label-v2">APPROCHE STRATÉGIQUE</span>
+            <h2 class="h2-v2">Notre approche pour un impact durable</h2>
+            
+            <div class="timeline-v2">
+                <div class="timeline-item-v2 scroll-fade-up">
+                    <div class="timeline-circle">01</div>
+                    <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+                        <i class="fa-solid fa-users" style="margin-right: 12px; color: var(--turquoise);"></i>Renforcement des capacités humaines
+                    </h4>
+                    <p style="color: var(--text-muted);">"Formations, mentorat et voyages d'études temporaires pour les agents de santé"</p>
+                </div>
+                <div class="timeline-item-v2 scroll-fade-up">
+                    <div class="timeline-circle">02</div>
+                    <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+                        <i class="fa-solid fa-flask" style="margin-right: 12px; color: var(--turquoise);"></i>Renforcement des laboratoires
+                    </h4>
+                    <p style="color: var(--text-muted);">"Introduction de nouvelles techniques diagnostiques et équipement des centres de référence nationaux"</p>
+                </div>
+                <div class="timeline-item-v2 scroll-fade-up">
+                    <div class="timeline-circle">03</div>
+                    <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+                        <i class="fa-solid fa-stethoscope" style="margin-right: 12px; color: var(--turquoise);"></i>Assistance technique
+                    </h4>
+                    <p style="color: var(--text-muted);">"Appui direct aux recherches épidémiologiques et à la mise en œuvre des protocoles de surveillance"</p>
+                </div>
+                <div class="timeline-item-v2 scroll-fade-up">
+                    <div class="timeline-circle">04</div>
+                    <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+                        <i class="fa-solid fa-globe-africa" style="margin-right: 12px; color: var(--turquoise);"></i>Collaborations Sud-Sud
+                    </h4>
+                    <p style="color: var(--text-muted);">"Partage d'expériences régionales pour la prévention et la réponse coordonnée aux menaces sanitaires"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: ÉQUIPE -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <span class="label-v2">LE CAPITAL HUMAIN</span>
+            <h2 class="h2-v2">Notre Équipe de Direction</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 64px;">
+                <!-- Carte 1 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <div class="avatar-v2">AF</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">AKE Honoré Flavien</h3>
+                    <div style="color: var(--turquoise); font-size: 14px; font-weight: 600; margin-bottom: 16px;">Directeur Exécutif</div>
+                    <div style="display: inline-block; padding: 4px 12px; background: rgba(98,90,154,0.2); border: 1px solid var(--violet); border-radius: 100px; font-size: 11px; font-weight: 600; margin-bottom: 20px;">Ingénieur IT — Bases de données</div>
+                    <div style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px;">
+                        <div style="font-size: 12px; color: #f0c040; margin-bottom: 12px; line-height: 1.4;">
+                            <i class="fa-solid fa-trophy" style="margin-right: 8px;"></i>Chevalier de l'Ordre du Mérite et de l'Action Sociale — 2020
+                        </div>
+                        <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">
+                            <i class="fa-solid fa-envelope" style="margin-right: 8px; width: 16px;"></i>flavien.ake@davycas.com
+                        </div>
+                        <div style="font-size: 13px; color: var(--text-muted);">
+                            <i class="fa-solid fa-phone" style="margin-right: 8px; width: 16px;"></i>+226 76261064
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte 2 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <div class="avatar-v2">NS</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">N'GADJAGA Seydou</h3>
+                    <div style="color: var(--turquoise); font-size: 14px; font-weight: 600; margin-bottom: 16px;">Secrétaire Général</div>
+                    <div style="display: inline-block; padding: 4px 12px; background: rgba(98,90,154,0.2); border: 1px solid var(--violet); border-radius: 100px; font-size: 11px; font-weight: 600; margin-bottom: 20px;">Ingénieur IT — Réseaux</div>
+                </div>
+                <!-- Carte 3 -->
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <div class="avatar-v2">BM</div>
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">BAZIE K. Marine</h3>
+                    <div style="color: var(--turquoise); font-size: 14px; font-weight: 600; margin-bottom: 16px;">Administratrice & Finances</div>
+                    <div style="display: inline-block; padding: 4px 12px; background: rgba(98,90,154,0.2); border: 1px solid var(--violet); border-radius: 100px; font-size: 11px; font-weight: 600; margin-bottom: 20px;">MSc Finance, Audit & Comptabilité</div>
+                </div>
+            </div>
+
+            <div class="table-v2-container scroll-fade-up">
+                <table class="table-v2">
+                    <thead>
+                        <tr>
+                            <th>Profil du personnel</th>
+                            <th>Effectif</th>
+                            <th>Qualification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>IT Expert</td><td>01</td><td>Master Informatique</td></tr>
+                        <tr><td>Experts Systèmes de Santé</td><td>02</td><td>Médecin, PhD</td></tr>
+                        <tr><td>Officiers Techniques M&E</td><td>03</td><td>Master Épidémiologie</td></tr>
+                        <tr><td>Démographes Statisticiens</td><td>02</td><td>Ingénieur Statistique</td></tr>
+                        <tr><td>Chef de Programme</td><td>01</td><td>Master Gestion de Projet</td></tr>
+                        <tr><td>Logisticien</td><td>02</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-v2" style="background: #F7F8FA; padding: 120px 0;">
+        <style>
+            .org-tree-light li::before, .org-tree-light li::after, .org-tree-light ul ul::before {
+                border-color: rgba(98, 90, 154, 0.2) !important;
+            }
+            .org-node-light {
+                background: #FFFFFF !important;
+                color: #2B2D42 !important;
+                border: 1px solid rgba(0,0,0,0.06) !important;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+                border-radius: 16px !important;
+                padding: 20px 32px !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .org-node-light:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.06) !important;
+                border-color: rgba(98, 90, 154, 0.2) !important;
+            }
+        </style>
+        <div class="container">
+            <span class="label-v2" style="color: #469cb0; letter-spacing: 4px;">STRUCTURE</span>
+            <h2 class="h2-v2" style="color: #0d0d1a;">Organigramme Institutionnel</h2>
+            
+            <div class="org-tree org-tree-light scroll-fade-up">
+                <ul>
+                    <li>
+                        <div class="org-node-light" style="border-top: 3px solid #625a9a !important;">Conseil d'Administration</div>
+                        <ul>
+                            <li>
+                                <div class="org-node-light" style="border-top: 3px solid #625a9a !important;">Direction Exécutive</div>
+                                <ul>
+                                    <li>
+                                        <div class="org-node-light" style="background: rgba(70,156,176,0.05) !important; border-top: 3px solid #469cb0 !important;">Comité de Direction</div>
+                                        <ul>
+                                            <li><div class="org-node-light">Gestion des Programmes & Communication</div></li>
+                                            <li><div class="org-node-light">Administration & Finance</div></li>
+                                            <li><div class="org-node-light">Urgence Sanitaire & Logistiques</div></li>
+                                            <li><div class="org-node-light">Épidémiologie & Laboratoire / M&E</div></li>
+                                            <li><div class="org-node-light">Études de Terrain & Recherches</div></li>
+                                            <li><div class="org-node-light">Systèmes Informatiques de Santé</div></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="display: flex; justify-content: center; gap: 24px; margin-top: 56px;">
+                    <div class="org-node-light" style="border-bottom: 2px solid #469cb0 !important; font-size: 13px;">Représentation Niger</div>
+                    <div class="org-node-light" style="border-bottom: 2px solid #469cb0 !important; font-size: 13px;">Représentation Côte d'Ivoire</div>
+                    <div class="org-node-light" style="border-bottom: 2px solid #469cb0 !important; font-size: 13px;">Représentation Mali <span style="opacity: 0.6; font-weight: 400;">(En déploiement)</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: GOUVERNANCE -->
+    <section class="section-v2" style="background: #0d0d1a;">
+        <div class="container">
+            <span class="label-v2">RIGUEUR & TRANSPARENCE</span>
+            <h2 class="h2-v2">Gouvernance & Gestion</h2>
+            <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 48px; font-size: 1.1rem;">
+                Après un audit organisationnel en 2020 et 18 mois de coaching par Swiss TPH (2021-2022), DAVYCAS fonctionne aux standards des petites organisations internationales.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <i class="fa-solid fa-book" style="color: var(--turquoise); font-size: 24px; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Manuel de procédures</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Administratives et financières aux normes internationales.</p>
+                </div>
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <i class="fa-solid fa-magnifying-glass-chart" style="color: var(--turquoise); font-size: 24px; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Audit annuel certifié</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Certification annuelle A133 garantissant la transparence.</p>
+                </div>
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <i class="fa-solid fa-scale-balanced" style="color: var(--turquoise); font-size: 24px; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Code d'éthique</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Engagement strict envers l'intégrité et la déontologie.</p>
+                </div>
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <i class="fa-solid fa-gavel" style="color: var(--turquoise); font-size: 24px; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Conseil Juridique</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Assistance permanente pour la conformité légale.</p>
+                </div>
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <i class="fa-solid fa-map" style="color: var(--turquoise); font-size: 24px; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Plan stratégique</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Vision claire et structurée pour la période 2024-2028.</p>
+                </div>
+                <div class="glass-card scroll-fade-up" style="padding: 32px;">
+                    <i class="fa-solid fa-calculator" style="color: var(--turquoise); font-size: 24px; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Logiciel TOM2PRO</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Gestion financière et comptable automatisée de pointe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: RECONNAISSANCES PREMIUM -->
+    <section class="section-v2" style="position: relative; background: url('Oeuvre Social.png') center/cover no-repeat; padding: 120px 0; overflow: hidden;">
+        <!-- Overlay Sombre Premium -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13, 13, 26, 0.95) 0%, rgba(13, 13, 26, 0.8) 100%); z-index: 1;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="scroll-fade-up">
+                <span class="label-v2" style="color: var(--turquoise); letter-spacing: 4px;">HONNEURS</span>
+                <h2 class="h2-v2" style="color: white; margin-bottom: 64px;">Une expertise reconnue à l'international</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                <!-- Card 1 -->
+                <div class="glass-card scroll-fade-up" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #625a9a; padding: 48px; border-radius: 24px; transition: all 0.4s ease;">
+                    <i class="fa-solid fa-trophy" style="color: #f0c040; font-size: 48px; margin-bottom: 24px; filter: drop-shadow(0 0 10px rgba(240, 192, 64, 0.3));"></i>
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px; color: white;">Chevalier de l'Ordre du Mérite et de l'Action Sociale</h3>
+                    <div style="color: var(--turquoise); font-weight: 600; margin-bottom: 12px; font-size: 14px;">Ministère de la Santé du Burkina Faso</div>
+                    <div style="display: inline-block; padding: 6px 16px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 100px; font-size: 11px; font-weight: 700; margin-bottom: 24px; color: rgba(255, 255, 255, 0.8);">25 août 2020</div>
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px; margin-bottom: 0;">Bénéficiaire : AKE Honoré Flavien, Directeur Exécutif</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card scroll-fade-up" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #469cb0; padding: 48px; border-radius: 24px; transition: all 0.4s ease;">
+                    <i class="fa-solid fa-earth-africa" style="color: #469cb0; font-size: 48px; margin-bottom: 24px; filter: drop-shadow(0 0 10px rgba(70, 156, 176, 0.3));"></i>
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px; color: white;">Certifiée ONG caritative publique</h3>
+                    <div style="color: var(--turquoise); font-weight: 600; margin-bottom: 12px; font-size: 14px;">NGO Source Canada — ngosource.org</div>
+                    <div style="display: inline-block; padding: 6px 16px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 100px; font-size: 11px; font-weight: 700; margin-bottom: 24px; color: rgba(255, 255, 255, 0.8);">Depuis 2021</div>
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px; line-height: 1.6; margin-bottom: 0;">Certification internationale validant notre capacité à contracter directement avec des fondations mondiales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE 2 -->
+    <div class="marquee-container marquee-reverse" style="background: var(--turquoise);">
+        <div class="marquee-content" style="color: #0d0d1a;">
+            <span>OMS</span><span>·</span><span>CDC ATLANTA</span><span>·</span><span>UNICEF</span><span>·</span><span>GATES FOUNDATION</span><span>·</span><span>WAHO</span><span>·</span><span>ASLM</span><span>·</span><span>SWISS TPH</span><span>·</span><span>NGO SOURCE CANADA</span><span>·</span><span>VILLAGE-REACH</span><span>·</span><span>FONDATION MÉRIEUX</span><span>·</span>
+            <span>OMS</span><span>·</span><span>CDC ATLANTA</span><span>·</span><span>UNICEF</span><span>·</span><span>GATES FOUNDATION</span><span>·</span><span>WAHO</span><span>·</span><span>ASLM</span><span>·</span><span>SWISS TPH</span><span>·</span><span>NGO SOURCE CANADA</span><span>·</span><span>VILLAGE-REACH</span><span>·</span><span>FONDATION MÉRIEUX</span><span>·</span>
+        </div>
+    </div>
+
+    <!-- SECTION 10: CTA FINAL -->
+    <section class="section-v2" style="background: #0d0d1a; text-align: center; position: relative;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(98,90,154,0.15) 0%, transparent 70%); pointer-events: none;"></div>
+        <div class="container z-1">
+            <div style="padding: 120px 0;">
+                <h2 class="h2-v2 scroll-fade-up">Vous souhaitez collaborer avec nous ?</h2>
+                <p class="scroll-fade-up" style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    DAVYCAS est ouverte à toute collaboration visant à renforcer les systèmes de santé en Afrique de l'Ouest.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 24px;" class="scroll-fade-up">
+                    <a href="#" class="btn-v2 btn-v2-primary">Voir nos projets</a>
+                    <a href="#" class="btn-v2 btn-v2-outline">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-full">
+        <div class="container">
+            <div class="footer-mega-grid">
+                <div>
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+                    </a>
+                    <p class="footer-brand-desc">Construire l'avenir en structurant le présent. DAVYCAS est au cœur de l'innovation sanitaire au service des populations et du développement africain.</p>
+                </div>
+                <div class="footer-nav-col">
+                    <h6>Raccourcis</h6>
+                    <a href="index.html">Navigation Principale</a>
+                    <a href="about.html">Histoire Institutionnelle</a>
+                    <a href="#">Surveillance et Laboratoires</a>
+                    <a href="#">Rapports d'Activité</a>
+                </div>
+                <div class="footer-contact-col">
+                    <h6>Siège Social</h6>
+                    <p>Tour Administrative, Riviera</p>
+                    <p>Abidjan, Côte d'Ivoire</p>
+                    <p>contact@davycas-ngo.org</p>
+                    <p>+225 27 00 00 00 00</p>
+                </div>
+            </div>
+            <div class="footer-bottom-line">
+                <div>© 2026 DAVYCAS ONG Globale. Tous droits réservés et protégés.</div>
+                <div class="footer-legal">
+                    <a href="#">Avis Légaux</a>
+                    <a href="#">Politique de Confidentialité des Données</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade-up').forEach(el => observer.observe(el));
+        
+        // Hamburger Menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.header-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
