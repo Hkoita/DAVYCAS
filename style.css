@@ -2885,3 +2885,295 @@ nav,
     from { transform: scale(1.1); }
     to { transform: scale(1); }
 }
+
+/* ============================================================
+   STELAB PRODUCT SECTION - HOMEPAGE
+   ============================================================ */
+.home-product-stelab {
+  padding-block: 120px;
+  background-color: var(--light-bg, #f0f0f5);
+  color: var(--deep-indigo, #0d0d1a);
+  overflow: hidden;
+}
+
+.home-product-stelab .product-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Visual Column (Left) */
+.stelab-product-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-visual-card {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 4 / 3;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(70, 156, 176, 0.15) 0%, rgba(98, 90, 154, 0.15) 100%), #12142a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.main-visual-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.22);
+}
+
+.visual-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(70, 156, 176, 0.2) 0%, transparent 60%),
+              radial-gradient(circle at bottom right, rgba(98, 90, 154, 0.2) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.main-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.85;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-visual-card:hover .main-product-img {
+  transform: scale(1.03);
+}
+
+.product-logo-badge {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.stelab-logo-composition {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* Floating Cards */
+.stelab-floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 20px 40px rgba(16, 17, 32, 0.08);
+  z-index: 3;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stelab-floating-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(16, 17, 32, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.floating-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(70, 156, 176, 0.1);
+  color: var(--teal-accent, #469cb0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.stelab-floating-card:hover .floating-card-icon {
+  background: var(--medium-purple, #625a9a);
+  color: white;
+}
+
+.floating-card-text h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--deep-indigo, #0d0d1a);
+  margin-bottom: 2px;
+}
+
+.floating-card-text p {
+  font-size: 12px;
+  color: rgba(16, 17, 32, 0.65);
+  margin: 0;
+}
+
+/* Card positions and float animations */
+@keyframes stelabFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.card-tracabilite {
+  top: 15%;
+  right: 0%;
+  animation: stelabFloat 6s ease-in-out infinite;
+}
+
+.card-offline {
+  bottom: 20%;
+  left: -2%;
+  animation: stelabFloat 6s ease-in-out infinite 1.5s;
+}
+
+.card-decision {
+  bottom: 8%;
+  right: 5%;
+  animation: stelabFloat 6s ease-in-out infinite 3s;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-tracabilite, .card-offline, .card-decision {
+    animation: none !important;
+  }
+}
+
+/* Text Column (Right) */
+.stelab-product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stelab-product-content .label-v2 {
+  color: var(--medium-purple, #625a9a);
+}
+
+.stelab-product-content .h2-v2 {
+  color: var(--deep-indigo, #0d0d1a);
+  margin-bottom: 24px;
+}
+
+.product-lead {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: rgba(13, 13, 26, 0.9);
+  margin-bottom: 20px;
+}
+
+.product-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(13, 13, 26, 0.7);
+  margin-bottom: 36px;
+}
+
+.stelab-product-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.stelab-product-actions .btn-v2 {
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 14px 32px;
+}
+
+.stelab-product-actions .btn-v2-primary {
+  box-shadow: 0 4px 15px rgba(98, 90, 154, 0.2);
+}
+
+.stelab-product-actions .btn-v2-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(98, 90, 154, 0.35);
+}
+
+.stelab-product-actions .btn-v2-outline:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(70, 156, 176, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .home-product-stelab .product-layout {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+  
+  .stelab-product-visual {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .main-visual-card {
+    width: 80%;
+  }
+  
+  .card-tracabilite { right: 2%; }
+  .card-offline { left: 2%; }
+  .card-decision { right: 5%; }
+}
+
+@media (max-width: 576px) {
+  .home-product-stelab {
+    padding-block: 80px;
+  }
+  
+  .main-visual-card {
+    width: 100%;
+  }
+  
+  .stelab-floating-card {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  
+  .floating-card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .floating-card-text h4 {
+    font-size: 12px;
+  }
+  
+  .floating-card-text p {
+    font-size: 10px;
+  }
+  
+  .card-tracabilite { top: 5%; right: -2%; }
+  .card-offline { bottom: 5%; left: -2%; }
+  .card-decision { bottom: -8%; right: 2%; }
+  
+  .stelab-product-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .stelab-product-actions .btn-v2 {
+    width: 100%;
+  }
+}
