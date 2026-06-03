@@ -31,144 +31,6 @@
 
         h1, h2, h3, .h2-v2 { font-family: 'Sora', sans-serif; }
 
-        /* 1. NAVBAR STICKY */
-        .premium-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(13, 13, 26, 0.7);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 0;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 40px;
-            width: 100%;
-            height: 64px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-light);
-            font-weight: 500;
-            font-size: 15px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            opacity: 1;
-            color: var(--turquoise);
-        }
-
-        .cta-don-nav {
-            background: var(--violet);
-            color: white;
-            padding: 8px 24px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-don-nav:hover {
-            background: var(--violet-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(98, 90, 154, 0.3);
-        }
-
-        /* Dropdown Menu System */
-        .nav-item { position: relative; display: flex; align-items: center; }
-        .has-dropdown .nav-link { display: flex; align-items: center; gap: 6px; }
-        .dropdown-arrow { font-size: 0.7rem; opacity: 0.6; transition: transform 0.3s ease; }
-        .has-dropdown:hover .dropdown-arrow { transform: rotate(180deg); opacity: 1; }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% + 12px);
-            left: 50%;
-            transform: translateX(-50%) translateY(8px);
-            background: rgba(13, 13, 26, 0.85);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 8px;
-            min-width: 180px;
-            opacity: 0;
-            visibility: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1001;
-        }
-
-        .has-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .dropdown-link {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 10px 16px;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border-radius: 10px;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .dropdown-link i {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.4);
-            transition: color 0.25s;
-        }
-
-        .dropdown-link:hover {
-            background: rgba(255, 255, 255, 0.06);
-            color: #ffffff;
-            padding-left: 18px;
-        }
-
-        .dropdown-link:hover i {
-            color: var(--turquoise);
-        }
-
-        .dropdown-menu::before {
-            content: '';
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            width: 12px;
-            height: 12px;
-            background: rgba(13, 13, 26, 0.85);
-            border-left: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
         /* --- 2. PREMIUM HERO SLIDER (APPLE-LEVEL REBUILD) --- */
         .hero-premium {
             position: relative;
@@ -947,14 +809,18 @@
         .footer-col a:hover { color: white; }
         .footer-bottom { border-top: 1px solid var(--border); margin-top: 64px; padding-top: 32px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.3); }
 
-        /* BUTTONS V2 */
-        .btn-v2 { display: inline-flex; align-items: center; padding: 14px 32px; border-radius: 100px; font-weight: 700; text-decoration: none; font-size: 15px; transition: all 0.3s; }
+        /* BUTTONS */
+        .btn-v2 { display: inline-flex; align-items: center; padding: 16px 24px; border-radius: 999px; font-weight: 700; text-decoration: none; font-size: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease; }
+        .btn-v2:hover { transform: translateY(-2px) scale(1.02); }
         .btn-v2-primary { background: var(--violet); color: white; }
-        .btn-v2-primary:hover { background: var(--violet-dark); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(98, 90, 154, 0.3); }
+        .btn-v2-primary:hover { background: var(--violet-dark); box-shadow: 0 10px 20px rgba(98, 90, 154, 0.3); }
         .btn-v2-outline { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: white; }
-        .btn-v2-outline:hover { background: white; color: var(--text-dark); border-color: white; transform: translateY(-3px); }
-        .btn-v2-dark { background: var(--text-dark); color: white; }
-        .btn-v2-dark:hover { background: var(--violet); transform: translateY(-3px); }
+        .btn-v2-outline:hover { background: white; color: var(--text-dark); border-color: white; }
+        .btn-v2-dark { background: var(--text-dark); color: white; border: 2px solid transparent; }
+        .btn-v2-dark:hover { background: var(--violet); }
+        
+        .btn-premium, .btn-submit { transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; }
+        .btn-premium:hover, .btn-submit:hover { transform: translateY(-2px) scale(1.02); }
 
         /* ANIMATIONS */
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -995,9 +861,9 @@
 
     <!-- 1. NAVBAR STICKY -->
     <header class="premium-nav">
-        <div class="nav-inner">
-            <a href="index.html" class="header-logo">
-                <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS International">
             </a>
             
             <nav>
@@ -1019,92 +885,283 @@
                 </ul>
             </nav>
             
-            <div class="header-cta">
-                <a href="#" class="cta-don-nav">Faire un don</a>
+            <div class="nav-cta">
+                <a href="#" class="btn-don">Faire un don</a>
             </div>
-
-            <button class="hamburger-v2"><i class="fas fa-bars"></i></button>
+            
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
         <!-- 2. PREMIUM HERO SLIDER (RECREATED FROM SCRATCH) -->
-        <section class="hero-premium" id="hero-slider-main">
+        <section class="hero-cinematic" id="hero-slider-main">
+            <style>
+                .hero-cinematic {
+                    position: relative;
+                    width: 100%;
+                    height: 100vh;
+                    min-height: 700px;
+                    overflow: hidden;
+                    background: #0d0d1a;
+                }
+                .hero-track {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                }
+                .hero-slide {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .hero-slide.active {
+                    opacity: 1;
+                }
+                .hero-bg {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: scale(1.05);
+                    transition: transform 8s linear;
+                }
+                .hero-slide.active .hero-bg {
+                    transform: scale(1);
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .hero-bg { transform: none !important; transition: none !important; }
+                    .hero-slide { transition: opacity 0.5s ease-in-out; }
+                }
+                /* Cinematic Overlay */
+                .hero-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(90deg, rgba(13, 13, 26, 0.95) 0%, rgba(13, 13, 26, 0.4) 55%, transparent 100%),
+                                linear-gradient(0deg, rgba(13, 13, 26, 0.5) 0%, transparent 40%);
+                    z-index: 2;
+                }
+                .hero-container {
+                    width: 100%;
+                    max-width: 1440px;
+                    margin: 0 auto;
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    padding-left: clamp(24px, 5vw, 48px);
+                    padding-right: clamp(24px, 5vw, 48px);
+                    padding-top: var(--hero-safe-top);
+                    box-sizing: border-box;
+                    position: relative;
+                    z-index: 3;
+                }
+                .hero-content {
+                    width: 100%;
+                    max-width: 1100px;
+                    margin-left: 0;
+                    text-align: left;
+                    margin-top: clamp(32px, 5vh, 72px);
+                }
+                .hero-label {
+                    display: block;
+                    color: var(--turquoise, #48B6CF);
+                    font-size: 14px;
+                    font-weight: 700;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    margin-bottom: 16px;
+                    opacity: 0;
+                }
+                .hero-title {
+                    color: #FFFFFF;
+                    font-family: 'Sora', sans-serif;
+                    font-size: clamp(40px, 5vw, 68px);
+                    font-weight: 800;
+                    line-height: 1.15;
+                    letter-spacing: -0.03em;
+                    width: 100%;
+                    margin-bottom: 24px;
+                    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+                    opacity: 0;
+                }
+                .hero-subtitle {
+                    color: rgba(255, 255, 255, 0.9);
+                    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+                    font-weight: 400;
+                    line-height: 1.6;
+                    max-width: 760px;
+                    margin-bottom: 40px;
+                    opacity: 0;
+                }
+                .hero-btns {
+                    display: flex;
+                    gap: 16px;
+                    opacity: 0;
+                }
+                .hero-slide.active .hero-label {
+                    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+                }
+                .hero-slide.active .hero-title {
+                    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+                }
+                .hero-slide.active .hero-subtitle {
+                    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+                }
+                .hero-slide.active .hero-btns {
+                    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+                }
+                .btn-cinematic {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 16px 32px;
+                    border-radius: 100px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(8px);
+                    -webkit-backdrop-filter: blur(8px);
+                }
+                .btn-cinematic-primary {
+                    background: var(--turquoise, #48B6CF);
+                    color: #FFFFFF;
+                    box-shadow: 0 8px 32px rgba(72, 182, 207, 0.25);
+                }
+                .btn-cinematic-primary:hover {
+                    transform: translateY(-4px);
+                    background: #3a9cb2;
+                    box-shadow: 0 12px 40px rgba(72, 182, 207, 0.4);
+                }
+                .btn-cinematic-outline {
+                    background: rgba(255, 255, 255, 0.05);
+                    color: #FFFFFF;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                }
+                .btn-cinematic-outline:hover {
+                    transform: translateY(-4px);
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: #FFFFFF;
+                }
+                .hero-pagination {
+                    position: absolute;
+                    bottom: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 12px;
+                    z-index: 4;
+                }
+                .nav-dash {
+                    width: 32px;
+                    height: 4px;
+                    background: rgba(255, 255, 255, 0.2);
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    padding: 0;
+                }
+                .nav-dash.active {
+                    background: var(--turquoise, #48B6CF);
+                    width: 48px;
+                }
+                @keyframes fadeUp {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @media (max-width: 768px) {
+                    .hero-container { padding-left: 20px; padding-right: 20px; }
+                    .hero-btns { flex-direction: column; width: 100%; max-width: 100%; }
+                    .btn-cinematic { width: 100%; }
+                    .hero-overlay {
+                        background: linear-gradient(180deg, rgba(13, 13, 26, 0.95) 0%, rgba(13, 13, 26, 0.7) 100%);
+                    }
+                }
+            </style>
+            
             <div class="hero-track">
-                
-                <!-- Slide 1: DAVYCAS International (Presentation) -->
+                <!-- Slide 1 -->
                 <div class="hero-slide active">
-                    <img src="Background hero.png" alt="Siège DAVYCAS International Ouagadougou" class="hero-bg" loading="eager">
+                    <img src="Background hero.png" alt="DAVYCAS Siège" class="hero-bg" loading="eager">
                     <div class="hero-overlay"></div>
-                    <div class="container">
+                    <div class="hero-container">
                         <div class="hero-content">
-                            <span class="hero-label">SANTÉ PUBLIQUE</span>
-                            <h1 class="hero-title">Renforcer les systèmes de santé en Afrique de l'Ouest</h1>
-                            <p class="hero-subtitle-accent">Une mission, une expertise, un engagement terrain</p>
-                            <p class="hero-description">DAVYCAS International accompagne les ministères de la santé et leurs partenaires à travers des solutions concrètes en surveillance épidémiologique, appui laboratoire, systèmes d'information sanitaire, études de terrain et logistique de santé publique.</p>
+                            <span class="hero-label">DAVYCAS INTERNATIONAL</span>
+                            <h1 class="hero-title">Renforcer la santé publique en Afrique de l'Ouest</h1>
+                            <p class="hero-subtitle">Surveillance, laboratoires, données et appui terrain au service des systèmes de santé.</p>
                             <div class="hero-btns">
-                                <a href="piliers.html" class="btn-premium btn-premium-primary">Découvrir nos expertises <i class="fas fa-shield-virus"></i></a>
-                                <a href="projets.html" class="btn-premium btn-premium-outline">Voir nos projets</a>
-                            </div>
-                            <div class="hero-meta-row">
-                                <div class="meta-box"><span>Lieu</span><span>Burkina Faso, Niger, Mali</span></div>
-                                <div class="meta-box"><span>Domaine</span><span>Santé publique</span></div>
+                                <a href="piliers.html" class="btn-cinematic btn-cinematic-primary">Découvrir nos expertises</a>
+                                <a href="projets.html" class="btn-cinematic btn-cinematic-outline">Voir nos projets</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2: STELab -->
+                <!-- Slide 2 -->
                 <div class="hero-slide">
-                    <img src="black-female-researcher-studying-compound-jar-laboratory-experiment-biochemistry.jpg" alt="STELab Laboratoire - Recherche Biochimie" class="hero-bg" loading="lazy">
+                    <img src="black-female-researcher-studying-compound-jar-laboratory-experiment-biochemistry.jpg" alt="STELab Laboratoire" class="hero-bg" loading="lazy">
                     <div class="hero-overlay"></div>
-                    <div class="container">
+                    <div class="hero-container">
                         <div class="hero-content">
-                            <span class="hero-label">PROJET STRUCTURANT</span>
-                            <h1 class="hero-title">STELab</h1>
-                            <p class="hero-subtitle-accent">Système de Traçabilité des données Épidémiologiques et des échantillons de Laboratoire</p>
-                            <p class="hero-description">Une plateforme électronique conçue pour la gestion cas par cas, la visualisation, le rapportage et la synchronisation des données de surveillance et des échantillons biologiques.</p>
+                            <span class="hero-label">PROJET PHARE</span>
+                            <h1 class="hero-title">STELab, la donnée au service de la décision</h1>
+                            <p class="hero-subtitle">Une plateforme de traçabilité pour les données épidémiologiques et les échantillons de laboratoire.</p>
                             <div class="hero-btns">
-                                <a href="stelab.html" class="btn-premium btn-premium-primary">Découvrir le projet <i class="fas fa-microscope"></i></a>
-                                <a href="projets.html" class="btn-premium btn-premium-outline">Nos projets</a>
-                            </div>
-                            <div class="hero-meta-row">
-                                <div class="meta-box"><span>Lieu</span><span>Burkina Faso, Niger</span></div>
-                                <div class="meta-box"><span>Domaine</span><span>Surveillance et laboratoire</span></div>
+                                <a href="stelab.html" class="btn-cinematic btn-cinematic-primary">Découvrir STELab</a>
+                                <a href="projets.html" class="btn-cinematic btn-cinematic-outline">Voir nos projets</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 3: SITEB -->
+                <!-- Slide 3 -->
                 <div class="hero-slide">
-                    <img src="https://images.unsplash.com/photo-1599733594230-6b823276abcc?auto=format&fit=crop&q=80&w=2000" alt="SITEB Logistique" class="hero-bg" loading="lazy">
+                    <img src="person-office-work-day.jpg" alt="Appui terrain" class="hero-bg" loading="lazy">
                     <div class="hero-overlay"></div>
-                    <div class="container">
+                    <div class="hero-container">
                         <div class="hero-content">
-                            <span class="hero-label">LOGISTIQUE SANITAIRE</span>
-                            <h1 class="hero-title">SITEB</h1>
-                            <p class="hero-subtitle-accent">Système Intégré de Transport des Échantillons Biologiques</p>
-                            <p class="hero-description">Une solution pensée pour améliorer la chaîne de transport des échantillons, réduire les délais d'acheminement et renforcer l'efficacité opérationnelle.</p>
+                            <span class="hero-label">EXPERTISE TERRAIN</span>
+                            <h1 class="hero-title">Des solutions pensées pour les réalités du terrain</h1>
+                            <p class="hero-subtitle">DAVYCAS accompagne les institutions sanitaires dans la mise en œuvre opérationnelle de projets à fort impact.</p>
                             <div class="hero-btns">
-                                <a href="projets.html" class="btn-premium btn-premium-primary">Voir le projet <i class="fas fa-truck-medical"></i></a>
-                                <a href="contact.html" class="btn-premium btn-premium-outline">Devenir partenaire</a>
-                            </div>
-                            <div class="hero-meta-row">
-                                <div class="meta-box"><span>Lieu</span><span>Afrique de l'Ouest</span></div>
-                                <div class="meta-box"><span>Impact</span><span>Logistique de santé</span></div>
+                                <a href="piliers.html" class="btn-cinematic btn-cinematic-primary">Découvrir nos piliers</a>
+                                <a href="contact.html" class="btn-cinematic btn-cinematic-outline">Nous contacter</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Slide 4 -->
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1599733594230-6b823276abcc?auto=format&fit=crop&q=80&w=2000" alt="Données et laboratoires" class="hero-bg" loading="lazy">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-container">
+                        <div class="hero-content">
+                            <span class="hero-label">SURVEILLANCE & LABORATOIRES</span>
+                            <h1 class="hero-title">Transformer les données en actions concrètes</h1>
+                            <p class="hero-subtitle">Des outils, des méthodes et un accompagnement pour renforcer la surveillance, les laboratoires et la coordination sanitaire.</p>
+                            <div class="hero-btns">
+                                <a href="piliers.html" class="btn-cinematic btn-cinematic-primary">Voir nos expertises</a>
+                                <a href="contact.html" class="btn-cinematic btn-cinematic-outline">Contacter DAVYCAS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Controls -->
+            
             <div class="hero-pagination">
-                <button class="nav-dash active" onclick="goToPremiumSlide(0)"></button>
-                <button class="nav-dash" onclick="goToPremiumSlide(1)"></button>
-                <button class="nav-dash" onclick="goToPremiumSlide(2)"></button>
+                <button class="nav-dash active" aria-label="Slide 1" onclick="goToPremiumSlide(0)"></button>
+                <button class="nav-dash" aria-label="Slide 2" onclick="goToPremiumSlide(1)"></button>
+                <button class="nav-dash" aria-label="Slide 3" onclick="goToPremiumSlide(2)"></button>
+                <button class="nav-dash" aria-label="Slide 4" onclick="goToPremiumSlide(3)"></button>
             </div>
         </section>
 
@@ -1579,7 +1636,7 @@
         }
 
         function startPremiumTimer() {
-            premiumInterval = setInterval(nextPremiumSlide, 6000);
+            premiumInterval = setInterval(nextPremiumSlide, 7000);
         }
 
         function resetPremiumTimer() {
@@ -1682,12 +1739,10 @@
         // NAVBAR BLUR EFFECT ON SCROLL
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.premium-nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(13, 13, 26, 0.95)';
-                nav.style.padding = '12px 0';
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
             } else {
-                nav.style.background = 'rgba(13, 13, 26, 0.7)';
-                nav.style.padding = '16px 0';
+                nav.classList.remove('is-scrolled');
             }
         });
 

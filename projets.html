@@ -10,15 +10,15 @@
 </head>
 <body class="about-v2-body">
 
-    <!-- 1. NAVBAR STICKY -->
-    <header class="main-header" style="background: rgba(13,13,26,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08);">
-        <div class="header-inner">
-            <a href="index.html" class="header-logo">
-                <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+    <!-- SECTION 1 — Navbar -->
+    <header class="premium-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS International">
             </a>
             
-            <nav class="header-nav">
-                <ul>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="about.html" class="nav-link">À Propos</a></li>
                     <li><a href="piliers.html" class="nav-link">Piliers</a></li>
@@ -36,23 +36,23 @@
                 </ul>
             </nav>
             
-            <div class="header-cta">
-                <a href="#" class="btn-v2 btn-v2-primary" style="padding: 8px 24px; font-size: 14px;">Faire un don</a>
+            <div class="nav-cta">
+                <a href="#" class="btn-don">Faire un don</a>
             </div>
             
-            <button class="hamburger">
-                <span></span><span></span><span></span>
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
     <!-- 2. HERO PROJETS -->
-    <section class="hero-section-v2" style="height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; background: #0d0d1a;">
+    <section class="hero-section-v2" style="min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: flex-start; padding-top: var(--hero-safe-top); box-sizing: border-box; background: #0d0d1a;">
         <div style="position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2000') center/cover; opacity: 0.35;"></div>
         <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,13,26,0.92) 0%, rgba(70,156,176,0.2) 100%);"></div>
         
         <div class="container z-1">
-            <div style="max-width: 900px;">
+            <div style="max-width: 900px; margin-top: clamp(32px, 5vh, 72px); margin-bottom: 40px;">
                 <span class="label-v2 scroll-fade-up">Nos Projets</span>
                 <h1 class="h1-v2 scroll-fade-up" style="font-family: 'Sora', sans-serif;">Des projets conçus pour renforcer durablement les systèmes de santé</h1>
                 <p class="scroll-fade-up" style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 48px; max-width: 750px; line-height: 1.8;">
@@ -440,6 +440,16 @@
         // Hamburger Menu
         document.querySelector('.hamburger').addEventListener('click', function() {
             document.querySelector('.header-nav').classList.toggle('open');
+        });
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.premium-nav');
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
+            } else {
+                nav.classList.remove('is-scrolled');
+            }
         });
     </script>
 </body>

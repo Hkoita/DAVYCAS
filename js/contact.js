@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.premium-nav');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('nav-scrolled');
+        if (window.scrollY > 24) {
+            navbar.classList.add('is-scrolled');
         } else {
-            navbar.classList.remove('nav-scrolled');
+            navbar.classList.remove('is-scrolled');
         }
     });
 

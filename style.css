@@ -9,6 +9,11 @@
     --ivory: #ffffff;
     --twilight-gray: #a0a0c0;
     --white: #ffffff;
+    
+    /* Unified Header & Hero variables */
+    --navbar-logo-size: 192px;
+    --navbar-height: 224px;
+    --hero-safe-top: calc(var(--navbar-height) + 40px);
 }
 
 html {
@@ -109,6 +114,17 @@ header .logo img,
 nav .logo img,
 .navbar img,
 nav img,
+.header-logo .logo-img {
+  height: var(--navbar-logo-size) !important;
+  width: auto !important;
+  min-height: var(--navbar-logo-size) !important;
+  max-height: var(--navbar-logo-size) !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: brightness(0) invert(1) !important;
+}
+
 footer img,
 .footer img,
 .footer-logo img,
@@ -126,18 +142,124 @@ footer img,
   filter: brightness(0) invert(1) !important;
 }
 
+/* ============================================================
+   GLOBAL PREMIUM NAVBAR (UNIFIED)
+   ============================================================ */
 header,
 nav,
 .navbar,
-.main-header,
-.premium-nav {
-  min-height: 112px !important;
+.main-header {
+  min-height: auto !important;
   height: auto !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
   display: flex !important;
   align-items: center !important;
 }
+
+.premium-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: auto !important;
+  height: auto !important;
+  padding-block: clamp(6px, 0.8vw, 12px) !important;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.is-scrolled,
+.nav-scrolled {
+  background: rgba(13, 13, 26, 0.92) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  padding-block: clamp(4px, 0.5vw, 8px) !important;
+}
+
+.nav-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.nav-logo img {
+  height: var(--navbar-logo-size, 192px) !important;
+  width: auto !important;
+  min-height: var(--navbar-logo-size, 192px) !important;
+  max-height: var(--navbar-logo-size, 192px) !important;
+  display: block !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+  color: #ffffff;
+}
+
+.nav-links .nav-link.active {
+  color: #469cb0;
+}
+
+.btn-don {
+  background: linear-gradient(135deg, #625a9a, #469cb0);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(98, 90, 154, 0.3);
+  display: inline-block;
+}
+
+.btn-don:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(70, 156, 176, 0.4);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --navbar-logo-size: 120px;
+    --navbar-height: 152px;
+    --hero-safe-top: calc(var(--navbar-height) + 24px);
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-cta {
+    display: none;
+  }
+  .hamburger {
+    display: block !important;
+  }
+}
+
 
 /* --- HERO REFINEMENT --- */
 .hero-title,
@@ -153,8 +275,14 @@ nav,
 .hero,
 .home-hero,
 .hero-section,
-.hero-slider {
-  padding-top: calc(var(--navbar-height, 112px) + 48px) !important;
+.hero-slider,
+.hero-cinematic,
+.hero-section-v2,
+.hero-piliers,
+.hero-stelab-v2,
+.contact-hero,
+.blog-hero {
+  padding-top: var(--hero-safe-top) !important;
 }
 
 .hero-content,
@@ -218,6 +346,11 @@ nav,
 }
 
 @media (max-width: 768px) {
+  :root {
+    --navbar-logo-size: 80px;
+    --navbar-height: 112px;
+    --hero-safe-top: calc(var(--navbar-height) + 16px);
+  }
   .hero-title,
   .hero h1,
   .home-hero h1,
@@ -230,8 +363,14 @@ nav,
   .hero,
   .home-hero,
   .hero-section,
-  .hero-slider {
-    padding-top: calc(var(--navbar-height, 72px) + 32px) !important;
+  .hero-slider,
+  .hero-cinematic,
+  .hero-section-v2,
+  .hero-piliers,
+  .hero-stelab-v2,
+  .contact-hero,
+  .blog-hero {
+    padding-top: var(--hero-safe-top) !important;
   }
 }
 

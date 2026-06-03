@@ -10,15 +10,15 @@
 </head>
 <body class="about-v2-body">
 
-    <!-- HEADER (Simplified for v2 coherence) -->
-    <header class="main-header" style="background: rgba(13,13,26,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08);">
-        <div class="header-inner">
-            <a href="index.html" class="header-logo">
-                <img src="Logo.png" alt="DAVYCAS ONG" class="logo-img">
+    <!-- SECTION 1 — Navbar -->
+    <header class="premium-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS International">
             </a>
             
-            <nav class="header-nav">
-                <ul>
+            <nav>
+                <ul class="nav-links">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="about.html" class="nav-link active">À Propos</a></li>
                     <li><a href="piliers.html" class="nav-link">Piliers</a></li>
@@ -36,12 +36,12 @@
                 </ul>
             </nav>
             
-            <div class="header-cta">
-                <a href="contact.html" class="btn-v2 btn-v2-outline" style="padding: 8px 24px; font-size: 14px;">Contact</a>
+            <div class="nav-cta">
+                <a href="#" class="btn-don">Faire un don</a>
             </div>
             
-            <button class="hamburger">
-                <span></span><span></span><span></span>
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
@@ -52,7 +52,7 @@
             from { transform: scale(1); }
             to { transform: scale(1.1); }
         }
-        .hero-section-v2 { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; background: #0a0a14; }
+        .hero-section-v2 { min-height: 100vh; height: auto; position: relative; overflow: hidden; display: flex; align-items: flex-start; padding-top: var(--hero-safe-top); box-sizing: border-box; background: #0a0a14; }
         .hero-bg-img { position: absolute; inset: 0; background: url('about_institutional_davycas_v1_1773179496979.png') center/cover no-repeat; opacity: 1; animation: kenburns-subtle 20s infinite alternate linear; }
         .hero-overlay-subtle { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.5), transparent); z-index: 1; }
         .hero-title {
@@ -76,6 +76,8 @@
             padding: 64px; 
             box-shadow: 0 40px 100px rgba(0,0,0,0.4); 
             transition: transform 0.5s ease;
+            margin-top: clamp(32px, 5vh, 72px);
+            margin-bottom: 40px;
         }
         .glass-hero-card:hover { transform: translateY(-10px); border-color: rgba(70, 156, 176, 0.4); }
         
@@ -249,53 +251,140 @@
 
     <!-- SECTION 4: OBJECTIFS -->
     <section class="section-v2" style="background: #0d0d1a;">
+        <style>
+            .objectifs-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+            .objectif-card {
+                background: rgba(255, 255, 255, 0.02);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 24px;
+                padding: 40px 32px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .objectif-card:hover {
+                transform: translateY(-8px);
+                border-color: rgba(70, 156, 176, 0.3);
+                background: rgba(255, 255, 255, 0.04);
+                box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+            }
+            .objectif-card.violet-hover:hover {
+                border-color: rgba(98, 90, 154, 0.4);
+            }
+            .objectif-card:hover .objectif-icon {
+                color: #fff !important;
+                transform: scale(1.1);
+            }
+            .objectif-icon {
+                color: var(--turquoise);
+                font-size: 32px;
+                margin-bottom: 24px;
+                position: relative;
+                transition: all 0.4s ease;
+            }
+            .objectif-bg-num {
+                position: absolute;
+                top: -16px;
+                right: 16px;
+                font-size: 100px;
+                font-weight: 900;
+                color: rgba(255, 255, 255, 0.02);
+                z-index: 0;
+                pointer-events: none;
+                transition: all 0.4s ease;
+                font-family: 'Sora', sans-serif;
+            }
+            .objectif-card:hover .objectif-bg-num {
+                color: rgba(70, 156, 176, 0.05);
+            }
+            .objectif-card.violet-hover:hover .objectif-bg-num {
+                color: rgba(98, 90, 154, 0.05);
+            }
+            .objectif-title {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 16px;
+                position: relative;
+                font-family: 'Sora', sans-serif;
+                color: #fff;
+                line-height: 1.4;
+            }
+            .objectif-desc {
+                color: rgba(255, 255, 255, 0.65);
+                font-size: 15px;
+                position: relative;
+                line-height: 1.7;
+                flex-grow: 1;
+                margin: 0;
+            }
+            @media (max-width: 992px) {
+                .objectifs-grid { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 768px) {
+                .objectifs-grid { grid-template-columns: 1fr; }
+                .objectif-card { padding: 32px 24px; }
+            }
+        </style>
         <div class="container">
-            <div class="section-header-v2">
-                <span class="label-v2">Nos Objectifs</span>
+            <div class="section-header-v2" style="margin-bottom: 64px;">
+                <span class="label-v2" style="color: var(--turquoise); letter-spacing: 4px;">Nos Objectifs</span>
                 <h2 class="h2-v2">Ce que nous nous engageons à faire</h2>
+                <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-top: 24px; line-height: 1.8;" class="scroll-fade-up">
+                    DAVYCAS International s'engage à accompagner ses partenaires à travers des axes stratégiques concrets, au service de la santé publique, de la recherche, de l'innovation et de l'impact communautaire.
+                </p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            
+            <div class="objectifs-grid">
                 <!-- 01 -->
-                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">01</div>
-                    <i class="fa-solid fa-handshake" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
-                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Appui technique</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Soutien aux programmes de santé publique des ministères d'Afrique de l'Ouest"</p>
+                <div class="objectif-card scroll-fade-up">
+                    <div class="objectif-bg-num">01</div>
+                    <i class="fa-solid fa-handshake objectif-icon"></i>
+                    <h4 class="objectif-title">Appui technique</h4>
+                    <p class="objectif-desc">Fournir une expertise technique de haut niveau pour la conception, la mise en œuvre et l'évaluation de projets dans les domaines de la santé, de la recherche et du développement.</p>
                 </div>
                 <!-- 02 -->
-                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">02</div>
-                    <i class="fa-solid fa-coins" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
-                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Mobilisation des ressources</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Mobiliser des ressources pour la mise en œuvre durable des projets de santé"</p>
+                <div class="objectif-card violet-hover scroll-fade-up">
+                    <div class="objectif-bg-num">02</div>
+                    <i class="fa-solid fa-hand-holding-dollar objectif-icon" style="color: var(--violet);"></i>
+                    <h4 class="objectif-title">Mobilisation des ressources</h4>
+                    <p class="objectif-desc">Identifier et mobiliser des financements auprès de partenaires nationaux et internationaux afin de soutenir des initiatives à fort impact.</p>
                 </div>
                 <!-- 03 -->
-                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">03</div>
-                    <i class="fa-solid fa-microscope" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
-                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Études scientifiques</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Études épidémiologiques, de vaccination et de biologie médicale"</p>
+                <div class="objectif-card scroll-fade-up">
+                    <div class="objectif-bg-num">03</div>
+                    <i class="fa-solid fa-microscope objectif-icon"></i>
+                    <h4 class="objectif-title">Recherche clinique et opérationnelle</h4>
+                    <p class="objectif-desc">Concevoir et conduire des études cliniques et de mise en œuvre, générer des données probantes et contribuer à l'amélioration des politiques et pratiques en santé.</p>
                 </div>
                 <!-- 04 -->
-                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">04</div>
-                    <i class="fa-solid fa-laptop-code" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
-                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Solutions technologiques</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Développement de logiciels et conseils en systèmes de santé"</p>
+                <div class="objectif-card violet-hover scroll-fade-up">
+                    <div class="objectif-bg-num">04</div>
+                    <i class="fa-solid fa-laptop-code objectif-icon" style="color: var(--violet);"></i>
+                    <h4 class="objectif-title">Solutions technologiques et intelligence artificielle</h4>
+                    <p class="objectif-desc">Développer et déployer des solutions numériques innovantes, incluant l'intelligence artificielle, pour améliorer l'accès, la qualité et l'efficacité des services.</p>
                 </div>
                 <!-- 05 -->
-                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">05</div>
-                    <i class="fa-solid fa-chart-line" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
-                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Collecte de données</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Données de qualité sur les facteurs d'apparition et distribution des maladies"</p>
+                <div class="objectif-card scroll-fade-up">
+                    <div class="objectif-bg-num">05</div>
+                    <i class="fa-solid fa-chart-line objectif-icon"></i>
+                    <h4 class="objectif-title">Collecte, analyse de données et modélisation</h4>
+                    <p class="objectif-desc">Mettre en place des systèmes robustes de collecte de données, assurer leur analyse avancée et développer des modèles prédictifs pour orienter la décision stratégique.</p>
                 </div>
                 <!-- 06 -->
-                <div class="glass-card scroll-fade-up" style="padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: 10px; font-size: 80px; font-weight: 900; color: rgba(98,90,154,0.1); z-index: 0;">06</div>
-                    <i class="fa-solid fa-hospital" style="color: var(--turquoise); font-size: 28px; margin-bottom: 24px; position: relative;"></i>
-                    <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; position: relative;">Conditions de travail</h4>
-                    <p style="color: var(--text-muted); font-size: 14px; position: relative;">"Amélioration des conditions de travail des prestataires de soins"</p>
+                <div class="objectif-card violet-hover scroll-fade-up">
+                    <div class="objectif-bg-num">06</div>
+                    <i class="fa-solid fa-hand-holding-heart objectif-icon" style="color: var(--violet);"></i>
+                    <h4 class="objectif-title">Œuvres sociales et engagement communautaire</h4>
+                    <p class="objectif-desc">Promouvoir des actions sociales en faveur des structures de santé et des populations vulnérables, renforcer la sensibilisation communautaire et contribuer à l'équité en santé.</p>
                 </div>
             </div>
         </div>
@@ -403,62 +492,346 @@
         </div>
     </section>
 
-    <section class="section-v2" style="background: #F7F8FA; padding: 120px 0;">
+    <section class="section-v2" style="background: var(--color-bg-soft, #F7F8FA); padding: 120px 0;">
         <style>
-            .org-tree-light li::before, .org-tree-light li::after, .org-tree-light ul ul::before {
-                border-color: rgba(98, 90, 154, 0.2) !important;
-            }
-            .org-node-light {
-                background: #FFFFFF !important;
-                color: #2B2D42 !important;
-                border: 1px solid rgba(0,0,0,0.06) !important;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
-                border-radius: 16px !important;
-                padding: 20px 32px !important;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            .org-section {
                 font-family: 'Inter', sans-serif;
-                font-weight: 600;
-                font-size: 14px;
+                color: #101120;
             }
-            .org-node-light:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 35px rgba(0,0,0,0.06) !important;
-                border-color: rgba(98, 90, 154, 0.2) !important;
+            .org-container {
+                max-width: 1140px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+            }
+            .org-card {
+                background: #FFFFFF;
+                border: 1px solid rgba(16, 17, 32, 0.08);
+                border-radius: 20px;
+                padding: 24px;
+                box-shadow: 0 16px 40px rgba(16, 17, 32, 0.03);
+                text-align: center;
+                position: relative;
+                z-index: 2;
+                transition: all 0.3s ease;
+                width: 100%;
+            }
+            .org-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 24px 60px rgba(16, 17, 32, 0.06);
+                border-color: rgba(16, 17, 32, 0.15);
+            }
+            .org-title {
+                font-size: 16px;
+                font-weight: 700;
+                font-family: 'Sora', sans-serif;
+                color: #101120;
+                margin-bottom: 6px;
+            }
+            .org-subtitle {
+                font-size: 13px;
+                font-weight: 500;
+                color: #596579;
+                font-style: italic;
+            }
+            
+            /* Highlight Top Borders */
+            .border-violet { border-top: 4px solid #6B61A8; }
+            .border-cyan { border-top: 4px solid #48B6CF; }
+            .border-navy { border-top: 4px solid #12142A; }
+            .border-grey { border-top: 4px solid #596579; }
+            
+            /* Center Elements */
+            .org-center-box {
+                width: 100%;
+                max-width: 480px;
+            }
+            
+            /* Vertical connecting line */
+            .org-line-v {
+                width: 2px;
+                height: 32px;
+                background: rgba(16, 17, 32, 0.12);
+                margin: 0 auto;
+            }
+            
+            /* Level 3 Grid */
+            .org-level-3 {
+                display: grid;
+                grid-template-columns: 1fr 1.5fr 1fr;
+                gap: 24px;
+                width: 100%;
+                align-items: center;
+                position: relative;
+            }
+            .org-level-3::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 15%;
+                right: 15%;
+                border-top: 2px dashed rgba(16, 17, 32, 0.15);
+                z-index: 1;
+            }
+            
+            /* Level 4 Countries */
+            .org-countries-label {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: #596579;
+                background: #F7F8FA;
+                padding: 4px 12px;
+                position: relative;
+                z-index: 2;
+                margin-top: -12px;
+            }
+            
+            .org-countries-row {
+                display: flex;
+                width: 100%;
+                position: relative;
+            }
+            .org-country-col {
+                flex: 1;
+                position: relative;
+                padding: 32px 12px 0 12px;
+            }
+            /* Horizontal bracket */
+            .org-country-col::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                height: 2px;
+                background: rgba(16, 17, 32, 0.12);
+            }
+            .org-country-col:not(:first-child):not(:last-child)::after { width: 100%; left: 0; }
+            .org-country-col:first-child::after { width: 50%; left: 50%; }
+            .org-country-col:last-child::after { width: 50%; left: 0; }
+            
+            /* Vertical tick dropping to card */
+            .org-country-col::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 32px;
+                background: rgba(16, 17, 32, 0.12);
+            }
+            
+            .org-country-card {
+                background: #FFFFFF;
+                border: 1px solid rgba(16, 17, 32, 0.08);
+                border-radius: 20px;
+                padding: 24px;
+                box-shadow: 0 16px 40px rgba(16, 17, 32, 0.03);
+                text-align: center;
+                transition: all 0.3s ease;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .org-country-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 24px 60px rgba(16, 17, 32, 0.06);
+            }
+            .org-country-name {
+                font-size: 18px;
+                font-weight: 700;
+                font-family: 'Sora', sans-serif;
+                color: #101120;
+                margin-bottom: 12px;
+            }
+            
+            /* Badges */
+            .org-badge {
+                display: inline-block;
+                padding: 4px 12px;
+                border-radius: 100px;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 24px;
+            }
+            .badge-cyan { background: rgba(72, 182, 207, 0.12); color: #48B6CF; }
+            .badge-violet { background: rgba(107, 97, 168, 0.12); color: #6B61A8; }
+            .badge-grey { background: rgba(89, 101, 121, 0.12); color: #596579; }
+            
+            /* List */
+            .org-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+                font-size: 13px;
+                color: #596579;
+                font-weight: 500;
+                flex-grow: 1;
+            }
+            .org-list li {
+                margin-bottom: 10px;
+                padding-left: 16px;
+                position: relative;
+                line-height: 1.4;
+            }
+            .org-list li::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgba(16, 17, 32, 0.15);
+                border-radius: 50%;
+            }
+            .org-list li strong { color: #101120; font-weight: 600; display: block; margin-bottom: 2px; }
+            
+            /* Responsive */
+            @media (max-width: 992px) {
+                .org-level-3 {
+                    grid-template-columns: 1fr;
+                    gap: 16px;
+                }
+                .org-level-3::before { display: none; }
+                .org-countries-row {
+                    flex-wrap: wrap;
+                }
+                .org-country-col {
+                    flex: 0 0 50%;
+                    padding: 24px 12px 0 12px;
+                }
+                /* Redraw bracket for 2x2 grid */
+                .org-country-col:nth-child(1)::after { width: 50%; left: 50%; }
+                .org-country-col:nth-child(2)::after { width: 50%; left: 0; }
+                .org-country-col:nth-child(3)::after, .org-country-col:nth-child(4)::after { display: none; }
+                .org-country-col:nth-child(3)::before, .org-country-col:nth-child(4)::before { display: none; }
+                .org-country-col:nth-child(3), .org-country-col:nth-child(4) { padding-top: 16px; }
+            }
+            @media (max-width: 600px) {
+                .org-country-col { flex: 0 0 100%; padding: 12px 0; }
+                .org-country-col::after, .org-country-col::before { display: none; }
+                .org-line-v.bottom { display: none; }
+                .org-countries-label { margin-top: 24px; margin-bottom: 8px; }
             }
         </style>
-        <div class="container">
-            <span class="label-v2" style="color: #469cb0; letter-spacing: 4px;">STRUCTURE</span>
-            <h2 class="h2-v2" style="color: #0d0d1a;">Organigramme Institutionnel</h2>
+        
+        <div class="container org-section">
+            <div class="section-header-v2" style="margin-bottom: 64px;">
+                <span class="label-v2" style="color: #48B6CF; letter-spacing: 4px;">STRUCTURE</span>
+                <h2 class="h2-v2" style="color: #101120;">Organigramme Institutionnel</h2>
+            </div>
             
-            <div class="org-tree org-tree-light scroll-fade-up">
-                <ul>
-                    <li>
-                        <div class="org-node-light" style="border-top: 3px solid #625a9a !important;">Conseil d'Administration</div>
-                        <ul>
-                            <li>
-                                <div class="org-node-light" style="border-top: 3px solid #625a9a !important;">Direction Exécutive</div>
-                                <ul>
-                                    <li>
-                                        <div class="org-node-light" style="background: rgba(70,156,176,0.05) !important; border-top: 3px solid #469cb0 !important;">Comité de Direction</div>
-                                        <ul>
-                                            <li><div class="org-node-light">Gestion des Programmes & Communication</div></li>
-                                            <li><div class="org-node-light">Administration & Finance</div></li>
-                                            <li><div class="org-node-light">Urgence Sanitaire & Logistiques</div></li>
-                                            <li><div class="org-node-light">Épidémiologie & Laboratoire / M&E</div></li>
-                                            <li><div class="org-node-light">Études de Terrain & Recherches</div></li>
-                                            <li><div class="org-node-light">Systèmes Informatiques de Santé</div></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div style="display: flex; justify-content: center; gap: 24px; margin-top: 56px;">
-                    <div class="org-node-light" style="border-bottom: 2px solid #469cb0 !important; font-size: 13px;">Représentation Niger</div>
-                    <div class="org-node-light" style="border-bottom: 2px solid #469cb0 !important; font-size: 13px;">Représentation Côte d'Ivoire</div>
-                    <div class="org-node-light" style="border-bottom: 2px solid #469cb0 !important; font-size: 13px;">Représentation Mali <span style="opacity: 0.6; font-weight: 400;">(En déploiement)</span></div>
+            <div class="org-container scroll-fade-up">
+                
+                <!-- Niveau 1 -->
+                <div class="org-center-box">
+                    <div class="org-card border-violet">
+                        <div class="org-title">Conseil d'Administration</div>
+                        <div class="org-subtitle">Président du CA : Orientations stratégiques</div>
+                    </div>
                 </div>
+                
+                <div class="org-line-v"></div>
+                
+                <!-- Niveau 2 -->
+                <div class="org-center-box">
+                    <div class="org-card border-cyan">
+                        <div class="org-title">Comité de Direction</div>
+                        <div class="org-subtitle">Directeur Exécutif : Décisions collégiales</div>
+                    </div>
+                </div>
+                
+                <div class="org-line-v"></div>
+                
+                <!-- Niveau 3 -->
+                <div class="org-level-3">
+                    <div class="org-card border-grey">
+                        <div class="org-title">Pool d'Experts</div>
+                        <div class="org-subtitle">Santé publique & IT</div>
+                    </div>
+                    
+                    <div class="org-card border-navy" style="padding: 32px 24px;">
+                        <div class="org-title" style="font-size: 18px;">Siège à Ouagadougou <span style="font-weight:400; font-size:14px; color:#596579;">(Burkina Faso)</span></div>
+                        <div class="org-subtitle" style="margin-top: 8px;">Coordonnateur = Directeur Exécutif · 5 services</div>
+                    </div>
+                    
+                    <div class="org-card border-grey">
+                        <div class="org-title">Assist. Admin & Finance</div>
+                        <div class="org-subtitle">Chef Administratif & Financier</div>
+                    </div>
+                </div>
+                
+                <div class="org-line-v bottom" style="height: 48px;"></div>
+                <div class="org-countries-label">Franchises / Représentations nationales</div>
+                
+                <!-- Niveau 4 (Pays) -->
+                <div class="org-countries-row">
+                    <!-- Niger -->
+                    <div class="org-country-col">
+                        <div class="org-country-card border-cyan">
+                            <div class="org-country-name">Niger</div>
+                            <div><span class="org-badge badge-cyan">Opérationnel</span></div>
+                            <ul class="org-list">
+                                <li><strong>Coordonnateur Pays</strong> (+Comité coord.)</li>
+                                <li>Admin & Finances</li>
+                                <li>Assistant(e) / Secrétaire</li>
+                                <li>Pool de Consultants</li>
+                                <li>Techniciens IT</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Mali -->
+                    <div class="org-country-col">
+                        <div class="org-country-card border-violet">
+                            <div class="org-country-name">Mali</div>
+                            <div><span class="org-badge badge-violet">En cours</span></div>
+                            <ul class="org-list">
+                                <li><strong>Coordonnateur Pays</strong> (+Comité coord.)</li>
+                                <li>Admin & Finances</li>
+                                <li>Assistant(e) / Secrétaire</li>
+                                <li>Pool de Consultants</li>
+                                <li>Techniciens IT</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Côte d'Ivoire -->
+                    <div class="org-country-col">
+                        <div class="org-country-card border-violet">
+                            <div class="org-country-name">Côte d'Ivoire</div>
+                            <div><span class="org-badge badge-violet">En cours</span></div>
+                            <ul class="org-list">
+                                <li><strong>Coordonnateur Pays</strong> (+Comité coord.)</li>
+                                <li>Admin & Finances</li>
+                                <li>Assistant(e) / Secrétaire</li>
+                                <li>Pool de Consultants</li>
+                                <li>Techniciens IT</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Sénégal -->
+                    <div class="org-country-col">
+                        <div class="org-country-card border-grey">
+                            <div class="org-country-name">Sénégal</div>
+                            <div><span class="org-badge badge-grey">Planifié</span></div>
+                            <ul class="org-list">
+                                <li><strong>Coordonnateur Pays</strong> (+Comité coord.)</li>
+                                <li>Admin & Finances</li>
+                                <li>Assistant(e) / Secrétaire</li>
+                                <li>Pool de Consultants</li>
+                                <li>Techniciens IT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -621,6 +994,16 @@
         // Hamburger Menu
         document.querySelector('.hamburger').addEventListener('click', function() {
             document.querySelector('.header-nav').classList.toggle('open');
+        });
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.premium-nav');
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
+            } else {
+                nav.classList.remove('is-scrolled');
+            }
         });
     </script>
 </body>

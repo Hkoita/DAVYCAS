@@ -19,113 +19,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Specific Navbar overrides to ensure horizontal layout as on homepage */
-        .premium-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(13, 13, 26, 0.85);
-            backdrop-filter: blur(20px);
-            height: 80px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 40px;
-            width: 100%;
-        }
-        .nav-logo img { height: 60px; filter: brightness(0) invert(1); }
-        .nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-        .nav-links a { text-decoration: none; color: #fff; font-weight: 500; opacity: 0.8; transition: 0.3s; font-size: 15px; }
-        .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--turquoise, #469cb0); }
-
-        /* Dropdown Menu System */
-        .nav-item { position: relative; display: flex; align-items: center; }
-        .has-dropdown .nav-link { display: flex; align-items: center; gap: 6px; }
-        .dropdown-arrow { font-size: 0.7rem; opacity: 0.6; transition: transform 0.3s ease; }
-        .has-dropdown:hover .dropdown-arrow { transform: rotate(180deg); opacity: 1; }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% + 15px);
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            background: rgba(13, 13, 26, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 12px;
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1001;
-        }
-
-        .has-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .dropdown-menu::before {
-            content: '';
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            width: 12px;
-            height: 12px;
-            background: rgba(13, 13, 26, 0.95);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .dropdown-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 16px;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
-            border-radius: 10px;
-            transition: all 0.25s;
-        }
-
-        .dropdown-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--turquoise);
-            padding-left: 20px;
-        }
-        
         /* Buttons should not look like links */
         a.btn-stelab { text-decoration: none !important; display: inline-flex !important; }
     </style>
 </head>
-<body>
+<body class="stelab-page">
 
     <!-- 1. NAVBAR -->
+    <!-- SECTION 1 — Navbar -->
     <header class="premium-nav">
-        <div class="nav-inner">
+        <div class="container nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="Logo.png" alt="DAVYCAS Logo">
+                <img src="Logo.png" alt="DAVYCAS International">
             </a>
             
-            <nav class="desktop-nav">
+            <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À Propos</a></li>
-                    <li><a href="piliers.html">Piliers</a></li>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link">Piliers</a></li>
                     <li class="nav-item has-dropdown">
                         <a href="projets.html" class="nav-link active">Projets <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
                         <div class="dropdown-menu">
@@ -135,14 +47,18 @@
                             </a>
                         </div>
                     </li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             
             <div class="nav-cta">
-                <a href="#" class="cta-don-nav" style="background: var(--stelab-primary); color: white; padding: 10px 24px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 14px;">Faire un don</a>
+                <a href="#" class="btn-don">Faire un don</a>
             </div>
+            
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -485,6 +401,16 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.premium-nav');
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
+            } else {
+                nav.classList.remove('is-scrolled');
+            }
+        });
     </script>
 </body>
 </html>
