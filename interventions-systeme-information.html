@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système d'Information | Interventions | DAVYCAS</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="DAVYCAS International accompagne les institutions sanitaires dans le renforcement des systèmes d'information en santé, la gouvernance des données et le déploiement de solutions numériques.">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/interventions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        a.btn-don, a.btn-siteb { text-decoration: none !important; display: inline-flex !important; }
+        .btn-interventions {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-interventions-primary {
+            background: var(--interventions-primary);
+            color: #ffffff;
+        }
+        .btn-interventions-primary:hover {
+            background: var(--interventions-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(70, 156, 176, 0.3);
+            color: white;
+        }
+        .btn-interventions-outline {
+            border: 2px solid var(--interventions-primary);
+            color: var(--interventions-primary);
+        }
+        .btn-interventions-outline:hover {
+            background: var(--interventions-primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="systeme-information-page interventions-page">
+
+    <!-- 1. NAVBAR -->
+    <header class="premium-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS International">
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link" data-i18n="nav_pillars">Piliers</a></li>
+                    <li class="nav-item has-dropdown interventions-dropdown">
+                        <a href="#" class="nav-link active" data-i18n="nav_interventions">Interventions <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="interventions-etudes-formations.html" class="dropdown-link" data-i18n="nav_studies">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                Études & Formations
+                            </a>
+                            <a href="interventions-laboratoire.html" class="dropdown-link" data-i18n="nav_lab">
+                                <i class="fa-solid fa-flask"></i>
+                                Laboratoire
+                            </a>
+                            <a href="interventions-oeuvres-sociales.html" class="dropdown-link" data-i18n="nav_social">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                Œuvres Sociales
+                            </a>
+                            <a href="interventions-surveillance-epidemiologique.html" class="dropdown-link" data-i18n="nav_epi">
+                                <i class="fa-solid fa-chart-line"></i>
+                                Surveillance Épidémiologique
+                            </a>
+                            <a href="interventions-systeme-information.html" class="dropdown-link" data-i18n="nav_sys">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Système d’Information
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="projets.html" class="nav-link" data-i18n="nav_projects">Projets</a></li>
+                    <li class="nav-item has-dropdown products-dropdown">
+                        <a href="#" class="nav-link" data-i18n="nav_products">Nos produits <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="stelab.html" class="dropdown-link">
+                                <i class="fa-solid fa-microscope"></i>
+                                STELab
+                            </a>
+                            <a href="siteb.html" class="dropdown-link">
+                                <i class="fa-solid fa-truck-medical"></i>
+                                SITEB
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta" style="display:flex; align-items:center;">
+                <div class="lang-switcher">
+                    <button class="lang-toggle-btn" aria-label="Changer de langue">FR / EN</button>
+                </div>
+                <a href="#" class="btn-don" data-i18n="nav_donate">Faire un don</a>
+            </div>
+            
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section class="hero-interventions">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal">
+                        <span class="hero-label">INTERVENTION</span>
+                        <h1 class="hero-title">Système d’Information</h1>
+                        <p class="hero-desc">DAVYCAS International accompagne les institutions sanitaires dans le renforcement des systèmes d’information en santé, la gouvernance des données, le développement d’infrastructures, la formation et l’implémentation de solutions électroniques adaptées aux réalités du terrain.</p>
+                        <div class="hero-actions">
+                            <a href="#expertise" class="btn-interventions btn-interventions-primary">Découvrir notre approche</a>
+                            <a href="contact.html" class="btn-interventions btn-interventions-outline" data-i18n="btn_contact">Contacter DAVYCAS</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
+                        <img src="si_data_center.png" alt="Data Center et équipe gérant les systèmes d'information santé" loading="lazy">
+                        <div class="hero-badge">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <span>Données · Logiciel · Gouvernance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. NOTRE EXPERTISE -->
+        <section id="expertise" class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary); margin-bottom: 24px;">Des systèmes d’information adaptés aux besoins des institutions</h2>
+                    <p style="color: var(--interventions-text-muted); font-size: 1.1rem; line-height: 1.7;">DAVYCAS International intervient, en collaboration avec ses partenaires nationaux et internationaux, dans le renforcement des systèmes d’information en santé à travers l’appui à la gouvernance, le développement d’infrastructures et d’équipements, la formation et l’implémentation de systèmes électroniques de traitement de l’information.</p>
+                </div>
+                
+                <div class="missions-grid">
+                    <div class="mission-card reveal" style="padding: 40px; transition-delay: 0.1s;">
+                        <i class="fa-solid fa-database" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Gouvernance des données</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 0; line-height: 1.6;">Appui à la structuration des systèmes, à l’organisation des flux d’information et à la qualité des données.</p>
+                    </div>
+                    <div class="mission-card reveal" style="padding: 40px; transition-delay: 0.2s;">
+                        <i class="fa-solid fa-laptop-code" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Solutions électroniques</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 0; line-height: 1.6;">Implémentation de systèmes numériques adaptés aux besoins réels des structures sanitaires.</p>
+                    </div>
+                    <div class="mission-card reveal" style="padding: 40px; transition-delay: 0.3s;">
+                        <i class="fa-solid fa-users-gear" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Renforcement des capacités</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 0; line-height: 1.6;">Formation des utilisateurs, accompagnement technique et maintenance applicative.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. DOMAINES DE SPÉCIALISATION -->
+        <section class="interventions-section">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary); margin-bottom: 24px;">Une expertise forte en information sanitaire</h2>
+                    <p style="color: var(--interventions-text-muted); font-size: 1.1rem; line-height: 1.7;">DAVYCAS excelle particulièrement dans l’implémentation de systèmes informatiques d’information géographique, de surveillance épidémiologique et de bases de données.</p>
+                </div>
+                
+                <div class="expertise-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="expertise-card reveal" style="transition-delay: 0.1s;">
+                        <div class="expertise-icon" style="background: rgba(70, 156, 176, 0.1); color: var(--interventions-accent);"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3>Systèmes d’information géographique</h3>
+                        <p>Cartographie, visualisation territoriale et analyse spatiale des données sanitaires.</p>
+                    </div>
+                    <div class="expertise-card reveal" style="transition-delay: 0.2s;">
+                        <div class="expertise-icon" style="background: rgba(98, 90, 154, 0.1); color: var(--interventions-accent-alt);"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Surveillance épidémiologique</h3>
+                        <p>Outils numériques pour le suivi des maladies, des alertes et des événements de santé publique.</p>
+                    </div>
+                    <div class="expertise-card reveal" style="transition-delay: 0.3s;">
+                        <div class="expertise-icon" style="background: rgba(70, 156, 176, 0.1); color: var(--interventions-accent);"><i class="fa-solid fa-server"></i></div>
+                        <h3>Bases de données sanitaires</h3>
+                        <p>Structuration, gestion, sécurisation et exploitation de données sanitaires.</p>
+                    </div>
+                    <div class="expertise-card reveal" style="transition-delay: 0.4s;">
+                        <div class="expertise-icon" style="background: rgba(98, 90, 154, 0.1); color: var(--interventions-accent-alt);"><i class="fa-solid fa-diagram-project"></i></div>
+                        <h3>Interconnexion des systèmes</h3>
+                        <p>Connexion entre les couches applicatives existantes pour limiter la ressaisie et améliorer la communication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. APPROCHE DE DÉVELOPPEMENT -->
+        <section class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="formations-split">
+                    <div class="reveal" style="transition-delay: 0.1s;">
+                        <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary); margin-bottom: 24px;">Des solutions conçues avec les bénéficiaires</h2>
+                        <p style="color: var(--interventions-text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 40px;">L’approche de DAVYCAS repose sur un développement spécifique tenant compte de la structure, de l’institution, des processus métiers et des méthodes de travail existantes. Cette approche permet d’adapter les logiciels aux besoins réels, d’interconnecter les applications et d’éviter la ressaisie des données.</p>
+                        
+                        <div class="method-timeline" style="margin-top: 0;">
+                            <div class="method-step" style="padding: 16px; margin-bottom: 16px;">
+                                <div class="step-number" style="width: 40px; height: 40px; font-size: 1rem;">01</div>
+                                <div class="step-content">
+                                    <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Analyse des besoins</h3>
+                                    <p style="font-size: 0.95rem; margin-bottom: 0;">Identifier les contraintes, ressources disponibles et objectifs de l’institution.</p>
+                                </div>
+                            </div>
+                            <div class="method-step" style="padding: 16px; margin-bottom: 16px;">
+                                <div class="step-number" style="width: 40px; height: 40px; font-size: 1rem;">02</div>
+                                <div class="step-content">
+                                    <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Conception adaptée</h3>
+                                    <p style="font-size: 0.95rem; margin-bottom: 0;">Développer une solution conforme aux processus métiers et aux exigences du cahier des charges.</p>
+                                </div>
+                            </div>
+                            <div class="method-step" style="padding: 16px; margin-bottom: 16px;">
+                                <div class="step-number" style="width: 40px; height: 40px; font-size: 1rem;">03</div>
+                                <div class="step-content">
+                                    <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Déploiement</h3>
+                                    <p style="font-size: 0.95rem; margin-bottom: 0;">Accompagner l’installation, la configuration et l’intégration de la solution.</p>
+                                </div>
+                            </div>
+                            <div class="method-step" style="padding: 16px;">
+                                <div class="step-number" style="width: 40px; height: 40px; font-size: 1rem;">04</div>
+                                <div class="step-content">
+                                    <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Formation & maintenance</h3>
+                                    <p style="font-size: 0.95rem; margin-bottom: 0;">Former les utilisateurs et assurer l’appui applicatif et infrastructurel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formations-image reveal" style="transition-delay: 0.2s;">
+                        <img src="si_team_workshop.png" alt="Équipe projet travaillant sur une solution digitale" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. NOTRE ÉQUIPE -->
+        <section class="interventions-section interventions-section-dark" style="background: linear-gradient(135deg, var(--interventions-primary) 0%, #111827 100%);">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: #ffffff; margin-bottom: 24px;">Une équipe technique au service de solutions durables</h2>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; line-height: 1.7;">DAVYCAS mobilise une équipe de spécialistes en système d’information, de développeurs confirmés et de gestionnaires capables de concevoir, déployer et maintenir des solutions conformes aux exigences institutionnelles.</p>
+                </div>
+                
+                <div class="impact-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="impact-card reveal" style="background: white; border: 1px solid var(--interventions-border); color: var(--interventions-primary); transition-delay: 0.1s;">
+                        <i class="fa-solid fa-user-shield" style="color: var(--interventions-accent); margin-bottom: 16px;"></i>
+                        <h4 style="color: var(--interventions-primary); font-size: 1.1rem;">Spécialistes SI</h4>
+                    </div>
+                    <div class="impact-card reveal" style="background: white; border: 1px solid var(--interventions-border); color: var(--interventions-primary); transition-delay: 0.2s;">
+                        <i class="fa-solid fa-code" style="color: var(--interventions-accent-alt); margin-bottom: 16px;"></i>
+                        <h4 style="color: var(--interventions-primary); font-size: 1.1rem;">Développeurs confirmés</h4>
+                    </div>
+                    <div class="impact-card reveal" style="background: white; border: 1px solid var(--interventions-border); color: var(--interventions-primary); transition-delay: 0.3s;">
+                        <i class="fa-solid fa-list-check" style="color: var(--interventions-accent); margin-bottom: 16px;"></i>
+                        <h4 style="color: var(--interventions-primary); font-size: 1.1rem;">Gestionnaires de projet</h4>
+                    </div>
+                    <div class="impact-card reveal" style="background: white; border: 1px solid var(--interventions-border); color: var(--interventions-primary); transition-delay: 0.4s;">
+                        <i class="fa-solid fa-chalkboard-user" style="color: var(--interventions-accent-alt); margin-bottom: 16px;"></i>
+                        <h4 style="color: var(--interventions-primary); font-size: 1.1rem;">Formateurs utilisateurs</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. RÉALISATIONS -->
+        <section class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary);">Des réalisations concrètes en information sanitaire</h2>
+                </div>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card reveal" style="transition-delay: 0.1s;">
+                        <img src="Logo STELab.png" alt="STELab" style="height: 48px; margin-bottom: 24px;">
+                        <h3>STELab</h3>
+                        <p style="color: var(--interventions-text-muted); font-size: 1.1rem; margin-bottom: 32px; line-height: 1.6;">Développement et déploiement du Système de Traçabilité des données Épidémiologiques et des échantillons de Laboratoire, véritable système d’information électronique de surveillance épidémiologique intégré avec des fonctionnalités de traçabilité, de gestion des données et d’appui à la décision.</p>
+                        <a href="stelab.html" class="btn-interventions btn-interventions-outline" data-i18n="btn_stelab">Découvrir STELab</a>
+                    </div>
+                    <div class="solution-card reveal" style="transition-delay: 0.2s;">
+                        <img src="Image 2 - SITEB.png" alt="SITEB" style="height: 64px; border-radius: 12px; margin-bottom: 24px; object-fit: cover;">
+                        <h3>SITEB</h3>
+                        <p style="color: var(--interventions-text-muted); font-size: 1.1rem; margin-bottom: 32px; line-height: 1.6;">Système intégré de transport des échantillons biologiques, connecté à la logique de traçabilité et de coordination terrain-laboratoire.</p>
+                        <a href="siteb.html" class="btn-interventions btn-interventions-outline" data-i18n="btn_siteb">Découvrir SITEB</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. VALEUR AJOUTÉE -->
+        <section class="interventions-section interventions-section-dark" style="background: linear-gradient(135deg, var(--interventions-primary) 0%, #111827 100%);">
+            <div class="container">
+                <div class="reveal" style="text-align: center;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 24px;">Des systèmes pensés pour améliorer la décision sanitaire</h2>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card reveal" style="transition-delay: 0.1s;">
+                        <i class="fa-solid fa-server"></i>
+                        <h4>Données mieux structurées</h4>
+                    </div>
+                    <div class="impact-card reveal" style="transition-delay: 0.2s;">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h4>Processus métiers respectés</h4>
+                    </div>
+                    <div class="impact-card reveal" style="transition-delay: 0.3s;">
+                        <i class="fa-solid fa-compress"></i>
+                        <h4>Ressaisie réduite</h4>
+                    </div>
+                    <div class="impact-card reveal" style="transition-delay: 0.4s;">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h4>Décisions plus rapides</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CTA FINAL -->
+        <section class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="cta-gradient reveal">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 24px;">Vous souhaitez renforcer votre système d’information sanitaire ?</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">DAVYCAS International accompagne les institutions dans l’analyse des besoins, le développement de solutions, la formation des utilisateurs et le déploiement de systèmes d’information durables.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-interventions" style="background: #ffffff; color: var(--interventions-primary);" data-i18n="btn_contact">Contacter DAVYCAS <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></a>
+                        <a href="piliers.html" class="btn-interventions" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white;" data-i18n="btn_products">Voir nos produits</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-v2" style="background: #0d0d1a; padding: 100px 0 60px;">
+        <div class="container">
+            <div class="footer-grid-v2" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px;">
+                <div class="footer-col">
+                    <a href="index.html" style="display: block; margin-bottom: 32px;">
+                        <img src="Logo.png" alt="DAVYCAS Logo" style="height: 80px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; max-width: 420px;">Expertise institutionnelle au service de la santé publique en Afrique de l'Ouest. Nous transformons les défis sanitaires en solutions structurantes.</p>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Raccourcis</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 16px;"><a href="index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_home">Accueil</a></li>
+                        <li style="margin-bottom: 16px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_about">À Propos</a></li>
+                        <li style="margin-bottom: 16px;"><a href="piliers.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_pillars">Piliers</a></li>
+                        <li style="margin-bottom: 16px;"><a href="projets.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_projects">Projets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Contact</h5>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">Ouagadougou, Burkina Faso</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">contact@davycas.org</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px;">+226 25 34 12 50</p>
+                </div>
+            </div>
+            <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.4); font-size: 13px;">
+                <p>© 2026 DAVYCAS International. Tous droits réservés.</p>
+                <p>Afrique de l'Ouest</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.premium-nav');
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
+            } else {
+                nav.classList.remove('is-scrolled');
+            }
+        });
+    </script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

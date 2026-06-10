@@ -35,25 +35,58 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="about.html" class="nav-link">À Propos</a></li>
-                    <li><a href="piliers.html" class="nav-link">Piliers</a></li>
-                    <li class="nav-item has-dropdown">
-                        <a href="projets.html" class="nav-link active">Projets <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link" data-i18n="nav_pillars">Piliers</a></li>
+                    <li class="nav-item has-dropdown interventions-dropdown">
+                        <a href="#" class="nav-link" data-i18n="nav_interventions">Interventions <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="interventions-etudes-formations.html" class="dropdown-link" data-i18n="nav_studies">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                Études & Formations
+                            </a>
+                            <a href="interventions-laboratoire.html" class="dropdown-link" data-i18n="nav_lab">
+                                <i class="fa-solid fa-flask"></i>
+                                Laboratoire
+                            </a>
+                            <a href="interventions-oeuvres-sociales.html" class="dropdown-link" data-i18n="nav_social">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                Œuvres Sociales
+                            </a>
+                            <a href="interventions-surveillance-epidemiologique.html" class="dropdown-link" data-i18n="nav_epi">
+                                <i class="fa-solid fa-chart-line"></i>
+                                Surveillance Épidémiologique
+                            </a>
+                            <a href="interventions-systeme-information.html" class="dropdown-link" data-i18n="nav_sys">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Système d’Information
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="projets.html" class="nav-link" data-i18n="nav_projects">Projets</a></li>
+                    <li class="nav-item has-dropdown products-dropdown">
+                        <a href="#" class="nav-link active" data-i18n="nav_products">Nos produits <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
                         <div class="dropdown-menu">
                             <a href="stelab.html" class="dropdown-link">
                                 <i class="fa-solid fa-microscope"></i>
                                 STELab
                             </a>
+                            <a href="siteb.html" class="dropdown-link">
+                                <i class="fa-solid fa-truck-medical"></i>
+                                SITEB
+                            </a>
                         </div>
                     </li>
-                    <li><a href="#" class="nav-link">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
                 </ul>
             </nav>
             
-            <div class="nav-cta">
-                <a href="#" class="btn-don">Faire un don</a>
+            <div class="nav-cta" style="display:flex; align-items:center;">
+                <div class="lang-switcher">
+                    <button class="lang-toggle-btn" aria-label="Changer de langue">FR / EN</button>
+                </div>
+                <a href="#" class="btn-don" data-i18n="nav_donate">Faire un don</a>
             </div>
             
             <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
@@ -68,14 +101,19 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <span class="hero-label">Projet Digital</span>
+                        <div style="margin-bottom: 24px;">
+                            <div class="stelab-hero-logo-card">
+                                <img src="Logo STELab.png" alt="Logo STELab">
+                            </div>
+                        </div>
+                        <span class="hero-label">Produit DAVYCAS</span>
                         <h1>STELab</h1>
                         <div class="hero-subtitle">Système de Traçabilité des données Épidémiologiques et des échantillons de Laboratoire</div>
                         <p class="hero-desc">Une plateforme électronique conçue pour renforcer la surveillance épidémiologique, le suivi des échantillons biologiques et la prise de décision en santé publique.</p>
                         
                         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                             <a href="#presentation" class="btn-stelab btn-stelab-primary">Découvrir la plateforme <i class="fa-solid fa-arrow-right"></i></a>
-                            <a href="contact.html" class="btn-stelab btn-stelab-outline">Contacter DAVYCAS</a>
+                            <a href="contact.html" class="btn-stelab btn-stelab-outline" data-i18n="btn_contact">Contacter DAVYCAS</a>
                         </div>
                     </div>
                     <div class="hero-image">
@@ -369,10 +407,10 @@
                 <div class="footer-col">
                     <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Raccourcis</h5>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 16px;"><a href="index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">Accueil</a></li>
-                        <li style="margin-bottom: 16px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">À Propos</a></li>
-                        <li style="margin-bottom: 16px;"><a href="piliers.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">Piliers</a></li>
-                        <li style="margin-bottom: 16px;"><a href="projets.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;">Projets</a></li>
+                        <li style="margin-bottom: 16px;"><a href="index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_home">Accueil</a></li>
+                        <li style="margin-bottom: 16px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_about">À Propos</a></li>
+                        <li style="margin-bottom: 16px;"><a href="piliers.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_pillars">Piliers</a></li>
+                        <li style="margin-bottom: 16px;"><a href="projets.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_projects">Projets</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -412,5 +450,6 @@
             }
         });
     </script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

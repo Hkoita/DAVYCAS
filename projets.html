@@ -19,25 +19,58 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="about.html" class="nav-link">À Propos</a></li>
-                    <li><a href="piliers.html" class="nav-link">Piliers</a></li>
-                    <li class="nav-item has-dropdown">
-                        <a href="projets.html" class="nav-link active">Projets <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link" data-i18n="nav_pillars">Piliers</a></li>
+                    <li class="nav-item has-dropdown interventions-dropdown">
+                        <a href="#" class="nav-link" data-i18n="nav_interventions">Interventions <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="interventions-etudes-formations.html" class="dropdown-link" data-i18n="nav_studies">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                Études & Formations
+                            </a>
+                            <a href="interventions-laboratoire.html" class="dropdown-link" data-i18n="nav_lab">
+                                <i class="fa-solid fa-flask"></i>
+                                Laboratoire
+                            </a>
+                            <a href="interventions-oeuvres-sociales.html" class="dropdown-link" data-i18n="nav_social">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                Œuvres Sociales
+                            </a>
+                            <a href="interventions-surveillance-epidemiologique.html" class="dropdown-link" data-i18n="nav_epi">
+                                <i class="fa-solid fa-chart-line"></i>
+                                Surveillance Épidémiologique
+                            </a>
+                            <a href="interventions-systeme-information.html" class="dropdown-link" data-i18n="nav_sys">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Système d’Information
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="projets.html" class="nav-link active" data-i18n="nav_projects">Projets</a></li>
+                    <li class="nav-item has-dropdown products-dropdown">
+                        <a href="#" class="nav-link" data-i18n="nav_products">Nos produits <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
                         <div class="dropdown-menu">
                             <a href="stelab.html" class="dropdown-link">
                                 <i class="fa-solid fa-microscope"></i>
                                 STELab
                             </a>
+                            <a href="siteb.html" class="dropdown-link">
+                                <i class="fa-solid fa-truck-medical"></i>
+                                SITEB
+                            </a>
                         </div>
                     </li>
-                    <li><a href="#" class="nav-link">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
                 </ul>
             </nav>
             
-            <div class="nav-cta">
-                <a href="#" class="btn-don">Faire un don</a>
+            <div class="nav-cta" style="display:flex; align-items:center;">
+                <div class="lang-switcher">
+                    <button class="lang-toggle-btn" aria-label="Changer de langue">FR / EN</button>
+                </div>
+                <a href="#" class="btn-don" data-i18n="nav_donate">Faire un don</a>
             </div>
             
             <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
@@ -398,10 +431,10 @@
                 </div>
                 <div class="footer-nav-col">
                     <h6>Raccourcis</h6>
-                    <a href="index.html">Accueil</a>
-                    <a href="about.html">À Propos</a>
-                    <a href="projets.html">Projets</a>
-                    <a href="#">Contact</a>
+                    <a href="index.html" data-i18n="nav_home">Accueil</a>
+                    <a href="about.html" data-i18n="nav_about">À Propos</a>
+                    <a href="projets.html" data-i18n="nav_projects">Projets</a>
+                    <a href="#" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-contact-col">
                     <h6>Siège Social</h6>
@@ -452,5 +485,6 @@
             }
         });
     </script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITEB | Système Intégré de Transport des Échantillons Biologiques | DAVYCAS</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Découvrez SITEB, la solution opérationnelle de DAVYCAS International pour organiser, tracer et sécuriser le transport des échantillons biologiques.">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/siteb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Buttons should not look like links */
+        a.btn-siteb { text-decoration: none !important; display: inline-flex !important; }
+    </style>
+</head>
+<body class="siteb-page">
+
+    <!-- 1. NAVBAR -->
+    <header class="premium-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS International">
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link" data-i18n="nav_pillars">Piliers</a></li>
+                    <li class="nav-item has-dropdown interventions-dropdown">
+                        <a href="#" class="nav-link" data-i18n="nav_interventions">Interventions <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="interventions-etudes-formations.html" class="dropdown-link" data-i18n="nav_studies">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                Études & Formations
+                            </a>
+                            <a href="interventions-laboratoire.html" class="dropdown-link" data-i18n="nav_lab">
+                                <i class="fa-solid fa-flask"></i>
+                                Laboratoire
+                            </a>
+                            <a href="interventions-oeuvres-sociales.html" class="dropdown-link" data-i18n="nav_social">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                Œuvres Sociales
+                            </a>
+                            <a href="interventions-surveillance-epidemiologique.html" class="dropdown-link" data-i18n="nav_epi">
+                                <i class="fa-solid fa-chart-line"></i>
+                                Surveillance Épidémiologique
+                            </a>
+                            <a href="interventions-systeme-information.html" class="dropdown-link" data-i18n="nav_sys">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Système d’Information
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="projets.html" class="nav-link" data-i18n="nav_projects">Projets</a></li>
+                    <li class="nav-item has-dropdown products-dropdown">
+                        <a href="#" class="nav-link active" data-i18n="nav_products">Nos produits <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="stelab.html" class="dropdown-link">
+                                <i class="fa-solid fa-microscope"></i>
+                                STELab
+                            </a>
+                            <a href="siteb.html" class="dropdown-link">
+                                <i class="fa-solid fa-truck-medical"></i>
+                                SITEB
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta" style="display:flex; align-items:center;">
+                <div class="lang-switcher">
+                    <button class="lang-toggle-btn" aria-label="Changer de langue">FR / EN</button>
+                </div>
+                <a href="#" class="btn-don" data-i18n="nav_donate">Faire un don</a>
+            </div>
+            
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section class="hero-siteb">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal">
+                        <span class="hero-label">Produit DAVYCAS</span>
+                        <h1>SITEB</h1>
+                        <div class="hero-subtitle">Système Intégré de Transport des Échantillons Biologiques</div>
+                        <p class="hero-desc">Une solution opérationnelle pour organiser, tracer et sécuriser le transport des échantillons biologiques entre les structures de santé, les transporteurs et les laboratoires destinataires.</p>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <a href="#pourquoi-siteb" class="btn-siteb btn-siteb-primary" data-i18n="btn_siteb">Découvrir SITEB <i class="fa-solid fa-arrow-down"></i></a>
+                            <a href="contact.html" class="btn-siteb btn-siteb-outline" data-i18n="btn_contact">Contacter DAVYCAS</a>
+                        </div>
+                    </div>
+                    <div class="hero-image reveal" style="transition-delay: 0.2s;">
+                        <div class="siteb-hero-badge">
+                            <i class="fa-solid fa-calendar-check"></i> Version Janvier 2026
+                        </div>
+                        <img src="Image 1 - SITEB.png" alt="Logistique de santé SITEB">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. POURQUOI SITEB ? -->
+        <section id="pourquoi-siteb" class="siteb-section siteb-section-white">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;" class="reveal">
+                    <span class="hero-label">Enjeux</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Un système pensé pour la chaîne complète de transport biologique</h2>
+                    <p style="color: var(--siteb-text-muted); max-width: 800px; margin: 16px auto 0; font-size: 1.1rem; line-height: 1.8;">
+                        SITEB répond au besoin de coordination entre les expéditeurs, les transporteurs et les laboratoires destinataires. Il permet de mieux organiser l’enlèvement, le conditionnement, le transport, la réception et la conformité des colis biologiques.
+                    </p>
+                </div>
+                
+                <div class="siteb-grid-3">
+                    <article class="siteb-card reveal">
+                        <div class="siteb-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <h3>Sécurité des échantillons</h3>
+                        <p>Conservation à température adéquate et respect strict des conditions de transport pour maintenir l'intégrité de chaque prélèvement.</p>
+                    </article>
+                    <article class="siteb-card reveal" style="transition-delay: 0.1s;">
+                        <div class="siteb-icon"><i class="fa-solid fa-route"></i></div>
+                        <h3>Traçabilité des colis</h3>
+                        <p>Suivi transparent des bordereaux, des registres d'expédition, des heures d’arrivée et vérification systématique de la conformité des colis.</p>
+                    </article>
+                    <article class="siteb-card reveal" style="transition-delay: 0.2s;">
+                        <div class="siteb-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Coordination nationale</h3>
+                        <p>Connexion fluide et en temps réel entre toutes les structures de santé, les partenaires de transport logistique et les laboratoires destinataires.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. LES ACTEURS DU SYSTÈME -->
+        <section class="siteb-section siteb-section-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;" class="reveal">
+                    <span class="hero-label">Rôles clés</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Les acteurs du système</h2>
+                </div>
+                
+                <div class="siteb-grid-3">
+                    <article class="siteb-card reveal">
+                        <div class="siteb-icon"><i class="fa-solid fa-user-nurse"></i></div>
+                        <h3>Expéditeur</h3>
+                        <ul>
+                            <li>Conserver les échantillons à température adéquate.</li>
+                            <li>Compléter la fiche de notification.</li>
+                            <li>Emballer les colis selon les exigences.</li>
+                            <li>Remplir le registre expéditeur.</li>
+                            <li>Communiquer avec le transporteur pour l’enlèvement.</li>
+                            <li>Réceptionner les glacières vides et enregistrer le retour.</li>
+                        </ul>
+                    </article>
+                    <article class="siteb-card reveal" style="transition-delay: 0.1s;">
+                        <div class="siteb-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Transporteur</h3>
+                        <ul>
+                            <li>Communiquer avec les agents du laboratoire.</li>
+                            <li>Remplir le bordereau d’envoi lors de l’enlèvement.</li>
+                            <li>Signer le registre d’expédition.</li>
+                            <li>Transporter les colis dans des conditions adéquates.</li>
+                            <li>Livrer les colis dans les 24 heures suivant l’enlèvement.</li>
+                            <li>Ramener les glacières vides et les résultats si nécessaire.</li>
+                        </ul>
+                    </article>
+                    <article class="siteb-card reveal" style="transition-delay: 0.2s;">
+                        <div class="siteb-icon"><i class="fa-solid fa-microscope"></i></div>
+                        <h3>Laboratoire destinataire</h3>
+                        <ul>
+                            <li>Vérifier la conformité de l’étiquette destinataire.</li>
+                            <li>Vérifier les bordereaux de réception.</li>
+                            <li>Relever l’heure d’arrivée du colis.</li>
+                            <li>Réceptionner les colis.</li>
+                            <li>Vérifier la conformité du colis.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TYPES D'ÉCHANTILLONS -->
+        <section class="siteb-section siteb-section-white">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;" class="reveal">
+                    <span class="hero-label">Conformité</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">Types d’échantillons et conditions de transport</h2>
+                    <p style="color: var(--siteb-text-muted); max-width: 600px; margin: 16px auto 0;">Des protocoles rigoureux adaptés à la nature de chaque prélèvement biologique.</p>
+                </div>
+                <div style="margin-bottom: 80px;">
+                    <div style="text-align: center; margin-bottom: 48px;" class="reveal">
+                        <h3 style="font-size: 32px; font-family: 'Sora', sans-serif; color: var(--siteb-text-dark);">Du prélèvement au laboratoire</h3>
+                        <p style="color: var(--siteb-text-muted); max-width: 700px; margin: 16px auto 0; font-size: 1.1rem; line-height: 1.8;">SITEB accompagne toute la chaîne opérationnelle : du prélèvement biologique jusqu’à la réception sécurisée au laboratoire destinataire.</p>
+                    </div>
+                    
+                    <div class="siteb-process-grid">
+                        <div class="siteb-process-card reveal">
+                            <img src="Image 3 - SITEB.png" alt="Prélèvement sanguin SITEB">
+                            <div style="padding: 32px;">
+                                <h4 style="color: var(--siteb-primary); font-size: 1.25rem; margin-bottom: 12px; font-family: 'Sora', sans-serif;">Prélèvement</h4>
+                                <p style="color: var(--siteb-text-muted); font-size: 1rem; line-height: 1.6; margin: 0;">Collecte de l’échantillon dans des conditions adaptées.</p>
+                            </div>
+                        </div>
+                        <div class="siteb-process-card reveal" style="transition-delay: 0.1s;">
+                            <img src="Image 2 - SITEB.png" alt="Conditionnement glacière SITEB">
+                            <div style="padding: 32px;">
+                                <h4 style="color: var(--siteb-primary); font-size: 1.25rem; margin-bottom: 12px; font-family: 'Sora', sans-serif;">Conditionnement</h4>
+                                <p style="color: var(--siteb-text-muted); font-size: 1rem; line-height: 1.6; margin: 0;">Identification, bordereau de colisage et respect des températures.</p>
+                            </div>
+                        </div>
+                        <div class="siteb-process-card reveal" style="transition-delay: 0.2s;">
+                            <img src="Image 1 - SITEB.png" alt="Transport logistique SITEB">
+                            <div style="padding: 32px;">
+                                <h4 style="color: var(--siteb-primary); font-size: 1.25rem; margin-bottom: 12px; font-family: 'Sora', sans-serif;">Transport</h4>
+                                <p style="color: var(--siteb-text-muted); font-size: 1rem; line-height: 1.6; margin: 0;">Acheminement sécurisé vers le laboratoire destinataire.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; height: 1px; background: var(--siteb-border); margin: 0 0 80px 0;">
+
+                <div class="siteb-sample-split">
+                    <div class="sample-left-col">
+                        <div class="sample-grid">
+                            <!-- Sample Card -->
+                            <div class="sample-card reveal">
+                                <div class="sample-header">
+                                    <i class="fa-solid fa-vial sample-icon"></i>
+                                    <div class="sample-title">LCS</div>
+                                </div>
+                                <div class="sample-details">
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-box-open"></i>
+                                        <div><strong>Condition</strong> Cryotube</div>
+                                    </div>
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-thermometer-half"></i>
+                                        <div><strong>Température</strong> Température ambiante</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sample-card reveal" style="transition-delay: 0.1s;">
+                                <div class="sample-header">
+                                    <i class="fa-solid fa-droplet sample-icon"></i>
+                                    <div class="sample-title">Sang</div>
+                                </div>
+                                <div class="sample-details">
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-box-open"></i>
+                                        <div><strong>Condition</strong> Sérum / Plasma</div>
+                                    </div>
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-thermometer-half"></i>
+                                        <div><strong>Température</strong> Entre 2 – 8°C ou 4 – 8°C selon le cas</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sample-card reveal">
+                                <div class="sample-header">
+                                    <i class="fa-solid fa-lungs-virus sample-icon"></i>
+                                    <div class="sample-title">Crachats</div>
+                                </div>
+                                <div class="sample-details">
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-box-open"></i>
+                                        <div><strong>Condition</strong> Crachats</div>
+                                    </div>
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-thermometer-half"></i>
+                                        <div><strong>Température</strong> Entre 2 – 8°C</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sample-card reveal" style="transition-delay: 0.1s;">
+                                <div class="sample-header">
+                                    <i class="fa-solid fa-virus-covid sample-icon"></i>
+                                    <div class="sample-title">COVID-19</div>
+                                </div>
+                                <div class="sample-details">
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-box-open"></i>
+                                        <div><strong>Condition</strong> Prélèvements oro-naso-pharyngés</div>
+                                    </div>
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-thermometer-half"></i>
+                                        <div><strong>Température</strong> Entre 2 – 8°C</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sample-card reveal">
+                                <div class="sample-header">
+                                    <i class="fa-solid fa-paw sample-icon"></i>
+                                    <div class="sample-title">Animaux</div>
+                                </div>
+                                <div class="sample-details">
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-box-open"></i>
+                                        <div><strong>Condition</strong> Origine animale, sérum, organes, écouvillons</div>
+                                    </div>
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-thermometer-half"></i>
+                                        <div><strong>Température</strong> Entre 4 – 8°C</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sample-card reveal" style="transition-delay: 0.1s;">
+                                <div class="sample-header">
+                                    <i class="fa-solid fa-poop sample-icon"></i>
+                                    <div class="sample-title">Selles</div>
+                                </div>
+                                <div class="sample-details">
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-box-open"></i>
+                                        <div><strong>Condition</strong> Prélèvements de selles</div>
+                                    </div>
+                                    <div class="sample-detail-item">
+                                        <i class="fa-solid fa-thermometer-half"></i>
+                                        <div><strong>Température</strong> Entre 2 – 8°C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sample-right-col reveal" style="transition-delay: 0.2s;">
+                        <div class="siteb-sample-image-card">
+                            <img src="Image 2 - SITEB.png" alt="Glacière médicale et documents de traçabilité SITEB">
+                            <div class="sample-image-caption">
+                                <span class="badge-tracabilite"><i class="fa-solid fa-clipboard-check"></i> Traçabilité colis</span>
+                                <p>Chaque colis biologique doit être correctement identifié, conditionné et accompagné de ses documents de traçabilité afin de garantir la conformité du transport jusqu’au laboratoire destinataire.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TRANSPORT MULTI-ÉCHANTILLONS -->
+        <section class="siteb-section siteb-section-light">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;" class="reveal">
+                    <span class="hero-label">Optimisation</span>
+                    <h2 style="font-size: 36px; font-family: 'Sora', sans-serif;">Plusieurs types d’échantillons, un même circuit sécurisé</h2>
+                    <p style="color: var(--siteb-text-muted); max-width: 700px; margin: 16px auto 0; font-size: 1.1rem; line-height: 1.8;">
+                        SITEB permet l’envoi de plusieurs types d’échantillons dans un même colis lorsque les températures de conservation sont identiques et qu’ils ont la même destination.
+                    </p>
+                </div>
+                
+                <div class="multi-grid">
+                    <div class="multi-card reveal">
+                        <div class="multi-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="multi-title">Même destination</div>
+                    </div>
+                    <div class="multi-card reveal" style="transition-delay: 0.1s;">
+                        <div class="multi-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <div class="multi-title">Température compatible</div>
+                    </div>
+                    <div class="multi-card reveal" style="transition-delay: 0.2s;">
+                        <div class="multi-icon"><i class="fa-solid fa-box-archive"></i></div>
+                        <div class="multi-title">Emballage sécurisé</div>
+                    </div>
+                    <div class="multi-card reveal" style="transition-delay: 0.3s;">
+                        <div class="multi-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="multi-title">Traçabilité documentaire</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PARTENAIRES OPÉRATIONNELS -->
+        <section class="siteb-section siteb-section-white">
+            <div class="container">
+                <div class="partners-block reveal">
+                    <div class="partners-content">
+                        <span class="hero-label">Collaboration</span>
+                        <h3>Un dispositif construit avec les acteurs de terrain</h3>
+                        <p>SITEB s’appuie sur une coordination entre les structures de santé, les laboratoires et les partenaires logistiques pour assurer l’acheminement rapide et sécurisé des échantillons biologiques.</p>
+                        
+                        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
+                            <span style="background: var(--siteb-bg-light); padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--siteb-text-dark); border: 1px solid var(--siteb-border);">Ministère de la Santé</span>
+                            <span style="background: var(--siteb-bg-light); padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--siteb-text-dark); border: 1px solid var(--siteb-border);">La Poste Burkina Faso</span>
+                            <span style="background: var(--siteb-bg-light); padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--siteb-text-dark); border: 1px solid var(--siteb-border);">Laboratoires de référence</span>
+                            <span style="background: var(--siteb-bg-light); padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--siteb-text-dark); border: 1px solid var(--siteb-border);">Structures sanitaires</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-box">
+                        <h4>Assistance & Contacts</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-headset"></i> Helpdesk : 76 68 13 48</li>
+                            <li><i class="fa-solid fa-hospital"></i> Ministère de la Santé : 70 57 45 95</li>
+                            <li><i class="fa-solid fa-envelopes-bulk"></i> La Poste (1) : 71 54 97 23</li>
+                            <li><i class="fa-solid fa-envelopes-bulk"></i> La Poste (2) : 71 54 97 26</li>
+                            <li><i class="fa-solid fa-envelopes-bulk"></i> La Poste (3) : 71 54 97 08</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. VALEUR AJOUTÉE -->
+        <section class="siteb-section siteb-section-dark">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;" class="reveal">
+                    <span class="hero-label" style="background: rgba(255,255,255,0.1); color: #fff;">Impact</span>
+                    <h2 style="font-size: 42px; font-family: 'Sora', sans-serif;">La valeur ajoutée du système</h2>
+                </div>
+                
+                <div class="value-grid">
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                        <h3>Détection plus rapide</h3>
+                        <p>Accélération du diagnostic grâce à une logistique optimisée et fluide.</p>
+                    </div>
+                    <div class="value-card reveal" style="transition-delay: 0.1s;">
+                        <div class="value-card-inner">
+                            <div class="value-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                            <h3>Surveillance renforcée</h3>
+                            <p>Couverture nationale élargie pour une meilleure réaction aux épidémies.</p>
+                        </div>
+                    </div>
+                    <div class="value-card reveal" style="transition-delay: 0.2s;">
+                        <div class="value-card-inner">
+                            <div class="value-icon"><i class="fa-solid fa-lock"></i></div>
+                            <h3>Transport sécurisé</h3>
+                            <p>Respect strict de la chaîne de froid et sécurité intégrale des prélèvements.</p>
+                        </div>
+                    </div>
+                    <div class="value-card reveal" style="transition-delay: 0.3s;">
+                        <div class="value-card-inner">
+                            <div class="value-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                            <h3>Coordination laboratoire-terrain</h3>
+                            <p>Alignement parfait entre le personnel soignant et les analystes médicaux.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CTA FINAL -->
+        <section class="siteb-section siteb-section-white">
+            <div class="container">
+                <div class="cta-gradient reveal">
+                    <h2>Vous souhaitez déployer SITEB ?</h2>
+                    <p>DAVYCAS International accompagne les institutions sanitaires dans la mise en place de systèmes intégrés pour le transport, la traçabilité et la sécurisation des échantillons biologiques.</p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn-siteb btn-siteb-accent">Contacter DAVYCAS <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></a>
+                        <a href="index.html#produits" class="btn-siteb" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white;">Voir nos autres produits</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-v2" style="background: #0d0d1a; padding: 100px 0 60px;">
+        <div class="container">
+            <div class="footer-grid-v2" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px;">
+                <div class="footer-col">
+                    <a href="index.html" style="display: block; margin-bottom: 32px;">
+                        <img src="Logo.png" alt="DAVYCAS Logo" style="height: 80px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; max-width: 420px;">Expertise institutionnelle au service de la santé publique en Afrique de l'Ouest. Nous transformons les défis sanitaires en solutions structurantes.</p>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Raccourcis</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 16px;"><a href="index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_home">Accueil</a></li>
+                        <li style="margin-bottom: 16px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_about">À Propos</a></li>
+                        <li style="margin-bottom: 16px;"><a href="piliers.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_pillars">Piliers</a></li>
+                        <li style="margin-bottom: 16px;"><a href="projets.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_projects">Projets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Contact</h5>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">Ouagadougou, Burkina Faso</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">contact@davycas.org</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px;">+226 25 34 12 50</p>
+                </div>
+            </div>
+            <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.4); font-size: 13px;">
+                <p>© 2026 DAVYCAS International. Tous droits réservés.</p>
+                <p>Afrique de l'Ouest</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.premium-nav');
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
+            } else {
+                nav.classList.remove('is-scrolled');
+            }
+        });
+    </script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratoire | Interventions | DAVYCAS</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="DAVYCAS International accompagne le renforcement des laboratoires à travers l’appui stratégique, l’opérationnalisation de systèmes, la traçabilité et l’amélioration des plateaux techniques.">
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/interventions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        a.btn-don, a.btn-siteb { text-decoration: none !important; display: inline-flex !important; }
+        .btn-interventions {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-interventions-primary {
+            background: var(--interventions-primary);
+            color: #ffffff;
+        }
+        .btn-interventions-primary:hover {
+            background: var(--interventions-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(70, 156, 176, 0.3);
+            color: white;
+        }
+        .btn-interventions-outline {
+            border: 2px solid var(--interventions-primary);
+            color: var(--interventions-primary);
+        }
+        .btn-interventions-outline:hover {
+            background: var(--interventions-primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="laboratoire-page interventions-page">
+
+    <!-- 1. NAVBAR -->
+    <header class="premium-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="DAVYCAS International">
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+                    <li><a href="piliers.html" class="nav-link" data-i18n="nav_pillars">Piliers</a></li>
+                    <li class="nav-item has-dropdown interventions-dropdown">
+                        <a href="#" class="nav-link active" data-i18n="nav_interventions">Interventions <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="interventions-etudes-formations.html" class="dropdown-link" data-i18n="nav_studies">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                Études & Formations
+                            </a>
+                            <a href="interventions-laboratoire.html" class="dropdown-link" data-i18n="nav_lab">
+                                <i class="fa-solid fa-flask"></i>
+                                Laboratoire
+                            </a>
+                            <a href="interventions-oeuvres-sociales.html" class="dropdown-link" data-i18n="nav_social">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                Œuvres Sociales
+                            </a>
+                            <a href="interventions-surveillance-epidemiologique.html" class="dropdown-link" data-i18n="nav_epi">
+                                <i class="fa-solid fa-chart-line"></i>
+                                Surveillance Épidémiologique
+                            </a>
+                            <a href="interventions-systeme-information.html" class="dropdown-link" data-i18n="nav_sys">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Système d’Information
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="projets.html" class="nav-link" data-i18n="nav_projects">Projets</a></li>
+                    <li class="nav-item has-dropdown products-dropdown">
+                        <a href="#" class="nav-link" data-i18n="nav_products">Nos produits <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="stelab.html" class="dropdown-link">
+                                <i class="fa-solid fa-microscope"></i>
+                                STELab
+                            </a>
+                            <a href="siteb.html" class="dropdown-link">
+                                <i class="fa-solid fa-truck-medical"></i>
+                                SITEB
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-link" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-cta" style="display:flex; align-items:center;">
+                <div class="lang-switcher">
+                    <button class="lang-toggle-btn" aria-label="Changer de langue">FR / EN</button>
+                </div>
+                <a href="#" class="btn-don" data-i18n="nav_donate">Faire un don</a>
+            </div>
+            
+            <button class="hamburger" style="display:none; color:white; background:none; border:none; font-size:24px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section class="hero-interventions">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal">
+                        <span class="hero-label">INTERVENTION</span>
+                        <h1 class="hero-title">Laboratoire</h1>
+                        <p class="hero-desc">DAVYCAS International accompagne le renforcement des laboratoires à travers l’appui stratégique, l’opérationnalisation de systèmes, la traçabilité des échantillons et l’amélioration des plateaux techniques.</p>
+                        <div class="hero-actions">
+                            <a href="#expertise" class="btn-interventions btn-interventions-primary">Découvrir notre approche</a>
+                            <a href="contact.html" class="btn-interventions btn-interventions-outline" data-i18n="btn_contact">Contacter DAVYCAS</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
+                        <img src="etudes_laboratory.png" alt="Laboratoire médical" loading="lazy">
+                        <div class="hero-badge">
+                            <i class="fa-solid fa-flask"></i>
+                            <span>Laboratoire · Traçabilité · Surveillance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. RÔLE STRATÉGIQUE ET OPÉRATIONNEL -->
+        <section id="expertise" class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary); margin-bottom: 24px;">Un appui stratégique et opérationnel aux laboratoires</h2>
+                    <p style="color: var(--interventions-text-muted); font-size: 1.1rem; line-height: 1.7;">Dans le domaine du laboratoire, DAVYCAS International intervient à plusieurs niveaux au Burkina Faso et accompagne les institutions sanitaires dans le renforcement du leadership, des systèmes de référence, de la traçabilité des échantillons et des capacités techniques.</p>
+                </div>
+                
+                <div class="strategy-grid">
+                    <div class="expertise-card reveal" style="transition-delay: 0.1s;">
+                        <div class="expertise-icon"><i class="fa-solid fa-landmark"></i></div>
+                        <h3>Au niveau stratégique</h3>
+                        <p>DAVYCAS International, grâce aux financements de ses partenaires, apporte un appui technique et financier au fonctionnement du groupe de travail laboratoire, notamment le Laboratory Technical Working Group. Cet appui contribue au renforcement du leadership des structures nationales du niveau central et à la clarification de leurs rôles et missions.</p>
+                    </div>
+                    <div class="expertise-card reveal" style="transition-delay: 0.2s;">
+                        <div class="expertise-icon"><i class="fa-solid fa-microscope"></i></div>
+                        <h3>Au niveau opérationnel</h3>
+                        <p>DAVYCAS International intervient dans la mise en place et l’opérationnalisation de dispositifs concrets pour le transport des échantillons biologiques, la traçabilité, la gestion des informations de laboratoire et l’amélioration des capacités techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. AXES D'INTERVENTION -->
+        <section class="interventions-section">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary);">Des interventions concrètes pour renforcer les capacités de laboratoire</h2>
+                </div>
+                
+                <div class="missions-grid" style="grid-template-columns: repeat(2, 1fr); gap: 32px;">
+                    <div class="mission-card reveal" style="padding: 40px;">
+                        <i class="fa-solid fa-truck-medical" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Transport des échantillons biologiques</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 24px; line-height: 1.6;">Appui à la mise en place et à l’opérationnalisation du Système Intégré de Transport des Échantillons Biologiques avec les partenaires logistiques, notamment La Poste Burkina Faso.</p>
+                        <a href="siteb.html" style="color: var(--interventions-accent-alt); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px;" data-i18n="btn_siteb">Découvrir SITEB <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="mission-card reveal" style="padding: 40px; transition-delay: 0.1s;">
+                        <i class="fa-solid fa-laptop-medical" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Traçabilité et information de laboratoire</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 24px; line-height: 1.6;">Mise en place de systèmes de traçabilité des échantillons biologiques et de gestion des informations de laboratoire en lien avec les données de surveillance épidémiologique.</p>
+                        <a href="stelab.html" style="color: var(--interventions-accent-alt); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px;" data-i18n="btn_stelab">Découvrir STELab <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="mission-card reveal" style="padding: 40px; transition-delay: 0.2s;">
+                        <i class="fa-solid fa-vial-circle-check" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Amélioration des plateaux techniques</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 0; line-height: 1.6;">Contribution à l’amélioration des laboratoires nationaux par l’appui en équipements spécifiques, consommables et réactifs adaptés aux besoins des programmes de surveillance.</p>
+                    </div>
+
+                    <div class="mission-card reveal" style="padding: 40px; transition-delay: 0.3s;">
+                        <i class="fa-solid fa-chart-line" style="font-size: 2rem; color: var(--interventions-accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-family: 'Sora', sans-serif; color: var(--interventions-primary); margin-bottom: 16px; font-size: 1.5rem;">Surveillance sentinelle et études spécifiques</h3>
+                        <p style="color: var(--interventions-text); margin-bottom: 0; line-height: 1.6;">Appui aux laboratoires dans le cadre de la surveillance sentinelle des arboviroses, des infections respiratoires aiguës sévères et d’études spécifiques comme le portage des germes méningés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ÉQUIPEMENTS -->
+        <section class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary); margin-bottom: 24px;">Des équipements au service de la performance des laboratoires</h2>
+                    <p style="color: var(--interventions-text-muted); font-size: 1.1rem; line-height: 1.7;">DAVYCAS contribue à renforcer les capacités des laboratoires à travers la fourniture ou l’appui à l’acquisition d’équipements et de matériels essentiels.</p>
+                </div>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-card reveal" style="transition-delay: 0.05s;"><i class="fa-solid fa-wind"></i><span>Hottes microbiologiques</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.1s;"><i class="fa-solid fa-arrows-spin"></i><span>Centrifugeuses</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.15s;"><i class="fa-solid fa-snowflake"></i><span>Réfrigérateurs</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.2s;"><i class="fa-solid fa-icicles"></i><span>Congélateurs</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.25s;"><i class="fa-solid fa-temperature-half"></i><span>Incubateurs</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.3s;"><i class="fa-solid fa-box-open"></i><span>Consommables</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.35s;"><i class="fa-solid fa-flask-vial"></i><span>Réactifs</span></div>
+                    <div class="equipment-card reveal" style="transition-delay: 0.4s;"><i class="fa-solid fa-syringe"></i><span>Matériels de prélèvement</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONNEXION LABORATOIRE / SURVEILLANCE -->
+        <section class="interventions-section">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto 64px;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary); margin-bottom: 24px;">Relier les données de laboratoire à la surveillance épidémiologique</h2>
+                    <p style="color: var(--interventions-text-muted); font-size: 1.1rem; line-height: 1.7;">Les interventions de DAVYCAS visent à créer un lien opérationnel entre les laboratoires, les systèmes d’information sanitaire et les données de surveillance épidémiologique. Cette approche permet une meilleure remontée des informations, une traçabilité plus fiable et une prise de décision plus rapide.</p>
+                </div>
+                
+                <div class="formations-split">
+                    <div class="formations-image reveal">
+                        <img src="lab_data_dashboard.png" alt="Dashboard surveillance épidémiologique" loading="lazy">
+                    </div>
+                    <div class="method-timeline" style="margin-top: 0; gap: 24px;">
+                        <div class="method-step reveal" style="transition-delay: 0.1s; padding: 24px;">
+                            <div class="step-number" style="width: 48px; height: 48px; font-size: 1.2rem;">01</div>
+                            <div class="step-content">
+                                <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Collecte et réception des échantillons</h3>
+                            </div>
+                        </div>
+                        <div class="method-step reveal" style="transition-delay: 0.2s; padding: 24px;">
+                            <div class="step-number" style="width: 48px; height: 48px; font-size: 1.2rem;">02</div>
+                            <div class="step-content">
+                                <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Analyse, conformité et validation</h3>
+                            </div>
+                        </div>
+                        <div class="method-step reveal" style="transition-delay: 0.3s; padding: 24px;">
+                            <div class="step-number" style="width: 48px; height: 48px; font-size: 1.2rem;">03</div>
+                            <div class="step-content">
+                                <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Intégration des données dans les systèmes de surveillance</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SOLUTIONS ASSOCIÉES -->
+        <section class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="reveal" style="text-align: center;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; color: var(--interventions-primary);">Des produits DAVYCAS au service des laboratoires</h2>
+                </div>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card reveal" style="transition-delay: 0.1s;">
+                        <img src="Logo STELab.png" alt="STELab" style="height: 48px; margin-bottom: 24px;">
+                        <h3>STELab</h3>
+                        <p style="color: var(--interventions-text-muted); font-size: 1.1rem; margin-bottom: 32px; line-height: 1.6;">Solution digitale de traçabilité des données épidémiologiques et des échantillons de laboratoire.</p>
+                        <a href="stelab.html" class="btn-interventions btn-interventions-outline" data-i18n="btn_stelab">Découvrir STELab</a>
+                    </div>
+                    <div class="solution-card reveal" style="transition-delay: 0.2s;">
+                        <img src="Image 2 - SITEB.png" alt="SITEB" style="height: 64px; border-radius: 12px; margin-bottom: 24px; object-fit: cover;">
+                        <h3>SITEB</h3>
+                        <p style="color: var(--interventions-text-muted); font-size: 1.1rem; margin-bottom: 32px; line-height: 1.6;">Système intégré de transport des échantillons biologiques pour sécuriser la chaîne terrain-laboratoire.</p>
+                        <a href="siteb.html" class="btn-interventions btn-interventions-outline" data-i18n="btn_siteb">Découvrir SITEB</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. IMPACT ATTENDU -->
+        <section class="interventions-section interventions-section-dark" style="background: linear-gradient(135deg, var(--interventions-primary) 0%, #111827 100%);">
+            <div class="container">
+                <div class="reveal" style="text-align: center;">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 24px;">Renforcer les laboratoires pour renforcer la décision sanitaire</h2>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card reveal" style="transition-delay: 0.1s;">
+                        <i class="fa-solid fa-chess-knight"></i>
+                        <h4>Leadership national renforcé</h4>
+                    </div>
+                    <div class="impact-card reveal" style="transition-delay: 0.2s;">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <h4>Échantillons mieux tracés</h4>
+                    </div>
+                    <div class="impact-card reveal" style="transition-delay: 0.3s;">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h4>Données mieux intégrées</h4>
+                    </div>
+                    <div class="impact-card reveal" style="transition-delay: 0.4s;">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h4>Plateaux techniques améliorés</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CTA FINAL -->
+        <section class="interventions-section interventions-section-white">
+            <div class="container">
+                <div class="cta-gradient reveal">
+                    <h2 style="font-family: 'Sora', sans-serif; font-size: 2.5rem; margin-bottom: 24px;">Vous souhaitez renforcer vos capacités de laboratoire ?</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">DAVYCAS International accompagne les institutions sanitaires dans la structuration, l’opérationnalisation et la modernisation des dispositifs de laboratoire, de surveillance et de transport des échantillons biologiques.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-interventions" style="background: #ffffff; color: var(--interventions-primary);" data-i18n="btn_contact">Contacter DAVYCAS <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></a>
+                        <a href="piliers.html" class="btn-interventions" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white;" data-i18n="btn_interventions">Voir nos interventions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-v2" style="background: #0d0d1a; padding: 100px 0 60px;">
+        <div class="container">
+            <div class="footer-grid-v2" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px;">
+                <div class="footer-col">
+                    <a href="index.html" style="display: block; margin-bottom: 32px;">
+                        <img src="Logo.png" alt="DAVYCAS Logo" style="height: 80px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; max-width: 420px;">Expertise institutionnelle au service de la santé publique en Afrique de l'Ouest. Nous transformons les défis sanitaires en solutions structurantes.</p>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Raccourcis</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 16px;"><a href="index.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_home">Accueil</a></li>
+                        <li style="margin-bottom: 16px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_about">À Propos</a></li>
+                        <li style="margin-bottom: 16px;"><a href="piliers.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_pillars">Piliers</a></li>
+                        <li style="margin-bottom: 16px;"><a href="projets.html" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s;" data-i18n="nav_projects">Projets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 style="color: #fff; margin-bottom: 32px; font-family: 'Sora', sans-serif; text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Contact</h5>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">Ouagadougou, Burkina Faso</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 16px;">contact@davycas.org</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 15px;">+226 25 34 12 50</p>
+                </div>
+            </div>
+            <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.4); font-size: 13px;">
+                <p>© 2026 DAVYCAS International. Tous droits réservés.</p>
+                <p>Afrique de l'Ouest</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.premium-nav');
+            if (window.scrollY > 24) {
+                nav.classList.add('is-scrolled');
+            } else {
+                nav.classList.remove('is-scrolled');
+            }
+        });
+    </script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

@@ -179,14 +179,34 @@ nav,
   padding-block: clamp(4px, 0.5vw, 8px) !important;
 }
 
-.nav-inner {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.premium-nav .nav-inner,
+.premium-nav .container.nav-inner {
+  width: calc(100% - 96px);
+  max-width: none;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 40px;
+}
+
+@media (min-width: 1200px) {
+  .premium-nav .nav-inner,
+  .premium-nav .container.nav-inner {
+    width: calc(100% - 120px);
+    max-width: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .premium-nav .nav-inner,
+  .premium-nav .container.nav-inner {
+    width: calc(100% - 160px);
+    max-width: none;
+  }
+}
+
+.nav-logo {
+  justify-self: start;
 }
 
 .nav-logo img {
@@ -198,12 +218,18 @@ nav,
   filter: brightness(0) invert(1) !important;
 }
 
+nav {
+  justify-self: center;
+}
+
 .nav-links {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: clamp(18px, 1.4vw, 32px);
   list-style: none;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
 }
 
 .nav-links .nav-link {
@@ -223,6 +249,10 @@ nav,
 
 .nav-links .nav-link.active {
   color: #469cb0;
+}
+
+.nav-cta {
+  justify-self: end;
 }
 
 .btn-don {
@@ -2951,23 +2981,37 @@ nav,
   transform: scale(1.03);
 }
 
-.product-logo-badge {
+.home-product-stelab .stelab-logo-card {
+  width: clamp(160px, 16vw, 220px);
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  background: var(--color-card-bg, #ffffff);
+  border: 1px solid var(--color-border-soft, rgba(15, 23, 42, 0.08));
+  border-radius: 24px;
+  box-shadow: var(--shadow-premium, 0 18px 50px rgba(15, 23, 42, 0.08));
+  overflow: visible;
   position: absolute;
   top: 32px;
   left: 32px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 12px 24px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+  z-index: 5;
 }
 
-.stelab-logo-composition {
-  height: 36px;
-  width: auto;
-  display: block;
+.home-product-stelab .stelab-logo-card img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 180px !important;
+  height: auto !important;
+  max-height: 96px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  position: relative;
+  z-index: 6;
 }
 
 /* Floating Cards */
@@ -3175,5 +3219,69 @@ nav,
   
   .stelab-product-actions .btn-v2 {
     width: 100%;
+  }
+}
+
+/* --- TRANSLATION BUTTON (LANG TOGGLE) --- */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.lang-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light, #ffffff);
+  border-radius: var(--radius-pill, 999px);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.lang-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-cyan, #48B6CF);
+  box-shadow: 0 0 12px rgba(72, 182, 207, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .lang-switcher {
+    margin: 16px 0;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .hamburger,
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .premium-nav nav {
+    display: none;
+  }
+}
+
+.hamburger,
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .hamburger,
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .premium-nav nav {
+    display: flex !important;
   }
 }
