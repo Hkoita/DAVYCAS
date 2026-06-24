@@ -3285,3 +3285,233 @@ nav {
     display: flex !important;
   }
 }
+
+/* --- 15. GALERIE DAVYCAS EN ACTION --- */
+.davycas-gallery {
+  padding-block: 120px;
+  background-color: var(--gallery-bg, #f5f6fa);
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-header {
+  width: 100%;
+  max-width: 880px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-inline: 24px;
+}
+
+.section-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gallery-accent, #48B6CF);
+}
+
+#gallery-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--gallery-text, #111226);
+  margin: 0;
+}
+
+.gallery-header p {
+  color: var(--gallery-muted, #697089);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.gallery-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-block: 48px 64px;
+}
+
+.gallery-track {
+  display: flex;
+  width: max-content;
+  gap: var(--gallery-gap, 24px);
+  animation: gallery-scroll 55s linear infinite;
+  will-change: transform;
+}
+
+.gallery-marquee:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+.gallery-group {
+  display: flex;
+  align-items: center;
+  gap: var(--gallery-gap, 24px);
+}
+
+.gallery-card {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: var(--gallery-radius, 32px);
+  background: var(--gallery-card-bg, #ffffff);
+  box-shadow: 0 24px 60px rgba(13, 18, 38, 0.12);
+  border: 1px solid rgba(15, 20, 40, 0.08);
+  transform: translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin: 0;
+}
+
+.gallery-card:nth-child(3n + 1) {
+  width: 420px;
+  height: 520px;
+}
+
+.gallery-card:nth-child(3n + 2) {
+  width: 360px;
+  height: 460px;
+}
+
+.gallery-card:nth-child(3n + 3) {
+  width: 440px;
+  height: 500px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 32px 80px rgba(13, 18, 38, 0.18);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 10, 20, 0.28) 35%, rgba(8, 10, 20, 0.88) 100%);
+  pointer-events: none;
+}
+
+.gallery-card figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  right: 28px;
+  bottom: 26px;
+  color: white;
+}
+
+.gallery-category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.gallery-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.gallery-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@keyframes gallery-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - (var(--gallery-gap, 24px) / 2))); }
+}
+
+@media (max-width: 1024px) {
+  .gallery-card:nth-child(3n + 1) { width: 340px; height: 460px; }
+  .gallery-card:nth-child(3n + 2) { width: 300px; height: 420px; }
+  .gallery-card:nth-child(3n + 3) { width: 360px; height: 440px; }
+}
+
+@media (max-width: 768px) {
+  .davycas-gallery {
+    padding-block: 80px;
+  }
+  
+  .gallery-header {
+    width: min(100% - 32px, 680px);
+    margin-inline: auto;
+  }
+  
+  #gallery-title {
+    font-size: clamp(38px, 11vw, 56px);
+    line-height: 1;
+  }
+
+  .gallery-marquee {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .gallery-marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-track {
+    animation: none;
+    width: max-content;
+    padding-inline: 20px;
+  }
+
+  .gallery-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .gallery-card {
+    width: min(82vw, 340px) !important;
+    height: 440px !important;
+    scroll-snap-align: center;
+  }
+  
+  .gallery-card figcaption {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track {
+    animation: none !important;
+  }
+  .gallery-card, .gallery-card img {
+    transition: none !important;
+  }
+}
