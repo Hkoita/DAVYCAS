@@ -90,3 +90,18 @@ Format : date · décision · raison · alternatives écartées.
   sur mobile, défilement horizontal natif avec aimantation.
 - Mots qui s'allument : les mots non lus restent à 50 % d'opacité (au lieu d'un effet plus marqué) pour garder un
   contraste suffisant (WCAG) avant le défilement.
+
+## 2026-11-17 · Changement de direction demandé par le propriétaire (remplace les choix précédents de charte et de contenu)
+- **Contenu** : reprise intégrale des textes du site d'origine, sur les 12 mêmes pages et les mêmes adresses
+  (plus mentions légales, confidentialité et 404). Aucune redirection nécessaire.
+- **Charte** : violet, turquoise et fond nuit du site d'origine, fonds adoucis (`#191935`, `#22224a`) alternés avec des
+  sections claires (`#f3f2f8`). Police unique **Montserrat** (variable, auto-hébergée).
+- **Héros** : photos pleinement visibles ; voile dégradé uniquement à gauche (ordinateur) ou en bas (mobile), derrière le texte.
+- **Images** : toutes les images du site d'origine sont conservées (sauf la photo de bananes, une capture d'écran et
+  le visuel « Ghana Health Service »), optimisées en AVIF/WebP, 200 Ko maximum.
+- **Bilingue** : générateur avec marqueurs `[[…]]` et dictionnaire `src/i18n/en.json` (949 textes) ; bouton FR/EN qui mène
+  à la même page dans l'autre langue ; balises `hreflang` et sitemap bilingue. Remplace Google Translate.
+- **Réparations** : menu mobile, sous-menus au clavier, formulaire réellement envoyé (PHP LWS, anti-spam), filtres de la
+  page Projets, liens « Faire un don » / « Devenir partenaire » vers le formulaire avec l'objet pré-rempli, « Blog » vers
+  les actualités, un seul pied de page, plus aucun lien `#`.
+- **Retirés car cassés** : liens « Lire la suite » (aucun article n'existe) et icônes de réseaux sociaux (aucune adresse).

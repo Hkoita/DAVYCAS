@@ -1,4 +1,4 @@
-# Hébergement LWS (Apache) — site statique DAVYCAS International (généré par scripts/build.mjs)
+# Hébergement LWS (Apache) — site statique bilingue DAVYCAS International (généré par scripts/build.mjs)
 
 Options -Indexes
 DirectoryIndex index.html
@@ -12,19 +12,9 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://davycas.com%{REQUEST_URI} [L,R=301]
 
-# Anciennes adresses du site (version 2025-2026) vers la nouvelle arborescence
-RewriteRule ^index\.html$ / [L,R=301]
-RewriteRule ^about\.html$ /qui-sommes-nous/ [L,R=301]
-RewriteRule ^piliers\.html$ /nos-actions/ [L,R=301]
-RewriteRule ^projets\.html$ /nos-actions/ [L,R=301]
-RewriteRule ^stelab\.html$ /nos-actions/stelab/ [L,R=301]
-RewriteRule ^siteb\.html$ /nos-actions/siteb/ [L,R=301]
-RewriteRule ^contact\.html$ /contact/ [L,R=301]
-RewriteRule ^interventions-surveillance-epidemiologique\.html$ /nos-actions/#surveillance [L,R=301,NE]
-RewriteRule ^interventions-laboratoire\.html$ /nos-actions/#laboratoire [L,R=301,NE]
-RewriteRule ^interventions-systeme-information\.html$ /nos-actions/#systemes-information [L,R=301,NE]
-RewriteRule ^interventions-etudes-formations\.html$ /nos-actions/#etudes [L,R=301,NE]
-RewriteRule ^interventions-oeuvres-sociales\.html$ /nos-actions/#oeuvres-sociales [L,R=301,NE]
+# /index.html -> / (seulement si demandé explicitement : évite la boucle avec DirectoryIndex)
+RewriteCond %{THE_REQUEST} \s/+(en/)?index\.html[\s?] [NC]
+RewriteRule ^(en/)?index\.html$ /$1 [L,R=301]
 
 # Anciennes adresses WordPress
 RewriteRule ^(wp-admin|wp-login\.php|wp-content|wp-includes|xmlrpc\.php|feed)(/.*)?$ - [G,L]
@@ -37,23 +27,25 @@ RewriteRule ^(wp-admin|wp-login\.php|wp-content|wp-includes|xmlrpc\.php|feed)(/.
 
 # En-têtes de sécurité
 <IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000"
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-    Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-REPLACE_INLINE_HASH'; font-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'"
+    Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' REPLACE_INLINE_HASHES; font-src 'self'; frame-src https://www.google.com; form-action 'self'; frame-ancestors 'self'; base-uri 'self'"
 </IfModule>
 
-# Cache : les ressources versionnées longtemps, le HTML toujours revalidé
+# Cache : CSS et JS versionnés (?v=) gardés longtemps, HTML toujours revalidé
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/html "access plus 0 seconds"
-    ExpiresByType text/css "access plus 7 days"
-    ExpiresByType text/javascript "access plus 7 days"
-    ExpiresByType application/javascript "access plus 7 days"
-    ExpiresByType image/avif "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/avif "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
     ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 

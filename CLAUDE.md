@@ -11,19 +11,20 @@ Site institutionnel de DAVYCAS International, ONG de santé publique en Afrique 
 - Ne jamais pousser sur GitHub sans l'accord explicite du propriétaire. La refonte se fait sur la branche `refonte`.
 - Ne jamais toucher aux enregistrements DNS de messagerie (MX, `mail`, SPF) chez LWS.
 
-## Règles de contenu
-1. **Ne jamais inventer de faits** : chiffres d'impact, partenaires, témoignages, montants, dates, certifications.
-   Tout manque est marqué `[À CONFIRMER]`, listé dans `docs/contenu-manquant.md`, et n'est jamais publié tel quel.
-2. **Vraies photos de l'ONG** pour les personnes et le terrain. Jamais de photo de banque d'images présentée comme l'ONG.
-3. Pas de superlatifs sans preuve. Pas d'emojis.
-4. Coordonnées, pays d'intervention et nom officiel : une seule source (voir `docs/contenu-manquant.md` tant que non validés).
+## Règles de contenu (décision du propriétaire, 17/11/2026)
+1. **Tout le contenu texte du site d'origine est repris**, page par page, aux mêmes adresses (`index.html`, `about.html`…).
+   Ne jamais inventer de faits ; les incohérences du contenu d'origine sont listées dans `docs/contenu-manquant.md`.
+2. **Site bilingue** : tout texte visible s'écrit `[[Texte français]]` dans `src/`, sa traduction va dans `src/i18n/en.json`.
+   La génération échoue s'il manque une traduction. Version anglaise sous `/en/`.
+3. Les images du site d'origine sont conservées ; les vraies photos de terrain sont dans `src/images/terrain/`.
+4. Pas d'emojis.
 
 ## Règles de design
 1. **Aucune valeur de design en dur** : couleurs, typos, espacements, rayons, ombres et durées viennent de
    `design/tokens.json`, compilé en variables CSS. Pas de `style=""` inline.
-2. Charte : respecter le logo DAVYCAS (bleu marine) et la palette validée (voir `docs/decisions.md`).
-3. Interdits : dégradés violets, effet « SaaS », grilles de 3 icônes génériques, cartes identiques,
-   carrousels hors du héros.
+2. Charte : celle du site d'origine (violet `#625a9a`, turquoise `#469cb0`, fond nuit adouci `#191935`),
+   **police unique Montserrat**, rendu inspiré d'Apple. Photos du héros bien visibles (voile seulement derrière le texte).
+3. Carrousel automatique uniquement dans le héros d'accueil (avec pause) ; galeries horizontales manuelles.
 4. Toute animation s'arrête avec `prefers-reduced-motion`. Tout le contenu reste lisible sans JavaScript.
 5. Mobile-first. Aucun débordement horizontal à 390 px.
 

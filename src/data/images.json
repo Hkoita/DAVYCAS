@@ -1,96 +1,36 @@
 {
-  "terrain": {
-    "src": "src/images/terrain/Field supervison of Davycas Director and CDC Team_Carriage Study in Burkina Faso.JPG",
-    "alt": "Supervision de l'étude de portage par l'équipe de DAVYCAS et du CDC dans un village du Burkina Faso",
-    "position": "50% 60%"
-  },
-  "crise": {
-    "src": "src/images/terrain/Davycas support for health crisis management in Burkina Faso.jpg",
-    "alt": "Équipe de DAVYCAS mobilisée pour la gestion d'une crise sanitaire au Burkina Faso",
-    "position": "50% 55%"
-  },
-  "communaute": {
-    "src": "src/images/terrain/Accountability to the populations of the villages of the carriage study in Burkina.jpg",
-    "alt": "Restitution des résultats de l'étude de portage auprès des populations d'un village du Burkina Faso",
-    "position": "50% 45%"
-  },
-  "helpdesk-ecran": {
-    "src": "src/images/terrain/Helpdesk DSRE Niger.jpg",
-    "crop": [
-      0,
-      0,
-      1,
-      0.47
-    ],
-    "alt": "Tableau de bord de surveillance et carte du Niger affichés dans la salle du Helpdesk de la DSRE",
-    "position": "22% 50%"
-  },
-  "helpdesk-equipe": {
-    "src": "src/images/terrain/Helpdesk DSRE Niger.jpg",
-    "crop": [
-      0,
-      0.53,
-      1,
-      0.44
-    ],
-    "alt": "Agents du Helpdesk DAVYCAS au travail auprès de la DSRE au Niger"
-  },
-  "menafrinet": {
-    "src": "src/images/terrain/MenAfriNet Regional Data management Team.jpg",
-    "alt": "Équipe régionale de gestion des données du projet MenAfriNet"
-  },
-  "prelevement": {
-    "src": "src/images/terrain/Carriage Study Samples Collect by mobile lab in Niger.jpg",
-    "alt": "Prélèvement d'un échantillon par le laboratoire mobile de l'étude de portage au Niger",
-    "widths": [
-      480,
-      650
-    ]
-  },
-  "formation": {
-    "src": "src/images/terrain/Lab Training on the Carriage Study in Niger.jpg",
-    "alt": "Formation en laboratoire des équipes de l'étude de portage au Niger",
-    "widths": [
-      480,
-      500
-    ]
-  },
-  "solidarite": {
-    "src": "src/images/oeuvres-sociales.png",
-    "alt": "Remise de denrées par DAVYCAS dans le cadre de ses œuvres sociales",
-    "widths": [
-      480,
-      868
-    ]
-  },
-  "directeur": {
-    "src": "src/images/directeur.png",
-    "alt": "Portrait de AKE Honoré Flavien, Directeur exécutif de DAVYCAS International",
-    "position": "50% 30%",
-    "widths": [
-      480,
-      960
-    ]
-  },
-  "og-default": {
-    "src": "src/images/terrain/Field supervison of Davycas Director and CDC Team_Carriage Study in Burkina Faso.JPG",
-    "crop": [
-      0,
-      0.12,
-      1,
-      0.75
-    ],
-    "alt": "",
-    "widths": [
-      1200
-    ]
-  },
-  "logo-stelab": {
-    "src": "src/images/logo-stelab.png",
-    "alt": "Logo de STELab, Système de traçabilité des données épidémiologiques et des échantillons de laboratoire",
-    "widths": [
-      480,
-      960
-    ]
-  }
+  "hero-siege": { "src": "src/images/site/background-hero.png", "alt": "Siège de DAVYCAS International à Ouagadougou", "widths": [480, 960, 1155] },
+  "hero-stelab": { "src": "src/images/site/black-female-researcher-studying-compound-jar-laboratory-experiment-biochemistry.jpg", "alt": "Chercheuse analysant des données de laboratoire sur STELab", "position": "60% 40%" },
+  "hero-terrain": { "src": "src/images/site/person-office-work-day.jpg", "alt": "Agent du helpdesk en appui aux équipes de terrain", "position": "50% 35%" },
+  "hero-labo": { "src": "src/images/site/hero-surveillance-laboratoire-davycas.png", "alt": "Équipe de surveillance et de laboratoire au travail" },
+  "about": { "src": "src/images/site/about-institutional.png", "alt": "Volontaires de santé communautaire au service des populations" },
+  "action": { "src": "src/images/site/action-bg.png", "alt": "Équipes de santé à la rencontre des communautés" },
+  "surveillance": { "src": "src/images/site/surveillance-epidemiologique.png", "alt": "Salle de suivi de la surveillance épidémiologique" },
+  "surveillance-hero": { "src": "src/images/site/surveillance-hero.png", "alt": "Centre d'opérations de surveillance épidémiologique" },
+  "laboratoire": { "src": "src/images/site/laboratoire.png", "alt": "Techniciens de laboratoire au travail" },
+  "etudes-labo": { "src": "src/images/site/etudes-laboratory.png", "alt": "Biologiste au microscope dans un laboratoire" },
+  "etudes-formation": { "src": "src/images/site/etudes-hero-training.png", "alt": "Session de formation d'agents de santé" },
+  "etudes-atelier": { "src": "src/images/site/etudes-workshop.png", "alt": "Atelier de formation aux outils numériques" },
+  "dashboard": { "src": "src/images/site/lab-data-dashboard.png", "alt": "Tableau de bord de données de surveillance" },
+  "si": { "src": "src/images/site/systemes-information.png", "alt": "Équipe travaillant sur les systèmes d'information sanitaire" },
+  "si-datacenter": { "src": "src/images/site/si-data-center.png", "alt": "Salle serveurs des données de santé" },
+  "si-atelier": { "src": "src/images/site/si-team-workshop.png", "alt": "Atelier de conception d'un système d'information" },
+  "social-1": { "src": "src/images/site/social-community-1.png", "alt": "Rencontre avec les femmes d'une communauté" },
+  "social-2": { "src": "src/images/site/social-community-2.png", "alt": "Action de sensibilisation communautaire" },
+  "oeuvre-sociale": { "src": "src/images/site/oeuvre-social.png", "alt": "Remise de dons par DAVYCAS dans le cadre de ses œuvres sociales", "widths": [480, 960, 1440] },
+  "oeuvre-enfant": { "src": "src/images/site/oeuvres-social-1.jpg", "alt": "Enfant d'un village accompagné par les œuvres sociales de DAVYCAS" },
+  "oeuvre-dons": { "src": "src/images/site/oeuvres-social-2.png", "alt": "Remise de denrées par DAVYCAS", "widths": [480, 868] },
+  "siteb-1": { "src": "src/images/site/image-1-siteb.png", "alt": "Transporteurs de La Poste chargés des glacières d'échantillons" },
+  "siteb-2": { "src": "src/images/site/image-2-siteb.png", "alt": "Glacière SITEB avec bordereau de colisage à destination du laboratoire" },
+  "siteb-3": { "src": "src/images/site/image-3-siteb.png", "alt": "Prélèvement sanguin réalisé dans une formation sanitaire" },
+  "logo-stelab": { "src": "src/images/site/logo-stelab.png", "alt": "Logo STELab", "widths": [480, 960] },
+  "directeur": { "src": "src/images/directeur.png", "alt": "AKE Honoré Flavien, Directeur Exécutif de DAVYCAS International", "position": "50% 30%", "widths": [480, 960] },
+  "g-menafrinet": { "src": "src/images/terrain/MenAfriNet Regional Data management Team.jpg", "alt": "Équipe régionale de gestion des données MenAfriNet" },
+  "g-supervision": { "src": "src/images/terrain/Field supervison of Davycas Director and CDC Team_Carriage Study in Burkina Faso.JPG", "alt": "Supervision de l'étude de portage au Burkina Faso" },
+  "g-prelevement": { "src": "src/images/terrain/Carriage Study Samples Collect by mobile lab in Niger.jpg", "alt": "Collecte d'échantillons par laboratoire mobile au Niger", "widths": [480, 650] },
+  "g-formation": { "src": "src/images/terrain/Lab Training on the Carriage Study in Niger.jpg", "alt": "Formation en laboratoire sur l'étude de portage au Niger", "widths": [480, 500] },
+  "g-helpdesk": { "src": "src/images/terrain/Helpdesk DSRE Niger.jpg", "alt": "Appui Helpdesk auprès de la DSRE au Niger", "crop": [0, 0, 1, 0.47] },
+  "g-restitution": { "src": "src/images/terrain/Accountability to the populations of the villages of the carriage study in Burkina.jpg", "alt": "Restitution auprès des populations au Burkina Faso" },
+  "g-crise": { "src": "src/images/terrain/Davycas support for health crisis management in Burkina Faso.jpg", "alt": "Appui de DAVYCAS à la gestion des crises sanitaires" },
+  "og": { "src": "src/images/site/hero-surveillance-laboratoire-davycas.png", "alt": "", "widths": [1200] }
 }

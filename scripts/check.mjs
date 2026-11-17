@@ -41,8 +41,8 @@ for (const p of paths) {
     page.on('pageerror', (e) => errors.push('JS: ' + e.message.slice(0, 160)));
     page.on('response', (r) => { if (r.status() >= 400 && !r.url().endsWith('/favicon.ico')) errors.push(`${r.status()} ${r.url().replace(base, '')}`); });
     await page.goto(base + p, { waitUntil: 'load' });
-    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 40)); } window.scrollTo(0, 0); });
-    await page.waitForTimeout(400);
+    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo({ top: y, behavior: 'instant' }); await new Promise((r) => setTimeout(r, 60)); } window.scrollTo({ top: 0, behavior: 'instant' }); });
+    await page.waitForTimeout(1300);
     const info = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth;
       const overflow = document.documentElement.scrollWidth > vw + 1;

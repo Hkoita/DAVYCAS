@@ -1,7 +1,7 @@
 # Site de DAVYCAS International
 
-Site institutionnel de DAVYCAS International (davycas.com) : HTML statique généré à partir de `src/`, sans
-framework, hébergé chez LWS.
+Site institutionnel bilingue (français / anglais) de DAVYCAS International (davycas.com) : HTML statique généré à
+partir de `src/`, sans framework, hébergé chez LWS. Français à la racine, anglais sous `/en/`.
 
 ## Installation
 
@@ -24,9 +24,8 @@ src/
   layout.html          Gabarit commun (head, en-tête, pied de page, barre de soutien mobile)
   partials/            En-tête et pied de page
   pages/               Une page = un fichier HTML ; ses métadonnées sont en JSON tout en haut
-  templates/           Gabarit des pages projets et sections propres à STELab et SITEB
   data/site.json       Coordonnées, menu, données structurées (JSON-LD NGO)
-  data/projets.json    Les projets : chaque entrée génère une page /nos-actions/<slug>/
+  i18n/en.json         Traductions anglaises (clé = texte français)
   data/images.json     Les photos utilisées : fichier source, texte alternatif, recadrage
   images/              Photos originales (non publiées telles quelles)
   css/main.css         Styles : uniquement des variables issues de tokens.json
@@ -44,10 +43,14 @@ docs/
 
 ## Modifier le contenu
 
+- **Traduction** : chaque texte visible s'écrit `[[Texte français]]`. Après une modification, lancer `npm run build` :
+  s'il manque des traductions, la liste est écrite dans `.cache/i18n-missing.json` ; ajouter chaque phrase et sa
+  traduction anglaise dans `src/i18n/en.json`, puis relancer. (`node scripts/build.mjs --allow-missing` pour un aperçu.)
+
 - **Un texte** : ouvrir la page dans `src/pages/` (par exemple `qui-sommes-nous.html`) et modifier le texte entre
   les balises. Le titre et la description pour Google sont dans le bloc JSON en haut du fichier.
 - **Coordonnées** (e-mail, téléphone, adresse) : `src/data/site.json`. Elles se mettent à jour partout.
-- **Un projet** : `src/data/projets.json`. Ajouter une entrée crée automatiquement sa page et l'ajoute à la liste.
+- **Un projet** : carte à ajouter dans `src/pages/projets.html` (avec son attribut `data-tags` pour les filtres).
 - **Une photo** :
   1. déposer le fichier original dans `src/images/` ;
   2. le déclarer dans `src/data/images.json` avec un texte alternatif qui décrit la photo ;

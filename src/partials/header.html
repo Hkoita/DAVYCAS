@@ -1,17 +1,37 @@
 <header class="site-header" data-header>
   <div class="site-header__inner wrap">
-    <a class="site-header__logo" href="/" aria-label="DAVYCAS International, accueil">
-      <img class="logo logo--dark" src="/assets/logo-davycas.png" alt="" width="627" height="160">
-      <img class="logo logo--light" src="/assets/logo-davycas-blanc.png" alt="" width="627" height="160">
+    <a class="site-header__logo" href="{{base}}" aria-label="[[DAVYCAS International, accueil]]">
+      <img class="logo" src="/assets/logo-davycas-blanc.webp" alt="" width="566" height="120">
     </a>
-    <nav class="site-nav" id="menu" aria-label="Navigation principale">
+    <nav class="site-nav" id="menu" aria-label="[[Navigation principale]]">
       <ul class="site-nav__list">
-        {{#each nav}}<li><a class="site-nav__link" href="{{.url}}" data-nav="{{.key}}">{{.label}}</a></li>{{/each}}
+        <li><a class="site-nav__link" href="{{base}}" data-nav="home">[[Accueil]]</a></li>
+        <li><a class="site-nav__link" href="{{base}}about.html" data-nav="about">[[À Propos]]</a></li>
+        <li><a class="site-nav__link" href="{{base}}piliers.html" data-nav="pillars">[[Piliers]]</a></li>
+        <li class="has-sub">
+          <button class="site-nav__link site-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-interventions" data-nav="interventions">[[Interventions]] {{icon chevron}}</button>
+          <ul class="sub-menu" id="sub-interventions">
+            {{#each interventions}}<li><a href="{{base}}{{.file}}">{{icon {{.icon}}}}<span>{{.label}}</span></a></li>{{/each}}
+          </ul>
+        </li>
+        <li><a class="site-nav__link" href="{{base}}projets.html" data-nav="projects">[[Projets]]</a></li>
+        <li class="has-sub">
+          <button class="site-nav__link site-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-produits" data-nav="products">[[Nos produits]] {{icon chevron}}</button>
+          <ul class="sub-menu" id="sub-produits">
+            <li><a href="{{base}}stelab.html">{{icon microscope}}<span>STELab</span></a></li>
+            <li><a href="{{base}}siteb.html">{{icon truck}}<span>SITEB</span></a></li>
+          </ul>
+        </li>
+        <li><a class="site-nav__link" href="{{base}}#actualites" data-nav="news">[[Blog]]</a></li>
+        <li><a class="site-nav__link" href="{{base}}contact.html" data-nav="contact">[[Contact]]</a></li>
       </ul>
-      <a class="btn btn--primary site-nav__cta" href="/agir/">Agir avec nous</a>
+      <div class="site-nav__actions">
+        <a class="lang-switch" href="{{altUrl}}" hreflang="{{altLangCode}}" lang="{{altLangCode}}" aria-label="{{altLangName}}"><span class="lang-switch__cur" aria-hidden="true">{{langCur}}</span><span aria-hidden="true">/</span><span aria-hidden="true">{{altLang}}</span></a>
+        <a class="btn btn--gradient" href="{{base}}contact.html?objet=don">[[Faire un don]]</a>
+      </div>
     </nav>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
-      <span class="menu-toggle__label">Menu</span>
+      <span class="menu-toggle__label" data-open="[[Menu]]" data-close="[[Fermer]]">[[Menu]]</span>
       <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span></span>
     </button>
   </div>

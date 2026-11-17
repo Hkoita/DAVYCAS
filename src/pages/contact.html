@@ -1,85 +1,95 @@
 <!--{
-  "title": "Contact — DAVYCAS International",
-  "description": "Écrire à DAVYCAS International : partenariat, projet, demande de document ou soutien. Siège à Ouagadougou, Burkina Faso.",
-  "path": "/contact/",
+  "file": "contact.html",
+  "title": "[[Contact | DAVYCAS International]]",
+  "description": "[[Vous avez une question, un projet ou souhaitez collaborer avec DAVYCAS ? Notre équipe est à votre écoute pour renforcer ensemble la santé publique en Afrique de l'Ouest.]]",
   "nav": "contact",
-  "breadcrumb": [["Contact", "/contact/"]]
+  "lcp": "hero-siege",
+  "og": "hero-siege"
 }-->
 <section class="page-hero">
-  <div class="wrap">
-    <p class="eyebrow">Contact</p>
-    <h1 class="page-hero__title" data-words>Parlons de <span class="accent">vos projets</span></h1>
-    <p class="lead">Notre équipe technique répond aux demandes de collaboration, d'expertise et d'information.</p>
+  <div class="media-fill media-fill--scrim">{{img hero-siege loading="eager" priority sizes="100vw"}}</div>
+  <div class="page-hero__content wrap">
+    <ol class="crumbs"><li><a href="{{base}}">[[Accueil]]</a></li><li aria-current="page">[[Contact]]</li></ol>
+    <p class="eyebrow mt-6">[[Contact]]</p>
+    <h1 class="page-hero__title">[[Parlons de <span class="grad">votre projet</span>]]</h1>
+    <p class="lead">[[Vous avez une question, un projet ou souhaitez collaborer avec DAVYCAS ? Notre équipe est à votre écoute pour renforcer ensemble la santé publique en Afrique de l'Ouest.]]</p>
   </div>
 </section>
 
-<section class="section section--surface" aria-labelledby="ecrire">
-  <div class="wrap split">
-    <div>
-      <h2 class="h3" id="coordonnees">Coordonnées</h2>
-      <ul class="contact-list mt-5">
-        <li><span class="k">Siège</span><span>{{address}}</span></li>
-        <li><span class="k">E-mail</span><a href="mailto:{{email}}">{{email}}</a></li>
-        <li><span class="k">Téléphone</span><a href="tel:{{phoneHref}}">{{phone}}</a></li>
-        <li><span class="k">Représentation</span><span>Niger</span></li>
+<section class="section" aria-labelledby="coordonnees">
+  <div class="wrap contact-grid">
+    <div data-reveal>
+      <h2 class="h2" id="coordonnees">[[Nos coordonnées]]</h2>
+      <p class="lead mt-4">[[Contactez-nous directement ou remplissez le formulaire pour toute demande spécifique.]]</p>
+      <ul class="contact-list">
+        <li>{{icon pin}}<div><strong>[[Siège social]]</strong>[[01 BP 6524 Ouagadougou 01, Burkina Faso]]</div></li>
+        <li>{{icon pin}}<div><strong>[[Bureau Niger]]</strong>Niamey, Niger</div></li>
+        <li>{{icon pin}}<div><strong>[[Bureau Mali]]</strong>Bamako, Mali</div></li>
+        <li>{{icon mail}}<div><strong>Email</strong><a href="mailto:contact@davycas.com">contact@davycas.com</a></div></li>
+        <li>{{icon phone}}<div><strong>[[Téléphone]]</strong><a href="tel:+22625361250">+226 25 36 12 50</a></div></li>
+        <li>{{icon globe}}<div><strong>Web</strong><a href="https://davycas.com">www.davycas.com</a></div></li>
       </ul>
     </div>
-    <div>
-      <h2 class="h3" id="ecrire">Écrire un message</h2>
-      <p class="muted mt-5">Tous les champs sont obligatoires, sauf l'organisation.</p>
-      <form class="form mt-7" action="/contact/envoi.php" method="post" novalidate data-contact-form data-fallback="{{email}}">
+    <div class="panel" data-reveal>
+      <h2 class="h3" id="formulaire">[[Envoyez-nous un message]]</h2>
+      <p class="muted mt-4">[[Les champs marqués d’un astérisque sont obligatoires.]]</p>
+      <form class="form" action="/contact/envoi.php" method="post" data-contact-form
+        data-ok="[[Merci, votre message a bien été envoyé. Notre équipe vous répondra rapidement.]]"
+        data-error="[[Le message n’a pas pu être envoyé. Écrivez-nous directement à contact@davycas.com.]]"
+        data-sending="[[Envoi en cours…]]" data-required="[[Ce champ est obligatoire.]]"
+        data-email="[[Indiquez une adresse e-mail valide.]]" data-short="[[Votre message doit contenir au moins 20 caractères.]]"
+        data-consent="[[Merci d’accepter l’utilisation de vos données pour traiter votre demande.]]">
+        <input type="hidden" name="langue" value="{{lang}}">
         <div class="form__row">
-          <div class="field">
-            <label for="nom">Nom et prénom</label>
-            <input id="nom" name="nom" type="text" autocomplete="name" required aria-describedby="nom-error">
-            <p class="field__error" id="nom-error" aria-live="polite"></p>
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-            <p class="field__error" id="email-error" aria-live="polite"></p>
-          </div>
+          <div class="field"><label for="prenom">[[Prénom]] *</label><input id="prenom" name="prenom" type="text" autocomplete="given-name" required aria-describedby="prenom-error"><p class="field__error" id="prenom-error" aria-live="polite"></p></div>
+          <div class="field"><label for="nom">[[Nom]] *</label><input id="nom" name="nom" type="text" autocomplete="family-name" required aria-describedby="nom-error"><p class="field__error" id="nom-error" aria-live="polite"></p></div>
         </div>
-        <div class="field">
-          <label for="organisation">Organisation <span class="hint">(facultatif)</span></label>
-          <input id="organisation" name="organisation" type="text" autocomplete="organization">
+        <div class="form__row">
+          <div class="field"><label for="email">[[Email professionnel]] *</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error"><p class="field__error" id="email-error" aria-live="polite"></p></div>
+          <div class="field"><label for="organisation">[[Organisation / Structure]]</label><input id="organisation" name="organisation" type="text" autocomplete="organization"></div>
         </div>
-        <div class="field">
-          <label for="objet">Objet</label>
+        <div class="field"><label for="objet">[[Objet du message]] *</label>
           <select id="objet" name="objet" required aria-describedby="objet-error">
-            <option value="">Choisir un objet</option>
-            <option value="partenariat">Partenariat ou financement</option>
-            <option value="projet">Demande d'expertise ou de projet</option>
-            <option value="stelab">STELab ou SITEB</option>
-            <option value="rapports">Demande de document ou de rapport</option>
-            <option value="soutien">Soutenir nos actions</option>
-            <option value="candidature">Candidature ou profil d'expert</option>
-            <option value="autre">Autre demande</option>
-          </select>
-          <p class="field__error" id="objet-error" aria-live="polite"></p>
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required minlength="20" aria-describedby="message-error"></textarea>
-          <p class="field__error" id="message-error" aria-live="polite"></p>
-        </div>
-        <div class="hp" aria-hidden="true">
-          <label for="site-web">Ne pas remplir ce champ</label>
-          <input id="site-web" name="site_web" type="text" tabindex="-1" autocomplete="off">
-        </div>
-        <input type="hidden" name="t" value="" data-form-time>
-        <div class="field">
-          <label class="check" for="consentement">
-            <input id="consentement" name="consentement" type="checkbox" value="oui" required aria-describedby="consentement-error">
-            <span>J'accepte que DAVYCAS International utilise ces informations pour répondre à ma demande. <a href="/confidentialite/">Politique de confidentialité</a></span>
-          </label>
-          <p class="field__error" id="consentement-error" aria-live="polite"></p>
-        </div>
-        <div>
-          <button class="btn btn--primary" type="submit">Envoyer le message</button>
-        </div>
+            <option value="">[[Sélectionnez un objet]]</option>
+            <option value="partenariat">[[Partenariat]]</option>
+            <option value="projet">[[Projet terrain]]</option>
+            <option value="information">[[Demande d'information]]</option>
+            <option value="collaboration">[[Collaboration technique]]</option>
+            <option value="don">[[Don / Soutien]]</option>
+            <option value="autre">[[Autre]]</option>
+          </select><p class="field__error" id="objet-error" aria-live="polite"></p></div>
+        <div class="field"><label for="message">[[Votre message]] *</label><textarea id="message" name="message" required minlength="20" aria-describedby="message-error"></textarea><p class="field__error" id="message-error" aria-live="polite"></p></div>
+        <div class="hp" aria-hidden="true"><label for="site-web">[[Ne pas remplir ce champ]]</label><input id="site-web" name="site_web" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="field"><label class="check" for="consentement"><input id="consentement" name="consentement" type="checkbox" value="oui" required aria-describedby="consentement-error"><span>[[J’accepte que DAVYCAS International utilise ces informations pour répondre à ma demande.]] <a href="{{base}}confidentialite.html">[[Politique de confidentialité]]</a></span></label><p class="field__error" id="consentement-error" aria-live="polite"></p></div>
+        <div><button class="btn btn--gradient" type="submit">[[Envoyer le message]]</button></div>
         <p class="form-status" data-form-status tabindex="-1" role="status"></p>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section--night2" aria-labelledby="trouver">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2 class="h2" id="trouver">[[Où nous trouver]]</h2>
+      <p class="lead">[[DAVYCAS International opère depuis Ouagadougou avec des bureaux stratégiques au Niger et au Mali pour une portée régionale maximale.]]</p>
+    </div>
+    <div class="map" data-reveal>
+      <iframe title="[[Carte : Ouagadougou, Burkina Faso]]" src="https://www.google.com/maps?q=Ouagadougou%2C%20Burkina%20Faso&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="soutenir">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <div class="media-fill">{{img oeuvre-sociale sizes="100vw" alt=""}}</div>
+      <h2 class="h2" id="soutenir">[[Vous souhaitez soutenir nos actions ?]]</h2>
+      <p class="lead">[[Rejoignez les partenaires qui font avancer la santé publique en Afrique de l'Ouest.]]</p>
+      <div class="btn-row btn-row--center">
+        <a class="btn btn--gradient" href="?objet=don#formulaire">[[Faire un don]] {{icon arrow}}</a>
+        <a class="btn btn--ghost" href="?objet=partenariat#formulaire">[[Devenir partenaire]]</a>
+      </div>
     </div>
   </div>
 </section>

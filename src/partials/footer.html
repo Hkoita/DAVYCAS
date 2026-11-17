@@ -1,49 +1,44 @@
 <footer class="site-footer">
   <div class="wrap">
-    <div class="site-footer__top">
-      <p class="site-footer__statement">Renforcer la santé publique <em>avec</em> les pays d'Afrique de l'Ouest, depuis 2016.</p>
-      <a class="btn btn--light" href="/contact/">Écrire à DAVYCAS</a>
-    </div>
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <img src="/assets/logo-davycas-blanc.png" alt="DAVYCAS International" width="627" height="160" loading="lazy">
-        <p>Association à but non lucratif, laïque et apolitique, créée le 18 juillet 2016 à Ouagadougou.</p>
+        <a href="{{base}}" class="site-footer__logo"><img src="/assets/logo-davycas-blanc.webp" alt="DAVYCAS International" width="566" height="120" loading="lazy"></a>
+        <p>[[Construire l'avenir en structurant le présent. DAVYCAS est au cœur de l'innovation sanitaire au service des populations et du développement africain.]]</p>
       </div>
       <div>
-        <h2 class="site-footer__title">Explorer</h2>
+        <h2 class="site-footer__title">[[Navigation]]</h2>
         <ul>
-          <li><a href="/qui-sommes-nous/">Qui sommes-nous</a></li>
-          <li><a href="/nos-actions/">Nos actions</a></li>
-          <li><a href="/impact/">Impact</a></li>
-          <li><a href="/actualites/">Actualités</a></li>
-          <li><a href="/transparence/">Transparence</a></li>
+          <li><a href="{{base}}">[[Accueil]]</a></li>
+          <li><a href="{{base}}about.html">[[À Propos]]</a></li>
+          <li><a href="{{base}}piliers.html">[[Piliers]]</a></li>
+          <li><a href="{{base}}projets.html">[[Projets]]</a></li>
+          <li><a href="{{base}}#actualites">[[Actualités]]</a></li>
         </ul>
       </div>
       <div>
-        <h2 class="site-footer__title">Projets</h2>
+        <h2 class="site-footer__title">[[Interventions]]</h2>
         <ul>
-          <li><a href="/nos-actions/stelab/">STELab</a></li>
-          <li><a href="/nos-actions/siteb/">SITEB</a></li>
-          <li><a href="/nos-actions/menafrinet/">MenAfriNet</a></li>
-          <li><a href="/nos-actions/nutrition-smart/">Nutrition SMART</a></li>
+          {{#each interventions}}<li><a href="{{base}}{{.file}}">{{.label}}</a></li>{{/each}}
+          <li><a href="{{base}}stelab.html">STELab</a></li>
+          <li><a href="{{base}}siteb.html">SITEB</a></li>
         </ul>
       </div>
       <div>
-        <h2 class="site-footer__title">Contact</h2>
+        <h2 class="site-footer__title">[[Coordonnées]]</h2>
         <ul>
-          <li>{{address}}</li>
+          <li>[[Siège social : Ouagadougou, Burkina Faso]]</li>
           <li><a href="mailto:{{email}}">{{email}}</a></li>
           <li><a href="tel:{{phoneHref}}">{{phone}}</a></li>
-          <li><a href="/agir/">Agir avec nous</a></li>
+          <li><a href="{{base}}contact.html">[[Nous contacter]]</a></li>
         </ul>
       </div>
     </div>
     <div class="site-footer__bottom">
-      <p>© {{year}} DAVYCAS International · {{registration}}</p>
+      <p>© {{year}} DAVYCAS International. [[Tous droits réservés.]]</p>
+      <p>[[Burkina Faso • Niger • Mali • Côte d'Ivoire]]</p>
       <ul>
-        <li><a href="/mentions-legales/">Mentions légales</a></li>
-        <li><a href="/confidentialite/">Confidentialité</a></li>
-        <li><a href="/plan-du-site/">Plan du site</a></li>
+        <li><a href="{{base}}mentions-legales.html">[[Mentions légales]]</a></li>
+        <li><a href="{{base}}confidentialite.html">[[Politique de confidentialité]]</a></li>
       </ul>
     </div>
   </div>

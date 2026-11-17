@@ -1,34 +1,28 @@
 {
   "name": "DAVYCAS International",
   "url": "https://davycas.com",
-  "tagline": "Renforcer la santé publique en Afrique de l'Ouest",
   "email": "contact@davycas.com",
   "phone": "+226 25 34 12 50",
   "phoneHref": "+22625341250",
-  "address": "Ouagadougou, Burkina Faso",
-  "founded": "18 juillet 2016",
-  "registration": "Récépissé N°2016_FE1271/MATDSI",
   "year": "2026",
-  "nav": [
-    { "key": "about", "label": "Qui sommes-nous", "url": "/qui-sommes-nous/" },
-    { "key": "actions", "label": "Nos actions", "url": "/nos-actions/" },
-    { "key": "impact", "label": "Impact", "url": "/impact/" },
-    { "key": "news", "label": "Actualités", "url": "/actualites/" },
-    { "key": "transparency", "label": "Transparence", "url": "/transparence/" },
-    { "key": "contact", "label": "Contact", "url": "/contact/" }
+  "interventions": [
+    { "file": "interventions-etudes-formations.html", "label": "[[Études & Formations]]", "icon": "study" },
+    { "file": "interventions-laboratoire.html", "label": "[[Laboratoire]]", "icon": "flask" },
+    { "file": "interventions-oeuvres-sociales.html", "label": "[[Œuvres Sociales]]", "icon": "heart" },
+    { "file": "interventions-surveillance-epidemiologique.html", "label": "[[Surveillance Épidémiologique]]", "icon": "pulse" },
+    { "file": "interventions-systeme-information.html", "label": "[[Système d’Information]]", "icon": "network" }
   ],
   "organizationLD": {
     "@context": "https://schema.org",
     "@type": "NGO",
     "name": "DAVYCAS International",
-    "alternateName": "Davycas International",
     "url": "https://davycas.com",
     "logo": "https://davycas.com/assets/logo-davycas.png",
     "foundingDate": "2016-07-18",
-    "description": "Association à but non lucratif qui fournit un appui technique aux ministères de la santé d'Afrique de l'Ouest : surveillance épidémiologique, laboratoire, systèmes d'information sanitaire et logistique.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Ouagadougou", "addressCountry": "BF" },
+    "description": "Association à but non lucratif qui accompagne depuis 2016 les ministères de la santé d'Afrique de l'Ouest : surveillance épidémiologique, laboratoire, systèmes d'information sanitaire et logistique.",
+    "address": { "@type": "PostalAddress", "streetAddress": "01 BP 6524", "addressLocality": "Ouagadougou", "addressCountry": "BF" },
     "email": "contact@davycas.com",
     "telephone": "+226 25 34 12 50",
-    "areaServed": ["Burkina Faso", "Niger"]
+    "areaServed": ["Burkina Faso", "Niger", "Mali"]
   }
 }
