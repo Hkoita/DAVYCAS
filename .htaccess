@@ -1,0 +1,15 @@
+# Hébergement LWS (Apache) — site statique DAVYCAS
+
+# Servir index.html en priorité (évite qu'un ancien index.php WordPress prenne le dessus)
+DirectoryIndex index.html
+
+# Forcer HTTPS et l'adresse sans www
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://davycas.com%{REQUEST_URI} [L,R=301]
+
+# Bloquer l'accès aux fichiers internes s'ils se retrouvent sur le serveur
+<FilesMatch "\.(py|md)$">
+    Require all denied
+</FilesMatch>
