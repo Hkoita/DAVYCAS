@@ -1,0 +1,85 @@
+<!--{
+  "title": "Contact — DAVYCAS International",
+  "description": "Écrire à DAVYCAS International : partenariat, projet, demande de document ou soutien. Siège à Ouagadougou, Burkina Faso.",
+  "path": "/contact/",
+  "nav": "contact",
+  "breadcrumb": [["Contact", "/contact/"]]
+}-->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h1 class="page-hero__title" data-words>Parlons de <span class="accent">vos projets</span></h1>
+    <p class="lead">Notre équipe technique répond aux demandes de collaboration, d'expertise et d'information.</p>
+  </div>
+</section>
+
+<section class="section section--surface" aria-labelledby="ecrire">
+  <div class="wrap split">
+    <div>
+      <h2 class="h3" id="coordonnees">Coordonnées</h2>
+      <ul class="contact-list mt-5">
+        <li><span class="k">Siège</span><span>{{address}}</span></li>
+        <li><span class="k">E-mail</span><a href="mailto:{{email}}">{{email}}</a></li>
+        <li><span class="k">Téléphone</span><a href="tel:{{phoneHref}}">{{phone}}</a></li>
+        <li><span class="k">Représentation</span><span>Niger</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="h3" id="ecrire">Écrire un message</h2>
+      <p class="muted mt-5">Tous les champs sont obligatoires, sauf l'organisation.</p>
+      <form class="form mt-7" action="/contact/envoi.php" method="post" novalidate data-contact-form data-fallback="{{email}}">
+        <div class="form__row">
+          <div class="field">
+            <label for="nom">Nom et prénom</label>
+            <input id="nom" name="nom" type="text" autocomplete="name" required aria-describedby="nom-error">
+            <p class="field__error" id="nom-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+            <p class="field__error" id="email-error" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="organisation">Organisation <span class="hint">(facultatif)</span></label>
+          <input id="organisation" name="organisation" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="objet">Objet</label>
+          <select id="objet" name="objet" required aria-describedby="objet-error">
+            <option value="">Choisir un objet</option>
+            <option value="partenariat">Partenariat ou financement</option>
+            <option value="projet">Demande d'expertise ou de projet</option>
+            <option value="stelab">STELab ou SITEB</option>
+            <option value="rapports">Demande de document ou de rapport</option>
+            <option value="soutien">Soutenir nos actions</option>
+            <option value="candidature">Candidature ou profil d'expert</option>
+            <option value="autre">Autre demande</option>
+          </select>
+          <p class="field__error" id="objet-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required minlength="20" aria-describedby="message-error"></textarea>
+          <p class="field__error" id="message-error" aria-live="polite"></p>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="site-web">Ne pas remplir ce champ</label>
+          <input id="site-web" name="site_web" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="t" value="" data-form-time>
+        <div class="field">
+          <label class="check" for="consentement">
+            <input id="consentement" name="consentement" type="checkbox" value="oui" required aria-describedby="consentement-error">
+            <span>J'accepte que DAVYCAS International utilise ces informations pour répondre à ma demande. <a href="/confidentialite/">Politique de confidentialité</a></span>
+          </label>
+          <p class="field__error" id="consentement-error" aria-live="polite"></p>
+        </div>
+        <div>
+          <button class="btn btn--primary" type="submit">Envoyer le message</button>
+        </div>
+        <p class="form-status" data-form-status tabindex="-1" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>

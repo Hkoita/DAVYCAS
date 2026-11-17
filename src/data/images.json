@@ -1,0 +1,96 @@
+{
+  "terrain": {
+    "src": "src/images/terrain/Field supervison of Davycas Director and CDC Team_Carriage Study in Burkina Faso.JPG",
+    "alt": "Supervision de l'étude de portage par l'équipe de DAVYCAS et du CDC dans un village du Burkina Faso",
+    "position": "50% 60%"
+  },
+  "crise": {
+    "src": "src/images/terrain/Davycas support for health crisis management in Burkina Faso.jpg",
+    "alt": "Équipe de DAVYCAS mobilisée pour la gestion d'une crise sanitaire au Burkina Faso",
+    "position": "50% 55%"
+  },
+  "communaute": {
+    "src": "src/images/terrain/Accountability to the populations of the villages of the carriage study in Burkina.jpg",
+    "alt": "Restitution des résultats de l'étude de portage auprès des populations d'un village du Burkina Faso",
+    "position": "50% 45%"
+  },
+  "helpdesk-ecran": {
+    "src": "src/images/terrain/Helpdesk DSRE Niger.jpg",
+    "crop": [
+      0,
+      0,
+      1,
+      0.47
+    ],
+    "alt": "Tableau de bord de surveillance et carte du Niger affichés dans la salle du Helpdesk de la DSRE",
+    "position": "22% 50%"
+  },
+  "helpdesk-equipe": {
+    "src": "src/images/terrain/Helpdesk DSRE Niger.jpg",
+    "crop": [
+      0,
+      0.53,
+      1,
+      0.44
+    ],
+    "alt": "Agents du Helpdesk DAVYCAS au travail auprès de la DSRE au Niger"
+  },
+  "menafrinet": {
+    "src": "src/images/terrain/MenAfriNet Regional Data management Team.jpg",
+    "alt": "Équipe régionale de gestion des données du projet MenAfriNet"
+  },
+  "prelevement": {
+    "src": "src/images/terrain/Carriage Study Samples Collect by mobile lab in Niger.jpg",
+    "alt": "Prélèvement d'un échantillon par le laboratoire mobile de l'étude de portage au Niger",
+    "widths": [
+      480,
+      650
+    ]
+  },
+  "formation": {
+    "src": "src/images/terrain/Lab Training on the Carriage Study in Niger.jpg",
+    "alt": "Formation en laboratoire des équipes de l'étude de portage au Niger",
+    "widths": [
+      480,
+      500
+    ]
+  },
+  "solidarite": {
+    "src": "src/images/oeuvres-sociales.png",
+    "alt": "Remise de denrées par DAVYCAS dans le cadre de ses œuvres sociales",
+    "widths": [
+      480,
+      868
+    ]
+  },
+  "directeur": {
+    "src": "src/images/directeur.png",
+    "alt": "Portrait de AKE Honoré Flavien, Directeur exécutif de DAVYCAS International",
+    "position": "50% 30%",
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "og-default": {
+    "src": "src/images/terrain/Field supervison of Davycas Director and CDC Team_Carriage Study in Burkina Faso.JPG",
+    "crop": [
+      0,
+      0.12,
+      1,
+      0.75
+    ],
+    "alt": "",
+    "widths": [
+      1200
+    ]
+  },
+  "logo-stelab": {
+    "src": "src/images/logo-stelab.png",
+    "alt": "Logo de STELab, Système de traçabilité des données épidémiologiques et des échantillons de laboratoire",
+    "widths": [
+      480,
+      960
+    ]
+  }
+}

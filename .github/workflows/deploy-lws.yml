@@ -1,12 +1,9 @@
-# Déploiement automatique : GitHub (branche main) -> hébergement LWS (FTP) -> davycas.com
+# Déploiement automatique : GitHub (branche main) -> build -> hébergement LWS (FTP) -> davycas.com
 #
-# Secrets à créer dans GitHub : Settings > Secrets and variables > Actions > New repository secret
-#   FTP_SERVER     : serveur FTP donné par LWS (ex. ftp.davycas.com)
-#   FTP_USERNAME   : identifiant FTP LWS
-#   FTP_PASSWORD   : mot de passe FTP LWS
-# Secrets facultatifs :
-#   FTP_DIR        : dossier du site sur le serveur, terminé par / (par défaut ./htdocs/)
-#   FTP_PROTOCOL   : ftps (par défaut) ou ftp si LWS refuse la connexion chiffrée
+# Secrets GitHub (Settings > Secrets and variables > Actions) :
+#   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD   accès FTP LWS
+#   FTP_DIR        (facultatif) dossier du site sur le serveur, terminé par / (par défaut ./htdocs/)
+#   FTP_PROTOCOL   (facultatif) ftps (par défaut) ou ftp
 
 name: Déploiement LWS
 
@@ -26,6 +23,18 @@ jobs:
       - name: Récupérer le code
         uses: actions/checkout@v4
 
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Générer le site
+        run: npm run build
+
       - name: Envoyer le site sur LWS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -34,14 +43,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
           server-dir: ${{ secrets.FTP_DIR || secrets.FTP_SERVER_DIR || './htdocs/' }}
-          # Fichiers internes qui ne doivent pas être publiés
-          exclude: |
-            **/.git*
-            **/.git*/**
-            .github/**
-            **/node_modules/**
-            **/.DS_Store
-            qa/**
-            docs/**
-            *.py
-            *.md
+          local-dir: ./dist/

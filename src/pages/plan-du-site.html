@@ -1,0 +1,29 @@
+<!--{
+  "title": "Plan du site — DAVYCAS International",
+  "description": "Toutes les pages du site de DAVYCAS International.",
+  "path": "/plan-du-site/",
+  "breadcrumb": [["Plan du site", "/plan-du-site/"]]
+}-->
+<section class="page-hero">
+  <div class="wrap">
+    <h1 class="page-hero__title">Plan du site</h1>
+  </div>
+</section>
+<section class="section section--surface">
+  <div class="wrap prose">
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/qui-sommes-nous/">Qui sommes-nous</a></li>
+      <li><a href="/nos-actions/">Nos actions</a>
+        <ul>{{#each projets}}<li><a href="/nos-actions/{{.slug}}/">{{.name}}</a></li>{{/each}}</ul>
+      </li>
+      <li><a href="/impact/">Impact</a></li>
+      <li><a href="/agir/">Agir avec nous</a></li>
+      <li><a href="/actualites/">Actualités</a></li>
+      <li><a href="/transparence/">Transparence</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/mentions-legales/">Mentions légales</a></li>
+      <li><a href="/confidentialite/">Politique de confidentialité</a></li>
+    </ul>
+  </div>
+</section>

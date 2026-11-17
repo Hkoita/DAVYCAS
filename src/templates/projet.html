@@ -1,0 +1,70 @@
+{{#if p.photo}}
+<section class="page-hero page-hero--photo">
+  <div class="hero__media" data-parallax>{{img {{p.photo}} loading="eager" priority sizes="100vw" alt=""}}</div>
+  <div class="wrap">
+    <p class="eyebrow">{{p.domain}}</p>
+    <h1 class="page-hero__title" data-words>{{p.name}}</h1>
+    <p class="lead">{{p.fullname}}</p>
+    <ul class="tags">
+      <li><span class="k">Pays</span> {{p.countries}}</li>
+      <li><span class="k">Statut</span> {{p.period}}</li>
+    </ul>
+  </div>
+</section>
+{{/if}}
+{{#if p.nophoto}}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{{p.domain}}</p>
+    <h1 class="page-hero__title" data-words>{{p.name}}</h1>
+    <p class="lead">{{p.fullname}}</p>
+    <ul class="tags">
+      <li><span class="k">Pays</span> {{p.countries}}</li>
+      <li><span class="k">Statut</span> {{p.period}}</li>
+    </ul>
+  </div>
+</section>
+{{/if}}
+
+<section class="section {{p.contextSection}}">
+  <div class="wrap split">
+    <div>
+      <h2 class="h2" data-words>Le <span class="accent">contexte</span></h2>
+    </div>
+    <div class="prose">
+      <p class="lead">{{p.summary}}</p>
+      <p>{{p.context}}</p>
+      {{#if p.partners}}<p><strong>Partenaires :</strong> {{p.partners}}</p>{{/if}}
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="wrap split">
+    <div>
+      <h2 class="h2" data-words>Nos <span class="accent">actions</span></h2>
+    </div>
+    <div>
+      <ul class="checklist">{{p.actions}}</ul>
+      {{#if p.facts}}<ul class="facts mt-7">{{p.facts}}</ul>{{/if}}
+    </div>
+  </div>
+</section>
+
+{{EXTRA}}
+
+<section class="section section--navy">
+  <div class="wrap cta-band">
+    <div>
+      <p class="eyebrow">{{p.name}}</p>
+      <h2 class="h2" data-words>Vous souhaitez <span class="accent">en savoir plus</span> ?</h2>
+    </div>
+    <div>
+      <p class="lead">DAVYCAS International accompagne les institutions sanitaires dans la mise en place de solutions concrètes pour la surveillance, les laboratoires et la décision publique.</p>
+      <div class="btn-row">
+        <a class="btn btn--light" href="/contact/">Contacter DAVYCAS {{icon arrow}}</a>
+        <a class="btn btn--ghost" href="/nos-actions/">Tous les projets</a>
+      </div>
+    </div>
+  </div>
+</section>

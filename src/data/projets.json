@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "stelab",
+    "name": "STELab",
+    "fullname": "Système de Traçabilité des données Épidémiologiques et des échantillons de Laboratoire",
+    "domain": "Systèmes d'information sanitaire",
+    "countries": "Burkina Faso, Niger",
+    "period": "Opérationnel",
+    "partners": "",
+    "summary": "Plateforme électronique de gestion cas par cas des données de surveillance et des échantillons biologiques, opérationnelle au Burkina Faso et au Niger.",
+    "context": "STELab est une plateforme électronique de gestion des données cas par cas, disponible au niveau des services épidémiologiques et des laboratoires. Conçue pour les réalités du terrain en Afrique de l'Ouest, elle intègre le suivi du transport des échantillons biologiques et facilite la saisie, la visualisation et le rapportage des données.",
+    "actions": [
+      "Gestion cas par cas : centralisation structurée des données de surveillance.",
+      "Suivi des échantillons entre le terrain, les laboratoires et les niveaux de coordination.",
+      "Saisie hors connexion, avec synchronisation automatique dès que le réseau revient.",
+      "Tableaux de bord, indicateurs, graphiques et cartes pour la décision.",
+      "Exports anonymisés au format Excel pour les analyses complémentaires.",
+      "Helpdesk dédié (appels et WhatsApp) et suivi permanent de la plateforme."
+    ],
+    "facts": [
+      "<strong>2</strong> pays : Burkina Faso et Niger",
+      "<strong>3</strong> niveaux : central, régional, district",
+      "Laboratoires de référence et formations sanitaires"
+    ],
+    "photo": "helpdesk-ecran",
+    "photo2": "helpdesk-equipe",
+    "extra": "projet-stelab.html"
+  },
+  {
+    "slug": "siteb",
+    "name": "SITEB",
+    "fullname": "Système Intégré de Transport des Échantillons Biologiques",
+    "domain": "Logistique sanitaire",
+    "countries": "Burkina Faso, Niger, Cabo Verde",
+    "period": "Déploiement régional",
+    "partners": "Ministère de la Santé, La Poste Burkina Faso, laboratoires de référence, structures sanitaires",
+    "summary": "Une solution pour organiser, tracer et sécuriser le transport des échantillons biologiques entre les structures de santé, les transporteurs et les laboratoires.",
+    "context": "SITEB répond au besoin de coordination entre les expéditeurs, les transporteurs et les laboratoires destinataires. Il organise l'enlèvement, le conditionnement, le transport, la réception et la conformité des colis biologiques, du prélèvement jusqu'au laboratoire.",
+    "actions": [
+      "Expéditeur : conserver à bonne température, notifier, emballer, tenir le registre, appeler le transporteur.",
+      "Transporteur : remplir le bordereau, signer le registre, livrer dans les 24 heures suivant l'enlèvement.",
+      "Laboratoire : vérifier l'étiquette, les bordereaux, l'heure d'arrivée et la conformité du colis.",
+      "Plusieurs types d'échantillons dans un même colis lorsque la destination et la température sont identiques."
+    ],
+    "facts": [
+      "<strong>24 h</strong> au plus entre l'enlèvement et la livraison",
+      "<strong>6</strong> types d'échantillons pris en charge",
+      "Chaîne du froid de 2 à 8 °C selon les prélèvements"
+    ],
+    "photo": "prelevement",
+    "photo2": "",
+    "extra": "projet-siteb.html"
+  },
+  {
+    "slug": "menafrinet",
+    "name": "MenAfriNet",
+    "fullname": "Surveillance cas par cas de la méningite",
+    "domain": "Surveillance épidémiologique",
+    "countries": "Burkina Faso, Niger",
+    "period": "2016 – 2024",
+    "partners": "",
+    "summary": "Amélioration de la surveillance cas par cas de la méningite au Burkina Faso et au Niger, avec une forte composante laboratoire.",
+    "context": "Le projet MenAfriNet vise à améliorer la surveillance cas par cas de la méningite au Burkina Faso et au Niger. DAVYCAS y apporte son expertise en gestion des données et en appui aux laboratoires, au sein d'une équipe régionale de gestion des données.",
+    "actions": [
+      "Surveillance cas par cas de la méningite.",
+      "Renforcement de la composante laboratoire.",
+      "Gestion régionale des données de surveillance."
+    ],
+    "facts": [
+      "<strong>2016 – 2024</strong>",
+      "<strong>2</strong> pays : Burkina Faso et Niger"
+    ],
+    "photo": "menafrinet",
+    "photo2": "",
+    "extra": ""
+  },
+  {
+    "slug": "vaccin-pcv13",
+    "name": "Vaccin PCV13",
+    "fullname": "Efficacité vaccinale et surveillance des pneumonies sévères",
+    "domain": "Recherche et évaluation",
+    "countries": "Burkina Faso",
+    "period": "Études spécialisées",
+    "partners": "",
+    "summary": "Suivi longitudinal de l'efficacité du vaccin PCV13 et surveillance des pneumonies sévères chez les enfants de moins de 5 ans au Burkina Faso.",
+    "context": "DAVYCAS contribue au suivi longitudinal de l'efficacité vaccinale du PCV13 et à la surveillance des pneumonies sévères chez les enfants de moins de 5 ans au Burkina Faso.",
+    "actions": [
+      "Suivi longitudinal de l'efficacité vaccinale.",
+      "Surveillance des pneumonies sévères chez les moins de 5 ans."
+    ],
+    "facts": [],
+    "photo": "",
+    "photo2": "",
+    "extra": ""
+  },
+  {
+    "slug": "nutrition-smart",
+    "name": "Nutrition SMART",
+    "fullname": "Enquêtes nutritionnelles nationales",
+    "domain": "Études et enquêtes de terrain",
+    "countries": "Niveau national",
+    "period": "Études de terrain",
+    "partners": "UNICEF, PAM",
+    "summary": "Appui technique à la conduite d'enquêtes nutritionnelles nationales et d'évaluations sur les micronutriments, avec l'UNICEF et le PAM.",
+    "context": "DAVYCAS apporte un appui technique à la conduite d'enquêtes nutritionnelles nationales selon la méthodologie SMART et à des évaluations sur les micronutriments, avec l'appui de l'UNICEF et du PAM.",
+    "actions": [
+      "Appui technique aux enquêtes nutritionnelles nationales.",
+      "Évaluations sur les micronutriments."
+    ],
+    "facts": [],
+    "photo": "",
+    "photo2": "",
+    "extra": ""
+  },
+  {
+    "slug": "surveillance-polio",
+    "name": "Surveillance de la polio",
+    "fullname": "Transport des prélèvements pour la surveillance de la poliomyélite",
+    "domain": "Logistique et surveillance",
+    "countries": "Niger",
+    "period": "En cours",
+    "partners": "",
+    "summary": "Mise en place d'un dispositif de transport des prélèvements pour renforcer la surveillance et la réactivité autour de la poliomyélite au Niger.",
+    "context": "Au Niger, DAVYCAS met en place un dispositif de transport des prélèvements pour renforcer la surveillance de la poliomyélite et la réactivité des équipes.",
+    "actions": [
+      "Organisation du transport des prélèvements.",
+      "Renforcement de la réactivité de la surveillance."
+    ],
+    "facts": [],
+    "photo": "",
+    "photo2": "",
+    "extra": ""
+  },
+  {
+    "slug": "arboviroses",
+    "name": "Arboviroses",
+    "fullname": "Surveillance sentinelle des arboviroses",
+    "domain": "Surveillance épidémiologique",
+    "countries": "Sites sentinelles",
+    "period": "Projet technique",
+    "partners": "",
+    "summary": "Déploiement d'un dispositif sentinelle pour améliorer la détection, le suivi et la réponse aux arboviroses.",
+    "context": "DAVYCAS déploie un dispositif de surveillance sentinelle pour améliorer la détection, le suivi et la réponse aux arboviroses dans la région.",
+    "actions": [
+      "Mise en place de sites sentinelles.",
+      "Détection, suivi et réponse aux arboviroses."
+    ],
+    "facts": [],
+    "photo": "",
+    "photo2": "",
+    "extra": ""
+  },
+  {
+    "slug": "surveillance-communautaire",
+    "name": "Surveillance communautaire",
+    "fullname": "Alerte précoce à partir du terrain",
+    "domain": "Santé publique",
+    "countries": "Niveau communautaire",
+    "period": "Appui institutionnel",
+    "partners": "",
+    "summary": "Renforcement des mécanismes d'alerte précoce et de remontée des événements de santé publique à partir des communautés.",
+    "context": "DAVYCAS renforce les mécanismes d'alerte précoce et de remontée des événements de santé publique depuis le niveau communautaire jusqu'aux autorités sanitaires.",
+    "actions": [
+      "Renforcement de l'alerte précoce.",
+      "Remontée des événements de santé publique depuis les communautés."
+    ],
+    "facts": [],
+    "photo": "",
+    "photo2": "",
+    "extra": ""
+  }
+]
