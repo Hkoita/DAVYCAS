@@ -214,3 +214,76 @@
     if (status) status.textContent = `${n} ${document.documentElement.lang === 'en' ? 'projects' : 'projets'}`;
   });
 })();
+
+/* ---------- Parcours animés : cartes étapes avec barre de progression « Étape 02 / 04 » ----------
+   Chaque liste .steps de 3 cartes ou plus devient un parcours horizontal : la carte active est mise en
+   avant, la barre et le compteur suivent ; avance automatique quand le parcours est visible,
+   suspendue au survol, au toucher ou au clavier, et désactivée avec prefers-reduced-motion. */
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const en = document.documentElement.lang === 'en';
+  const label = en ? 'Step' : 'Étape';
+  const css = getComputedStyle(document.documentElement).getPropertyValue('--duration-journey').trim();
+  const DELAY = css ? parseFloat(css) : 3800;
+  const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#${id}"></use></svg>`;
+
+  document.querySelectorAll('ol.steps').forEach((list) => {
+    const items = [...list.children];
+    if (items.length < 3) return;
+    list.classList.add('is-journey');
+    const pad = (n) => String(n).padStart(2, '0');
+    const head = document.createElement('div');
+    head.className = 'journey__head';
+    head.innerHTML = `<p class="journey__count" aria-hidden="true">${label} <b>01</b> / ${pad(items.length)}</p>
+      <div class="journey__ctrl"><button class="round-btn" type="button" data-j="prev" aria-label="${en ? 'Previous step' : 'Étape précédente'}">${icon('left')}</button><button class="round-btn" type="button" data-j="next" aria-label="${en ? 'Next step' : 'Étape suivante'}">${icon('arrow')}</button></div>`;
+    const bar = document.createElement('div');
+    bar.className = 'journey__bar';
+    bar.setAttribute('aria-hidden', 'true');
+    bar.innerHTML = '<span class="journey__fill"></span><span class="journey__dot"></span>';
+    list.before(head, bar);
+    const count = head.querySelector('b');
+
+    let index = 0; let timer = 0; let visible = false; let holdUntil = 0;
+    const set = (i, scroll = true) => {
+      index = (i + items.length) % items.length;
+      items.forEach((li, k) => li.classList.toggle('is-active', k === index));
+      count.textContent = pad(index + 1);
+      bar.style.setProperty('--journey', `${items.length > 1 ? (index / (items.length - 1)) * 100 : 0}%`);
+      if (scroll && list.scrollWidth > list.clientWidth + 4) {
+        const li = items[index];
+        list.scrollTo({ left: li.offsetLeft - list.offsetLeft - 4, behavior: reduce.matches ? 'auto' : 'smooth' });
+      }
+    };
+    const hold = () => { holdUntil = performance.now() + DELAY * 2.5; };
+    const loop = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (visible && !reduce.matches && performance.now() > holdUntil && !document.hidden) set(index + 1);
+        loop();
+      }, DELAY);
+    };
+    items.forEach((li, k) => {
+      li.addEventListener('pointerenter', () => { hold(); set(k, false); });
+      li.addEventListener('click', () => { hold(); set(k); });
+    });
+    head.querySelector('[data-j="prev"]').addEventListener('click', () => { hold(); set(index - 1); });
+    head.querySelector('[data-j="next"]').addEventListener('click', () => { hold(); set(index + 1); });
+    list.addEventListener('pointerdown', hold);
+    list.addEventListener('wheel', hold, { passive: true });
+    let scrollTimer = 0;
+    list.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        if (performance.now() < holdUntil) {
+          const left = list.scrollLeft;
+          let best = 0; let dist = Infinity;
+          items.forEach((li, k) => { const d = Math.abs(li.offsetLeft - list.offsetLeft - left); if (d < dist) { dist = d; best = k; } });
+          set(best, false);
+        }
+      }, 120);
+    }, { passive: true });
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.35 }).observe(list);
+    set(0, false);
+    loop();
+  });
+})();

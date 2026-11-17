@@ -450,3 +450,89 @@ html:not(.js) .filters { display: none; }
 .stat__value--text { font-size: var(--size-2xl); line-height: var(--leading-snug); }
 .mini a { display: inline-flex; align-items: center; min-height: var(--layout-tap); }
 @media (max-width: 767px) { .map { aspect-ratio: auto; height: 20rem; min-height: 0; } }
+
+/* =====================================================================
+   Cartes v3 — inspirées de la référence « Comment ça marche ? »
+   Le texte n'est jamais posé sur une photo : image en haut, texte dessous.
+   ===================================================================== */
+
+/* ---------- Cartes photo (tuiles avec image) ---------- */
+.tile:has(> .media-fill) { min-height: 0; justify-content: flex-start; padding: 0 0 var(--space-6); border: var(--border-hair) solid var(--color-line); background: var(--color-night-2); box-shadow: var(--shadow-card); }
+.tile:has(> .media-fill) > .media-fill { position: relative; inset: auto; z-index: 0; flex: none; aspect-ratio: 16 / 10; margin-bottom: var(--space-5); }
+.tile:has(> .media-fill) > .media-fill::after { display: none; }
+.tile:has(> .media-fill) > :not(.media-fill) { margin-inline: var(--space-6); }
+.tile:has(> .media-fill) p { color: var(--color-text-soft); }
+.tile:has(> .media-fill) > .eyebrow { display: inline-grid; place-items: center; align-self: flex-start; width: var(--space-7); height: var(--space-7); margin-top: calc(var(--space-7) / -2 - var(--space-5)); margin-bottom: var(--space-4); position: relative; z-index: 1; border-radius: var(--radius-md); background: var(--gradient-brand); color: var(--color-white); letter-spacing: 0; font-size: var(--size-sm); box-shadow: var(--shadow-card); }
+.section--light .tile:has(> .media-fill), .section--white .tile:has(> .media-fill) { background: var(--color-white); color: var(--color-ink); border-color: var(--color-line-light); }
+.section--light .tile:has(> .media-fill) p, .section--white .tile:has(> .media-fill) p { color: var(--color-ink-soft); }
+.tile:has(> .media-fill):hover { transform: translateY(var(--motion-lift)); box-shadow: var(--shadow-lift); }
+.tile { transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out); }
+
+/* ---------- Cartes à icône (fond clair, pastille dégradée, halo) ---------- */
+.tile--plain { box-shadow: var(--shadow-card); }
+.tile--plain:hover { transform: translateY(var(--motion-lift)); box-shadow: var(--shadow-lift); border-color: var(--color-violet-light); }
+.tile__icon { box-shadow: 0 12px 24px -10px var(--color-violet); transition: transform var(--duration-base) var(--ease-out); }
+.tile--plain:hover .tile__icon { transform: translateY(var(--motion-lift)) scale(var(--motion-zoom)); }
+
+/* ---------- Cartes étapes (référence) ---------- */
+.steps li { position: relative; overflow: hidden; padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); transition: transform var(--duration-slow) var(--ease-out), box-shadow var(--duration-slow) var(--ease-out), border-color var(--duration-slow) var(--ease-out), opacity var(--duration-slow) var(--ease-out); }
+.steps li::before { content: counter(step, decimal-leading-zero); display: grid; place-items: center; width: var(--space-8); height: var(--space-8); margin-bottom: var(--space-5); border-radius: var(--radius-md); background: var(--gradient-brand); -webkit-background-clip: border-box; background-clip: border-box; color: var(--color-white); font-size: var(--size-lg); font-weight: var(--weight-black); box-shadow: 0 14px 28px -12px var(--color-violet); transition: transform var(--duration-slow) var(--ease-out), filter var(--duration-slow) var(--ease-out); }
+.section--light .steps li::before, .section--white .steps li::before { background: var(--gradient-brand); -webkit-background-clip: border-box; background-clip: border-box; color: var(--color-white); }
+.steps li::after { content: counter(step, decimal-leading-zero); position: absolute; top: var(--space-3); right: var(--space-5); font-size: var(--size-watermark); line-height: 1; font-weight: var(--weight-black); letter-spacing: var(--tracking-tight); color: var(--color-watermark); pointer-events: none; transition: color var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out); }
+.section--light .steps li::after, .section--white .steps li::after { color: var(--color-watermark-light); }
+.steps h3 { position: relative; font-size: var(--size-lg); }
+.steps p { position: relative; }
+
+/* Parcours animé (activé par JavaScript) */
+.journey__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
+.journey__count { font-weight: var(--weight-semibold); color: var(--color-text-soft); }
+.journey__count b { color: var(--color-text); }
+.section--light .journey__count, .section--white .journey__count { color: var(--color-ink-soft); }
+.section--light .journey__count b, .section--white .journey__count b { color: var(--color-ink); }
+.journey__ctrl { display: flex; gap: var(--space-2); }
+.journey__bar { position: relative; height: 2px; margin: var(--space-4) 0 var(--space-6); border-radius: var(--radius-pill); background: var(--color-line); }
+.section--light .journey__bar, .section--white .journey__bar { background: var(--color-line-light); }
+.journey__fill { position: absolute; inset: 0 auto 0 0; width: var(--journey, 0%); border-radius: inherit; background: var(--gradient-brand); transition: width var(--duration-slow) var(--ease-out); }
+.journey__dot { position: absolute; top: 50%; left: var(--journey, 0%); width: var(--space-4); height: var(--space-4); border-radius: 50%; background: var(--color-turquoise); box-shadow: 0 0 0 var(--space-2) var(--color-halo); transform: translate(-50%, -50%); transition: left var(--duration-slow) var(--ease-out); }
+.steps.is-journey { display: flex; gap: var(--space-5); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: var(--space-3) var(--space-1) var(--space-6); margin-inline: calc(var(--space-1) * -1); }
+.steps.is-journey::-webkit-scrollbar { display: none; }
+.steps.is-journey > li { flex: none; width: clamp(15rem, 27vw, 24rem); scroll-snap-align: start; cursor: pointer; }
+.steps.is-journey > li:not(.is-active) { opacity: 0.85; transform: scale(0.97); box-shadow: none; }
+.steps.is-journey > li:not(.is-active)::before { filter: saturate(0.4) brightness(1.15); transform: scale(0.92); }
+.steps.is-journey > li.is-active { opacity: 1; transform: translateY(calc(var(--motion-lift) * 2)); box-shadow: var(--shadow-lift); border-color: var(--color-violet-light); }
+.steps.is-journey > li.is-active::after { color: var(--color-watermark-strong); transform: translateY(calc(var(--motion-lift) * -1)); }
+.section--light .steps.is-journey > li.is-active::after, .section--white .steps.is-journey > li.is-active::after { color: var(--color-watermark-light-strong); }
+@media (prefers-reduced-motion: reduce) { .steps.is-journey > li { opacity: 1 !important; transform: none !important; } }
+
+/* ---------- Bandeaux d'appel : photo et texte côte à côte ---------- */
+.cta { display: grid; gap: 0; padding: 0; text-align: left; background: var(--gradient-brand); box-shadow: var(--shadow-lift); }
+.cta > .media-fill { position: relative; inset: auto; z-index: 0; min-height: 16rem; }
+.cta > .media-fill::after { display: none; }
+.cta > :not(.media-fill) { padding-inline: var(--space-gutter); }
+.cta > .h2 { padding-top: var(--space-7); }
+.cta > .btn-row { padding-bottom: var(--space-7); justify-content: flex-start; }
+.cta .h2, .cta .lead { margin-inline: 0; max-width: none; }
+.cta .grad { background: none; color: var(--color-white); -webkit-background-clip: border-box; background-clip: border-box; text-decoration: underline; text-decoration-color: var(--color-turquoise-light); text-underline-offset: 0.12em; text-decoration-thickness: 0.08em; }
+.cta .btn--gradient { background: var(--color-white); color: var(--color-violet-deep); }
+.cta .btn--light { background: var(--color-night); color: var(--color-white); }
+.cta .btn--ghost { border-color: var(--color-white); }
+@media (min-width: 900px) {
+  .cta { grid-template-columns: 1fr 1.15fr; align-content: center; }
+  .cta > .media-fill { grid-row: 1 / span 3; min-height: 100%; }
+  .cta > :not(.media-fill) { grid-column: 2; padding-inline: var(--space-8); }
+  .cta > .h2 { padding-top: var(--space-8); align-self: end; }
+  .cta > .btn-row { padding-bottom: var(--space-8); }
+}
+
+/* ---------- Apparitions en cascade ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js li[data-reveal]:nth-child(2) { transition-delay: calc(var(--duration-stagger) * 1); }
+  .js li[data-reveal]:nth-child(3) { transition-delay: calc(var(--duration-stagger) * 2); }
+  .js li[data-reveal]:nth-child(4) { transition-delay: calc(var(--duration-stagger) * 3); }
+  .js li[data-reveal]:nth-child(5) { transition-delay: calc(var(--duration-stagger) * 4); }
+  .js li[data-reveal]:nth-child(6) { transition-delay: calc(var(--duration-stagger) * 5); }
+  .js li[data-reveal]:nth-child(n+7) { transition-delay: calc(var(--duration-stagger) * 6); }
+  .js [data-reveal] .split__media, .js .split__media[data-reveal] { clip-path: inset(0 0 0 0 round var(--radius-lg)); }
+  .js .split__media[data-reveal]:not(.is-in) { clip-path: inset(8% 8% 8% 8% round var(--radius-lg)); }
+  .js .split__media[data-reveal] { transition: opacity var(--duration-reveal) var(--ease-out), transform var(--duration-reveal) var(--ease-out), clip-path var(--duration-reveal) var(--ease-out); }
+}
