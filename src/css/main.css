@@ -536,3 +536,23 @@ html:not(.js) .filters { display: none; }
   .js .split__media[data-reveal]:not(.is-in) { clip-path: inset(8% 8% 8% 8% round var(--radius-lg)); }
   .js .split__media[data-reveal] { transition: opacity var(--duration-reveal) var(--ease-out), transform var(--duration-reveal) var(--ease-out), clip-path var(--duration-reveal) var(--ease-out); }
 }
+
+/* =====================================================================
+   Correctifs de lisibilité : aucun mot coupé au milieu, textes aérés
+   ===================================================================== */
+.mini strong, .stat__value, .tile h3, .card__body h3, .steps h3, .person h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+.mini a, .contact-list a, .person a { overflow-wrap: anywhere; }
+
+/* Chiffres-clés : la taille du texte s'adapte à la largeur de la carte (jamais de mot coupé) */
+.stat { container-type: inline-size; }
+.stat__value--text { font-size: clamp(1.125rem, 11.5cqi, 2.25rem); line-height: var(--leading-snug); white-space: normal; }
+
+/* Petites cartes (icône + titre + texte) : plus larges, plus d'air, icône dans une pastille */
+.minis { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--space-4); }
+.mini { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding: var(--space-5) var(--space-5) var(--space-6); border-radius: var(--radius-md); transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out); }
+.mini:hover { transform: translateY(var(--motion-lift)); box-shadow: var(--shadow-card); border-color: var(--color-violet-light); }
+.mini > .icon { display: grid; place-items: center; box-sizing: content-box; width: 1.25rem; height: 1.25rem; padding: var(--space-3); margin-bottom: var(--space-2); border-radius: var(--radius-md); background: var(--gradient-brand); color: var(--color-white); }
+.section--light .mini > .icon, .section--white .mini > .icon { color: var(--color-white); }
+.mini strong { font-size: var(--size-md); line-height: var(--leading-snug); }
+.mini span { margin-top: 0; font-size: var(--size-sm); line-height: var(--leading-body); }
+.mini span + strong { margin-top: 0; }
